@@ -1,0 +1,70 @@
+#include <iostream>
+#include <map>
+#include <limits.h>
+using namespace std;
+
+int n;
+int chart[101][101];
+
+int mincost(int a,int b)
+{
+		multimap<int,int> way;
+		int dist[101];
+		for(int i=0;i<101;i++)
+				dist[i]=-2;
+		dist[a]=0;
+		for(int i=0;i<101;i++){
+				if(dist[i]==-2){
+						if(chart[a][i]==INT_MAX)
+								way.insert(multimap<int ,int>::value_type(INT_MAX,i));
+						else
+								way.insert(multimap<int ,int>::value_type(dist[a]+chart[a][i],i));
+				}
+		}				
+		while(dist[b]==-2){
+				int p,d;
+				d=way.begin()->first;	p=way.begin()->second;
+				way.erase(way.begin());
+				dist[p]=d;
+				for(int i=0;i<101;i++){
+						if(dist[i]==-2){
+								if(dist[p]==INT_MAX || chart[p][i]==INT_MAX)
+										way.insert(multimap<int ,int>::value_type(INT_MAX,i));
+								else
+										way.insert(multimap<int ,int>::value_type(dist[p]+chart[p][i],i));
+
+						}
+				}
+		}
+		return dist[b];
+}
+
+int main()
+{
+		int k;
+		cin >> n >> k;
+		for(int i=0;i<101;i++)
+				for(int j=0;j<101;j++)
+						chart[i][j]=INT_MAX;
+		for(int i=0;i<101;i++)
+				chart[i][i]=0;
+		for(int i=0;i<k;i++){
+				int a;
+				cin >> a;
+				if(a==0){
+						int b,c;
+						cin >> b >> c;
+						int r=mincost(b,c);
+						r=(r==INT_MAX) ? -1 : r;
+						cout << r << endl;
+				}else if(a==1){
+						int b,c,d;
+						cin >> b >> c >> d;
+						if(d < chart[b][c]){
+								chart[b][c]=d;	chart[c][b]=d;
+						}
+				}
+		}
+		return 0;
+}
+

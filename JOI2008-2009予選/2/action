@@ -1,0 +1,19 @@
+rm out1.txt
+./2.out < in1.txt > out1.txt
+echo;
+
+rm out2.txt
+./2.out < in2.txt > out2.txt
+echo;
+
+rm out3.txt
+./2.out < in3.txt > out3.txt
+echo;
+
+rm out4.txt
+./2.out < in4.txt > out4.txt
+echo;
+
+rm out1.txt
+./2.out < in5.txt > out5.txt
+echo;

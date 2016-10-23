@@ -1,0 +1,36 @@
+#include <string>
+using namespace std;
+
+class ShortPalindromes{
+	public:
+
+		string rec(string s)
+		{
+			if(s.size()==0)
+				return "";
+			if(s.size()==1)
+				return s;
+			bool isPali=true;
+			for(int i=0;i<s.size();i++)
+				if(s[i]!=s[s.size()-1-i])
+					isPali=false;
+			if(isPali)
+				return s;
+			if(s[0]==s[s.size()-1])
+				return (s[0]+rec(s.substr(1,s.size()-2))+s[0]);
+
+			string s1,s2;
+			s1=(s[0]+rec(s.substr(1,s.size()-1))+s[0]);
+			s2=(s[s.size()-1]+rec(s.substr(0,s.size()-1))+s[s.size()-1]);
+			if(s1.size()<s2.size())
+				return s1;
+			if(s2.size()<s1.size())
+				return s2;
+			return (s1<s2) ? s1 :s2;
+		}
+
+		string shortest(string base)
+		{
+			return rec(base);
+		}
+};

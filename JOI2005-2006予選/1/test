@@ -1,0 +1,2 @@
+./1.out < input.txt
+echo;

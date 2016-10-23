@@ -1,0 +1,6 @@
+b=0 n=1 c=0 minCost[1]=0
+b=1 n=5 c=1 minCost[5]=1
+b=1 n=3 c=4 minCost[3]=4
+b=1 n=4 c=5 minCost[4]=5
+b=4 n=2 c=8 minCost[2]=8
+8

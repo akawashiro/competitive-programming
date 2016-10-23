@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+ <link rev="made" href="mailto:joi@ioi-jp.org">
+<title>JOI 2010-2011 予選 問題１</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="550" height="30" align="center" 
+      style="color:#ffffff; background-color:#ff8844; 
+             font-size:x-large; font-weight:bold;">
+	            第10回日本情報オリンピック　予選１
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2010年12月19日<br>
+情報オリンピック日本委員会
+</p>
+
+<!-- JOI-TASK-START --> 
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>１
+     </th>
+     <th style="font-size:large;">
+       　　　合計時間 (Total Time)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+太郎君は 3 カ所の店を訪ねることを日課にしている．
+家を出発し，決まった順番で 3 カ所の店を回った後，家に帰る．
+ときどき，ストップウォッチを使って，各区間を移動するのに何秒かかったかを計り，その秒数を記録する．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+ある日の計測結果が与えられたとき，この日の移動時間の合計が何分何秒かを求めるプログラムを作成せよ．
+</p>
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<!--
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は 4 行からなり， 1 行に 1 つずつ正の整数が書かれている．
+1 行目の整数は家から 1 つ目の店までの移動時間が何秒であるかを表す．<br/>
+以下同様に， 2 行目の整数は 1 つ目の店から 2 つ目の店まで，
+3 行目の整数は 2 つ目の店から 3 つ目の店まで，
+4 行目の整数は 3 つ目の店から家までの移動時間を表したものである．
+</p>
+-->
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は 4 行からなり， 1 行に 1 つずつ正の整数が書かれている．<br />
+1 行目の整数は家から 1 つ目の店までの移動時間を表す秒数である．<br />
+2 行目の整数は 1 つ目の店から 2 つ目の店までの移動時間を表す秒数である．<br />
+3 行目の整数は 2 つ目の店から 3 つ目の店までの移動時間を表す秒数である．<br />
+4 行目の整数は 3 つ目の店から家までの移動時間を表す秒数である．
+ただし，与えられる入力データにおいては合計移動時間は 1 分 0 秒以上で 59 分 59 秒以下であることが保証されている．
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+出力は 2 行からなる．x 分 y 秒 (1 ≦ x ≦ 59 , 0 ≦ y ≦ 59 )のとき，
+1行目に x を，2行目に y を出力せよ．
+
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="150" align="left"><a href="./2011-yo-t1-in_s1.txt" target="_blank">入力例 1</a></th>
+  <th width="150" align="left"><a href="./2011-yo-t1-in_s2.txt" target="_blank">入力例 2</a></th>  
+  <th width="150" align="left"><a href="./2011-yo-t1-in_s3.txt" target="_blank">入力例 3</a></th>  
+ </tr>
+ <tr>
+ <td>
+  <pre>
+31
+34
+7
+151
+  </pre>
+  </td>
+ <td>
+  <pre>
+316
+430
+643
+1253
+  </pre>
+  </td>
+ <td>
+  <pre>
+5
+10
+15
+30
+  </pre>
+  </td>
+
+  
+  
+  
+ </tr>
+ <tr>
+   <td>　</td>
+ </tr>
+ <tr>
+   <th width="150" align="left"><a href="./2011-yo-t1-out_s1.txt" target="_blank">出力例 1</a></th>
+   <th width="150" align="left"><a href="./2011-yo-t1-out_s2.txt" target="_blank">出力例 2</a></th>
+   <th width="150" align="left"><a href="./2011-yo-t1-out_s3.txt" target="_blank">出力例 3</a></th>
+ </tr>
+ <tr>
+  <td>
+   <pre>
+3
+43
+   </pre>
+  </td>
+  <td>
+   <pre>
+44
+2
+   </pre>
+  </td>
+  <td>
+   <pre>
+1
+0
+   </pre>
+  </td>
+ </tr>
+</table>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入出力例 1 では，合計時間が 31+34+7+151 = 223 秒つまり， 3 分 43 秒である．
+入出力例 2 では，合計時間が 2642 秒つまり， 44 分 2 秒である．
+入出力例 3 では，合計時間が 60 秒つまり， 1 分 0 秒である．
+
+<p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，
+右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2011-yo-t1-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t1-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t1-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t1-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t1-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>

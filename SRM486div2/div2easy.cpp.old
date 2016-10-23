@@ -1,0 +1,71 @@
+#include <string>
+using namespace std;
+
+class TxMsg{
+		public:
+				string getMessage(string original);
+};
+
+string shorter(string original)
+{
+		string ans;
+		bool iscut[original.size()];
+		for(int i=0;i<original.size();i++)
+				iscut[i]=false;
+		int place=0;
+		int pos=0;
+		for(pos=0;pos<original.size();pos++)
+				if(!(original[pos]=='a' || original[pos]=='e' || original[pos]=='i' || original[pos]=='o' || original[pos]=='u'))
+						break;
+		while(pos<original.size()){
+				if(place==0){
+						pos++;
+						if(original[pos]<original.size())
+								break;
+						if(original[pos]=='a' || original[pos]=='e' || original[pos]=='i' || original[pos]=='o' || original[pos]=='u')
+								place=1;
+						else
+								place=2;
+				}else if(place==1){
+						iscut[pos]=true;
+						pos++;
+						if(original[pos]<original.size())
+								break;
+						if(original[pos]=='a' || original[pos]=='e' || original[pos]=='i' || original[pos]=='o' || original[pos]=='u')
+								place=1;
+						else
+								place=0;
+				}else if(place==2){
+						iscut[pos]=true;
+						pos++;
+						if(original[pos]<original.size())
+								break;
+						if(original[pos]=='a' || original[pos]=='e' || original[pos]=='i' || original[pos]=='o' || original[pos]=='u')
+								place=1;
+						else
+								place=2;
+				}
+		}
+		for(int i=0;i<original.size();i++){
+				if(!iscut[i])
+						ans+=original[i];
+		}
+		return ans;
+}
+
+
+string TxMsg::getMessage(string original)
+{
+		string ans;
+		int b=0,e=0;
+		for(e=0;e<original.size();e++){
+				if(original[e]==' '){
+						ans+=shorter(original.substr(b,e-b));
+						ans+=" ";
+						b=e+1;
+						e=b+1;
+				}
+		}
+		ans+=shorter(original.substr(b,original.size()-b));
+		return ans;
+}

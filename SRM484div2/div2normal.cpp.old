@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+class RabbitNumber{
+		public:
+				int theCount(int low, int high);
+};
+
+int S(long long a)
+{
+		int r=0;
+		char c[100];
+		sprintf(c,"%lld",a);
+		int i=0;
+		while(c[i]!=NULL){
+				r+=(c[i]-48);
+				i++;
+		}
+		return r;
+}
+
+int RabbitNumber::theCount(int low, int high)
+{
+		int count=0;
+		for(long long i=low;i<=high;i++){
+				if(S(i)*S(i) == S(i*i))
+						count++;
+		}
+		return count;
+}

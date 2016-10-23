@@ -1,0 +1,12 @@
+n=3 c=1
+cp=3
+cp=10
+cp=10
+input
+input[0].FI=10 SE=3
+input[1].FI=6 SE=0
+input[2].FI=5 SE=0
+input[3].FI=4 SE=0
+under
+cand[4].FI=10 SE.FI=1 SE.SE=3
+2

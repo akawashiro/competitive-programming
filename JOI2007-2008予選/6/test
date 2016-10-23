@@ -1,0 +1,2 @@
+./6.out < intest.txt
+echo;

@@ -1,0 +1,3 @@
+0 1 1 0 1 
+beginLoop=0 endLoop=2 
+1

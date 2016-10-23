@@ -1,0 +1,7 @@
+3 3
+Pasha
+Lesha
+Vanya
+Pasha Lesha
+Vanya Pasha
+Lesha Vanya

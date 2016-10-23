@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+using namespace std;
+int grid[2000][2000];
+int mv[8][2]={{-2,-1},{-1,-2},{1,-2},{2,-1},{2,1},{1,2},{-1,2},{-2,1}};
+int main(){
+	int h,w;
+	scanf("%d%d",&h,&w);
+	memset(grid,0,sizeof(grid));
+	int s=0,t=0;
+	for(int i=0;i<h;i++)
+		for(int j=0;j<w;j++)
+			if(!grid[i][j]){
+				grid[i][j]=1;
+				s++;
+				for(int k=0;k<8;k++){
+					int ii=i+mv[k][0],jj=j+mv[k][1];
+					if(0<=ii&&ii<h&&0<=jj&&jj<w)
+						grid[ii][jj]=1;
+				}
+			}
+	/*for(int i=0;i<h;i++){
+		for(int j=0;j<w;j++)
+			printf("%d",grid[i][j]);
+		printf("\n");
+	}
+	printf("\n");*/
+	memset(grid,0,sizeof(grid));
+	swap(h,w);
+	//printf("h=%d w=%d\n",h,w);
+	for(int i=0;i<h;i++)
+		for(int j=0;j<w;j++)
+			if(!grid[i][j]){
+				grid[i][j]=2;
+				t++;
+				for(int k=0;k<8;k++){
+					int ii=i+mv[k][0],jj=j+mv[k][1];
+					if(0<=ii&&ii<h&&0<=jj&&jj<w)
+						grid[ii][jj]=1;
+				}
+			}
+	/*for(int i=0;i<h;i++){
+		for(int j=0;j<w;j++)
+			printf("%d",grid[i][j]);
+		printf("\n");
+	}
+	printf("\n");*/
+	printf("%d\n",max(max(s,t),max((h+2)/3*w,(w+2)/3*h)));
+	return 0;
+}
+

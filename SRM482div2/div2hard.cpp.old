@@ -1,0 +1,41 @@
+#include <list>
+using namespace std;
+
+class BaseConfusion{
+		public:
+				long long sum(int M, int N, int B);
+};
+
+long long transform(long long number,int B)
+{
+		if(number==0)
+				return 0;
+		list<int> n;
+		while(1){
+				int a=number%B;
+				n.push_back(a);
+				number-=a;
+				if(number==0)
+						break;
+				number/=B;
+		}
+		list<int>::iterator it=n.begin();
+		long long ans=*it;
+		it++;
+		long long b2=B+1;
+		long long b1=B+1;
+		for(it;it!=n.end();it++){
+				ans+=b2*(*it);
+				b2*=b1;
+		}
+		return ans;
+}
+
+long long BaseConfusion::sum(int M,int N,int B)
+{
+		long long ans=0;
+		for(int i=M;i<=N;i++)
+				ans+=transform(i,B);
+		return ans;
+}
+

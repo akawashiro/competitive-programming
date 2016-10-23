@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+#define MAX_N 100000
+
+int n;
+int used[MAX_N+1];
+int ans[MAX_N+1];
+
+int rec(int k){
+     for(int i=1;i<=n;i++)
+	  if(!used[i]){
+	       vector<int> changed;
+	       ans[k]=i;changed.push_back(k);
+	       int a=k;
+	       bool f=true;
+	       while(1){
+		    if(used[n-a+1]){
+			 f=false;
+			 break;
+		    }
+		    ans[ans[a]]=n-a+1;
+		    a=ans[a];
+	       }

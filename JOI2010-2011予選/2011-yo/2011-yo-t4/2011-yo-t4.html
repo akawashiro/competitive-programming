@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+ <link rev="made" href="mailto:joi@ioi-jp.org">
+<title>JOI 2010-2011 予選 問題４</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="550" height="30" align="center" 
+      style="color:#ffffff; background-color:#ff8844; 
+             font-size:x-large; font-weight:bold;">
+	            第10回日本情報オリンピック　予選４
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2010年12月19日<br>
+情報オリンピック日本委員会
+</p>
+
+<!-- JOI-TASK-START -->
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>４
+     </th>
+     <th style="font-size:large;">
+       　　　1年生 (A First Grader)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君は小学 1 年生である．JOI君は教わったばかりの足し算，引き算がとても好きで，数字が並んでいるのを見ると最後の 2 つの数字の間に「=」を入れ，残りの数字の間に必ず「+」または「-」を入れて等式を作って遊んでいる．例えば「8 3 2 4 8 7 2 4 0 8 8」から，等式「8+3-2-4+8-7-2-4-0+8=8」を作ることができる．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君は等式を作った後，それが正しい等式になっているかを計算して確かめる．ただし，JOI君はまだ負の数は知らないし，20 を超える数の計算はできない．したがって，正しい等式のうち左辺を左から計算したとき計算の途中で現れる数が全て 0 以上 20 以下の等式だけがJOI君が確かめられる正しい等式である．例えば，「8+3-2-4-8-7+2+4+0+8=8」は 正しい等式だが，途中に現れる 8+3-2-4-8 が負の数なのでJOI君はこの等式が正しいかどうか確かめることができない．</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力として数字の列が与えられたとき，JOI君が作り，確かめることができる正しい等式の個数を求めるプログラムを作成せよ．
+</p>
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力ファイルは 2 行からなる．1 行目には並んでいる数字の個数を表す整数 N （3 ≦ N ≦ 100）が書かれている．2 行目には 0 以上 9 以下の整数が N 個，空白を区切りとして書かれている．
+</p>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+与えられる入力データの 60% では，JOI君が作り，確かめることができる正しい等式の個数は 2<SUP>31</SUP>-1 を超えない．また，与えられる入力データの全てにおいて，JOI君が作り，確かめることができる正しい等式の個数は 2<SUP>63</SUP>-1 を超えない．
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君が作り，確かめることができる正しい等式の個数を表す整数を 1 行で出力せよ．
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="200" align="left"><a href="./2011-yo-t4-in_s1.txt" target="_blank">入力例1</a></th>  
+  <th width="150" align="left"><a href="./2011-yo-t4-in_s2.txt" target="_blank">入力例2</a></th>  
+ </tr>
+ <tr><td>
+  <pre>
+11
+8 3 2 4 8 7 2 4 0 8 8
+  </pre></td>
+   <td><pre>
+40
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1
+   </pre></td>
+ </tr>
+ <tr>
+   <th width="200" align="left"><a href="./2011-yo-t4-out_s1.txt" target="_blank">出力例1</a></th>
+   <th width="150" align="left"><a href="./2011-yo-t4-out_s2.txt" target="_blank">出力例2</a></th>
+ </tr>
+ <tr>
+  <td><pre>
+10
+  </pre></td>
+  <td><pre>
+7069052760
+  </pre></td>
+ </tr>
+</table>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力例 1 において，JOI君は 10 個の正しい等式
+<table style="margin-left: 50px; margin-right: 50px;">
+<tr><td>8+3-2-4+8-7-2-4-0+8=8</td></tr>
+<tr><td>8+3-2-4+8-7-2-4+0+8=8</td></tr>
+<tr><td>8+3+2+4-8-7+2-4-0+8=8</td></tr>
+<tr><td>8+3+2+4-8-7+2-4+0+8=8</td></tr>
+<tr><td>8+3-2-4+8-7+2+4-0-8=8</td></tr>
+<tr><td>8+3-2-4+8-7+2+4+0-8=8</td></tr>
+<tr><td>8-3+2+4-8+7+2+4-0-8=8</td></tr>
+<tr><td>8-3+2+4-8+7+2+4+0-8=8</td></tr>
+<tr><td>8-3+2-4+8+7+2-4-0-8=8</td></tr>
+<tr><td>8-3+2-4+8+7+2-4+0-8=8</td></tr>
+</table>
+を作り，確かめることができるので 10 を出力する．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力例 2 において，答えが 32 bit符号付き整数の範囲に収まらないことに注意せよ．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，
+右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2011-yo-t4-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t4-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t4-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t4-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t4-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>

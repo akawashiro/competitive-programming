@@ -1,0 +1,14 @@
+./3.out < in1.txt > out1.txt
+echo;
+
+./3.out < in2.txt > out2.txt
+echo;
+
+./3.out < in3.txt > out3.txt
+echo;
+
+./3.out < in4.txt > out4.txt
+echo;
+
+./3.out < in5.txt > out5.txt
+echo;

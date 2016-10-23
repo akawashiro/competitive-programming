@@ -1,0 +1,6 @@
+4
+AAA.B.
+.ABBB.
+.AC.BD
+CCCDDD
+..C..D

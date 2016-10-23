@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+ <link rev="made" href="mailto:joi@ioi-jp.org">
+<title>JOI 2010-2011 予選 問題３</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="550" height="30" align="center" 
+      style="color:#ffffff; background-color:#ff8844; 
+             font-size:x-large; font-weight:bold;">
+	            第10回日本情報オリンピック　予選３
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2010年12月19日<br>
+情報オリンピック日本委員会
+</p>
+
+<!-- JOI-TASK-START -->
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>３
+     </th>
+     <th style="font-size:large;">
+       　　　タイル (Tile)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI 高校では，
+1 × 1 の正方形のタイルを使って N × N の正方形の壁画を作り，
+文化祭で展示することになった．
+タイルの色は，赤，青，黄の 3 種類である．
+壁画のデザインは次の通りである．
+まず，最も外側の周に赤のタイルを貼り，その内側の周に青のタイルを貼る．
+さらにその内側の周に黄色のタイルを貼る．
+これを N × N の正方形が埋め尽くされるまで繰り返す．
+用いるタイルの色は，
+一番外側の周から順番に赤，青，黄，赤，青，黄，…である．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+文化祭が近づいてきたある日，
+壁画のうち K 枚のタイルがはがれていることが判明した．
+そこで，新しいタイルを購入して，はがれた箇所に新しいタイルを貼ることにした．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力として壁画の一辺の長さ N と，
+はがれたタイルの枚数 K，
+K 枚のはがれたタイルの位置が与えられたとき，
+はがれたタイルの色を求めるプログラムを作成せよ．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+例えば，N = 11 の場合，11 × 11 の壁画のデザインは下図の通りである．
+<br>
+<img src="./2011-yo-t3-fig01.png"  alt="11 × 11 の壁画" width=350 height=350>
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+また，N = 16 の場合，16 × 16 の壁画のデザインは下図の通りである．
+<br>
+<img src="./2011-yo-t3-fig02.png"  alt="16 × 16 の壁画" width=510 height=510>
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は全部で 2+K 行からなる．
+1 行目には，壁画の一辺の長さ N （1 ≦ N ≦ 1000000000 = 10<sup>9</sup>）が，
+2 行目には，はがれたタイルの枚数 K （1 ≦ K ≦ 1000）が書かれている．
+2+i 行目（1 ≦ i ≦ K）には，2 つの整数 a<sub>i</sub> と b<sub>i</sub> （1 ≦ a<sub>i</sub> ≦ N, 1 ≦ b<sub>i</sub> ≦ N）が空白区切りで書かれており，
+i 枚目のはがれたタイルが，
+左から a<sub>i</sub> 列目，上から b<sub>i</sub> 行目のタイルであることを表す．
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力の 3 行目から 2+K 行目には同じタイルを表す行が重複して現れることはない．
+また，与えられる入力データ 40% では， N ≦ 1000 をみたしている．
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+出力は K 行からなる．
+各行は 1 つの整数からなり，
+i 行目（1 ≦ i ≦ K）の整数は，i 枚目のはがれたタイルが赤のときは 1 を，青のときは 2 を，黄色のときは 3 を表す．
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="150" align="left"><a href="./2011-yo-t3-in_s1.txt" target="_blank">入力例1</a></th>
+  <th width="150" align="left"><a href="./2011-yo-t3-in_s2.txt" target="_blank">入力例2</a></th>
+ </tr>
+ <tr>
+  <td valign="top"><pre>
+11
+4
+5 2
+9 7
+4 4
+3 9
+  </pre></td>
+  <td valign="top"><pre>
+16
+7
+3 7
+5 2
+11 6
+15 2
+9 7
+8 12
+15 16
+  </pre></td>
+ </tr>
+ <tr>
+   <td>　</td>
+ </tr>
+ <tr>
+   <th width="150" align="left"><a href="./2011-yo-t3-out_s1.txt" target="_blank">出力例1</a></th>
+   <th width="150" align="left"><a href="./2011-yo-t3-out_s2.txt" target="_blank">出力例2</a></th>
+ </tr>
+ <tr>
+  <td valign="top"><pre>
+2
+3
+1
+3
+   </pre>
+  </td>
+  <td valign="top"><pre>
+3
+2
+3
+2
+1
+2
+1
+   </pre>
+  </td>
+ </tr>
+</table>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力例 1 において，11 × 11 の壁画は以下の図の通りである．
+「×」は，はがれたタイルを表す．
+<br>
+<img src="./2011-yo-t3-fig03.png"  alt="16 × 16 の壁画" width=350 height=350>
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，
+右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2011-yo-t3-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t3-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t3-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t3-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2011-yo-t3-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>
