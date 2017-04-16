@@ -1,0 +1,263 @@
+l=4 nl=1
+
+l=1 nl=1
+l=2 nl=1
+
+l=0 nl=1
+l=1 nl=1
+l=1 nl=2
+
+Case #1: 1 0
+l=5 nl=1
+
+l=2 nl=1
+l=2 nl=2
+
+Case #2: 2 2
+l=6 nl=1
+
+l=2 nl=1
+l=3 nl=1
+
+l=1 nl=1
+l=1 nl=2
+l=2 nl=1
+
+Case #3: 2 1
+l=1000 nl=1
+
+l=499 nl=1
+l=500 nl=1
+
+l=249 nl=1
+l=250 nl=1
+l=499 nl=1
+
+l=249 nl=1
+l=249 nl=2
+l=249 nl=3
+l=250 nl=1
+
+l=124 nl=1
+l=125 nl=1
+l=249 nl=1
+l=249 nl=2
+l=249 nl=3
+
+l=124 nl=3
+l=124 nl=6
+l=124 nl=7
+l=125 nl=1
+l=249 nl=1
+l=249 nl=2
+
+l=124 nl=2
+l=124 nl=4
+l=124 nl=7
+l=124 nl=10
+l=124 nl=11
+l=125 nl=1
+l=249 nl=1
+
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+l=124 nl=6
+l=124 nl=9
+l=124 nl=12
+l=124 nl=13
+l=125 nl=1
+
+l=62 nl=1
+l=62 nl=2
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+l=124 nl=6
+l=124 nl=9
+l=124 nl=12
+l=124 nl=13
+
+l=61 nl=13
+l=62 nl=13
+l=62 nl=14
+l=62 nl=15
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+l=124 nl=6
+l=124 nl=9
+l=124 nl=12
+
+l=61 nl=12
+l=61 nl=25
+l=62 nl=12
+l=62 nl=25
+l=62 nl=26
+l=62 nl=27
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+l=124 nl=6
+l=124 nl=9
+
+l=61 nl=9
+l=61 nl=21
+l=61 nl=34
+l=62 nl=9
+l=62 nl=21
+l=62 nl=34
+l=62 nl=35
+l=62 nl=36
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+l=124 nl=6
+
+l=61 nl=6
+l=61 nl=15
+l=61 nl=27
+l=61 nl=40
+l=62 nl=6
+l=62 nl=15
+l=62 nl=27
+l=62 nl=40
+l=62 nl=41
+l=62 nl=42
+l=124 nl=1
+l=124 nl=2
+l=124 nl=4
+
+l=61 nl=4
+l=61 nl=10
+l=61 nl=19
+l=61 nl=31
+l=61 nl=44
+l=62 nl=4
+l=62 nl=10
+l=62 nl=19
+l=62 nl=31
+l=62 nl=44
+l=62 nl=45
+l=62 nl=46
+l=124 nl=1
+l=124 nl=2
+
+l=61 nl=2
+l=61 nl=6
+l=61 nl=12
+l=61 nl=21
+l=61 nl=33
+l=61 nl=46
+l=62 nl=2
+l=62 nl=6
+l=62 nl=12
+l=62 nl=21
+l=62 nl=33
+l=62 nl=46
+l=62 nl=47
+l=62 nl=48
+l=124 nl=1
+
+l=61 nl=1
+l=61 nl=3
+l=61 nl=7
+l=61 nl=13
+l=61 nl=22
+l=61 nl=34
+l=61 nl=47
+l=62 nl=1
+l=62 nl=3
+l=62 nl=7
+l=62 nl=13
+l=62 nl=22
+l=62 nl=34
+l=62 nl=47
+l=62 nl=48
+l=62 nl=49
+
+l=30 nl=49
+l=31 nl=49
+l=61 nl=1
+l=61 nl=3
+l=61 nl=7
+l=61 nl=13
+l=61 nl=22
+l=61 nl=34
+l=61 nl=47
+l=62 nl=1
+l=62 nl=3
+l=62 nl=7
+l=62 nl=13
+l=62 nl=22
+l=62 nl=34
+l=62 nl=47
+l=62 nl=48
+
+l=30 nl=48
+l=30 nl=97
+l=31 nl=48
+l=31 nl=97
+l=61 nl=1
+l=61 nl=3
+l=61 nl=7
+l=61 nl=13
+l=61 nl=22
+l=61 nl=34
+l=61 nl=47
+l=62 nl=1
+l=62 nl=3
+l=62 nl=7
+l=62 nl=13
+l=62 nl=22
+l=62 nl=34
+l=62 nl=47
+
+l=30 nl=47
+l=30 nl=95
+l=30 nl=144
+l=31 nl=47
+l=31 nl=95
+l=31 nl=144
+l=61 nl=1
+l=61 nl=3
+l=61 nl=7
+l=61 nl=13
+l=61 nl=22
+l=61 nl=34
+l=61 nl=47
+l=62 nl=1
+l=62 nl=3
+l=62 nl=7
+l=62 nl=13
+l=62 nl=22
+l=62 nl=34
+
+l=30 nl=34
+l=30 nl=81
+l=30 nl=129
+l=30 nl=178
+l=31 nl=34
+l=31 nl=81
+l=31 nl=129
+l=31 nl=178
+l=61 nl=1
+l=61 nl=3
+l=61 nl=7
+l=61 nl=13
+l=61 nl=22
+l=61 nl=34
+l=61 nl=47
+l=62 nl=1
+l=62 nl=3
+l=62 nl=7
+l=62 nl=13
+l=62 nl=22
+
+Case #4: 62 30
+l=1000 nl=1
+
+l=499 nl=1
+l=500 nl=1
+
+Case #5: 500 499
