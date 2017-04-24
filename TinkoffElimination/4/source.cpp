@@ -25,27 +25,40 @@
 typedef long long LL;
 
 using namespace std;
-int n,k,m,u[2000],v[2000];
-LL c[2000];
-vector<pair<int,LL> > G[80];
-LL INF=(1<<30);
+int n,k,m,u[2000],v[2000],c[2000];
+vector<pair<int,int> > G[80];
+int INF=(1<<28);
+int cache[82][82][82][82];
 
-LL rec(int pre,int now,int rk){
-    LL ans;
-    if(rk==0){
+int rec(int now,int left,int right,int reftk){
+    // printf("now=%d left=%d right=%d reftk=%d\n",now,left,right,reftk);
+    int ans;
+    if(cache[now+1][left+1][right+1][reftk+1]!=-1){
+        return cache[now+1][left+1][right+1][reftk+1];
+    }else if(reftk==0){
         ans=0;
     }else{
         ans=INF;
-        REP(i,SZ(G[now])){
-            int nex=G[now][i].first;
-            if(pre<now&&(
-        }
+        REP(i,SZ(G[now]))
+            if(left<G[now][i].first && G[now][i].first<right){
+                if(G[now][i].first < now)
+                    ans=min(ans,G[now][i].second+rec(G[now][i].first,G[now][i].first,now,reftk-1));
+                else
+                    ans=min(ans,G[now][i].second+rec(G[now][i].first,now,G[now][i].first,reftk-1));
+            }
     }
+    return cache[now+1][left+1][right+1][reftk+1]=ans;
 }
 
 int main(void){
+    memset(cache,-1,sizeof(cache));
     cin>>n>>k>>m;
     REP(i,m)cin>>u[i]>>v[i]>>c[i];
     REP(i,m){G[u[i]-1].pb(mp(v[i]-1,c[i]));}
+    int ans=INF;
+    REP(i,n)
+        ans=min(ans,rec(i,-1,n,k-1));
+    if(ans==INF)cout<<-1<<endl;
+    else cout<<ans<<endl;
     return 0;
 }
