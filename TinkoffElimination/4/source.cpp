@@ -20,13 +20,12 @@
 #define SZ(i) ((int)i.size())
 #define pb          push_back
 #define mp          make_pair
-#define mt          make_tuple
-#define ALL(X)      (X).begin(),(X).end()
 typedef long long LL;
+
 
 using namespace std;
 int n,k,m,u[2000],v[2000],c[2000];
-vector<pair<int,int> > G[80];
+vector<pair<int,int> > G[82];
 int INF=(1<<28);
 int cache[82][82][82][82];
 
@@ -41,10 +40,14 @@ int rec(int now,int left,int right,int reftk){
         ans=INF;
         REP(i,SZ(G[now]))
             if(left<G[now][i].first && G[now][i].first<right){
-                if(G[now][i].first < now)
+                if(G[now][i].first < now){
                     ans=min(ans,G[now][i].second+rec(G[now][i].first,G[now][i].first,now,reftk-1));
-                else
+                    ans=min(ans,G[now][i].second+rec(G[now][i].first,left,G[now][i].first,reftk-1));
+                }
+                else{
                     ans=min(ans,G[now][i].second+rec(G[now][i].first,now,G[now][i].first,reftk-1));
+                    ans=min(ans,G[now][i].second+rec(G[now][i].first,G[now][i].first,right,reftk-1));
+                }
             }
     }
     return cache[now+1][left+1][right+1][reftk+1]=ans;
