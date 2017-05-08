@@ -22,14 +22,26 @@
 #define mp          make_pair
 #define mt          make_tuple
 #define ALL(X)      (X).begin(),(X).end()
-#define LLMAX       9223372036854775807
-#define LLMIN       -9223372036854775808
-#define IMAX        2147483647
-#define IMIN        -2147483648
 typedef long long LL;
 
 using namespace std;
+int n,a[1000],b[1000];
 
 int main(void){
-     return 0;
+    cin>>n;
+    REP(i,n){
+        cin>>a[i]>>b[i];
+        if(a[i]!=b[i]){
+            cout<<"rated"<<endl;
+            return 0;
+        }
+    }
+    int i;
+    for(i=0;i<n-1;i++)
+        if(a[i]<a[i+1])
+            break;
+    if(i==n-1)
+        cout<<"maybe"<<endl;
+    else
+        cout<<"unrated"<<endl;
 }

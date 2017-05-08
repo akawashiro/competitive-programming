@@ -22,14 +22,37 @@
 #define mp          make_pair
 #define mt          make_tuple
 #define ALL(X)      (X).begin(),(X).end()
-#define LLMAX       9223372036854775807
-#define LLMIN       -9223372036854775808
-#define IMAX        2147483647
-#define IMIN        -2147483648
 typedef long long LL;
 
 using namespace std;
+int p,x,y;
+
+int isGoodPoint(int s){
+    int i = (s / 50) % 475;
+    for(int k=0;k<25;k++){
+        i = (i * 96 + 42) % 475;
+        if(i+26 == p)
+            return true;
+    }
+    return false;
+}
 
 int main(void){
+    cin>>p>>x>>y;
+    int xx=x%50;
+    while(1){
+        if(y<=xx){
+            if(isGoodPoint(xx)){
+                int r=(xx-x+99)/100;
+                if(0<r)
+                    cout<<r<<endl;
+                else
+                    cout<<0<<endl;
+                return 0;
+            }
+        }
+        xx+=50;
+    }
      return 0;
 }
+

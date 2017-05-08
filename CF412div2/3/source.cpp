@@ -22,14 +22,34 @@
 #define mp          make_pair
 #define mt          make_tuple
 #define ALL(X)      (X).begin(),(X).end()
-#define LLMAX       9223372036854775807
-#define LLMIN       -9223372036854775808
-#define IMAX        2147483647
-#define IMIN        -2147483648
 typedef long long LL;
 
 using namespace std;
 
+void solve(){
+    LL x,y,p,q;
+    cin>>x>>y>>p>>q;
+    LL mak=9223372036854775807/q;
+    LL mik=0;
+    while(1<mak-mik){
+        LL mdk=(mak+mik)/2;
+        if(mdk*q>=y && mdk*p>=x && mdk*(q-p)>=y-x)
+            mak=mdk;
+        else
+            mik=mdk;
+    }
+    LL r=(mik*q>=y && mik*p>=x && mik*(q-p)>=y-x)?mik:mak;
+    // cout<<"r="<<r<<endl;
+    if(9223372036854775807/q<=r)
+        cout<<-1<<endl;
+    else
+        cout<<q*r-y<<endl;
+}
+
 int main(void){
-     return 0;
+    int t;
+    cin>>t;
+    REP(i,t)
+        solve();
+    return 0;
 }
