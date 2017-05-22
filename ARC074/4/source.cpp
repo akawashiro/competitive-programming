@@ -31,7 +31,7 @@ typedef long long LL;
 using namespace std;
 
 
-#define MAX_V 100000
+#define MAX_V 200000
 
 struct Edge{ int to,cap,rev; };
 int used[MAX_V];
@@ -64,63 +64,39 @@ int maxFlow(int s,int t){
         for(int i=0;i<MAX_V;i++)
             used[i]=false;
         int f=DFS(s,t,INT_MAX);
-        if(f==0)
-            break;
+        if(f==0) return flow;
         flow+=f;
     }
-    return flow;
 }
-
-int pond[100][100];
 
 int main(void){
     int H,W;
     vector<string> vs;
-    memset(pond,-1,sizeof(pond));
     cin>>H>>W;
     REP(i,H){
         string s;cin>>s;vs.pb(s);}
-    int nl=2;
+    int sy,sx,ty,tx;
     REP(i,H)
         REP(j,W){
-            if(vs[i][j]=='S')
-                pond[i][j]=0;
-            else if(vs[i][j]=='T')
-                pond[i][j]=1;
-            else if(vs[i][j]=='o'){
-                pond[i][j]=nl;
-                nl++;
+            if(vs[i][j]=='S'){
+                sy=i,sx=j;
+                addEdge(i*W+j,H*W+j,INT_MAX);
+                addEdge(i*W+j,H*W+W+i,INT_MAX);
+            }else if(vs[i][j]=='T'){
+                ty=i,tx=j;
+                addEdge(H*W+j,i*W+j,INT_MAX);
+                addEdge(H*W+W+i,i*W+j,INT_MAX);
+            }else if(vs[i][j]=='o'){
+                addEdge(H*W+W+i,H*W+j,1);
+                addEdge(H*W+j,H*W+W+i,1);
             }
         }
-    REP(i,H)
-        REP(j,W)
-        if(pond[i][j]!=-1){
-            int v=pond[i][j];
-            REP(k,H){
-                int w=pond[k][j];
-                if(i==k || w==-1)
-                    continue;
-                addEdge(v,w,1);
-            }
-            REP(k,W){
-                int w=pond[i][k];
-                if(j==k || w==-1)
-                    continue;
-                addEdge(v,w,1);
-            }
-        }
-    // REP(i,nl){
-        // REP(j,SZ(G[i]))
-            // printf("i=%d to=%d cap=%d rev=%d\n",i,G[i][j].to,G[i][j].cap,G[i][j].rev);
-        // printf("\n");
-    // }
-    REP(i,SZ(G[0]))
-        if(G[0][i].to==1){
-            cout<<-1<<endl;
-            return 0;
-        }
-    int ans=maxFlow(0,1);
-    cout<<ans<<endl;
+    if(sy==ty || sx==tx)
+        cout<<-1<<endl;
+    else{
+        int ans=maxFlow(sy*W+sx,ty*W+tx);
+        cout<<ans<<endl;
+    }
     return 0;
 }
 

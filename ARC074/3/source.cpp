@@ -27,50 +27,67 @@
 #define IMAX        2147483647
 #define IMIN        -2147483648
 typedef long long LL;
-
 using namespace std;
 
+int N,M;
+LL cache[300+2][300+2][300+2];
+vector<tuple<int,int,int> > cond[300+1];
 
-#define MAX_V 1000
-
-struct Edge{ int to,cap,rev; };
-int used[MAX_V];
-vector<Edge> G[MAX_V];
-
-void addEdge(int from,int to,int cap){
-    G[from].push_back((Edge){to,cap,(int)G[to].size()});
-    G[to].push_back((Edge){from,0,(int)G[from].size()-1});
-}
-int DFS(int v,int t,int f){
-    if(v==t)
-        return f;
-    used[v]=true;
-    for(int i=0;i<(int)G[v].size();i++){
-        Edge &e=G[v][i];
-        if(!used[e.to] && 0<e.cap){
-            int d=DFS(e.to,t,min(f,e.cap));
-            if(0<d){
-                e.cap-=d;
-                G[e.to][e.rev].cap+=d;
-                return d;
-            }
+inline bool ok(int R,int G,int B){
+    if(R>G) swap(R,G);
+    if(G>B) swap(G,B);
+    if(R>G) swap(R,G);
+    int cs[3]={R,G,B};
+    int v=cs[2];
+    bool flag=true;
+    if(cond[v].size()==0)
+            return true;
+    for(auto c : cond[v]){
+        // printf("c0=%d c1=%d c2=%d\n",get<0>(c),get<1>(c),get<2>(c));
+        if(get<2>(c) == 1){
+            if(cs[1] < get<0>(c))   ;
+            else flag=false;
+        }else if(get<2>(c) == 2){
+            if(cs[0] < get<0>(c) && get<0>(c) <= cs[1]) ;
+            else flag=false;
+        }else{
+            if(get<0>(c) <= cs[0])  ;
+            else flag=false;
         }
     }
-    return 0;
+    return flag;
 }
-int maxFlow(int s,int t){
-    int flow=0;
-    while(1){
-        for(int i=0;i<MAX_V;i++)
-            used[i]=false;
-        int f=DFS(s,t,INT_MAX);
-        if(f==0)
-            break;
-        flow+=f;
+
+LL rec(int R,int G,int B){
+    int v=max(R,max(G,B));
+    LL &r=cache[R+1][G+1][B+1];
+    if(v==N-1){
+        // printf("R=%d G=%d B=%d\n",R,G,B);
+        // printf("v==N\n");
+        r=1;
+    }else if(r!=-1){
+        ;
+    }else{
+        v++;
+        r=0;
+        if(ok(v,G,B)) r+=rec(v,G,B);
+        if(ok(R,v,B)) r+=rec(R,v,B);
+        if(ok(R,G,v)) r+=rec(R,G,v);
+        r%=1000000007;
     }
-    return flow;
+    return r;
 }
 
 int main(void){
-     return 0;
+    memset(cache,-1,sizeof(cache));
+    cin>>N>>M;
+    REP(i,M){
+        int l,r,x;
+        cin>>l>>r>>x;
+        l--,r--;
+        cond[r].pb(mt(l,r,x));
+    }
+   LL ans = rec(-1,-1,-1);
+    cout<<ans<<endl;
+    return 0;
 }
