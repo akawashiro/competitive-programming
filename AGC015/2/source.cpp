@@ -32,5 +32,15 @@ typedef long long LL;
 using namespace std;
 
 int main(void){
+    string s;
+    cin>>s;
+    LL N=SZ(s),ans=0;
+    REP(i,N){
+        if(s[i]=='U')
+            ans+=(N-1-i) + 2 * i;
+        else
+            ans+=2 * (N-1-i) + i;
+    }
+    cout<<ans<<endl;
      return 0;
 }

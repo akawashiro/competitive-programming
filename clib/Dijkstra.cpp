@@ -1,3 +1,17 @@
+#define MAX_V 1000
+
+class Edge{
+    public:
+        int to,cost;
+        Edge(int t,int c){to=t;cost=c;}
+};
+bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
+typedef vector<Edge> Graph[MAX_V];
+
+void addEdge(int from,int to,int cap){
+    G[from].push_back((Edge){to,cap,(int)G[to].size()});
+	}
+
 int dijkstra(Graph &G,int s,int g)
 {
 	int n=G.size();
@@ -15,5 +29,3 @@ int dijkstra(Graph &G,int s,int g)
 	}
 	return dist[g];
 }
-
-
