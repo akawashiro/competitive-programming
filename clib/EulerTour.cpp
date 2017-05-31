@@ -12,7 +12,6 @@ void addEdge(int from,int to,int cap){
     G[from].push_back((Edge){to,cap,(int)G[to].size()});
   }
 
-
 pair<vector<int>,vector<pair<int,int> > > EulerTour(Graph &G,int start){
     vector<int> tour;
     stack<int> st;
