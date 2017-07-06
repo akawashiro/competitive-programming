@@ -50,6 +50,13 @@ http://hamayanhamayan.hatenablog.jp/entry/2017/05/09/120253
 ### <http://kupc2016.contest.atcoder.jp/tasks/kupc2016_e>
 塀を設けるのが辺ではなくグリッドの中央なので、グリッドごとに裏から表に容量1の辺を貼る工夫が必要。
 
+### <http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2251>
+二部グラフの最大マッチング問題。ワーシャルフロイドは
+
+REP(k,N)REP(i,N)REP(j,N)
+    d[i][j]=min(d[i][k]+d[k][j],d[i][j])
+
+の形で書かないといけない。i,j,kの順番でループを回すとバグる。
 
 ## 最小全域木
 
