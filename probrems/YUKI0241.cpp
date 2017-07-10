@@ -31,15 +31,7 @@
 typedef long long LL;
 using namespace std;
 
-int gcd(int x,int y){
-	if(y==0)	return x;
-	else	return gcd(y,x%y);
-}
-int lcm(int x,int y){
-	return x*y/gcd(x,y);
-}
-
-#define MAX_V 1002
+#define MAX_V 1000
 
 struct Edge{ int to,cap,rev; };
 int used[MAX_V];
@@ -79,32 +71,29 @@ int maxFlow(int s,int t){
     return flow;
 }
 
-
-int n,m;
-
-void solve(){
-    REP(i,MAX_V){used[i]=0;G[i].clear();}
-    vector<int> b,r;
-    REP(i,m){int bb;cin>>bb;b.pb(bb);}
-    REP(i,n){int rr;cin>>rr;r.pb(rr);}
-    REP(i,m)REP(j,n){
-        if(gcd(b[i],r[j])>1){
-            addEdge(i,m+j,1);
-            // printf("b[i]=%d r[j]=%d\n",b[i],r[j]);
-        }
-    }
-    REP(i,m)addEdge(n+m,i,1);
-    REP(i,n)addEdge(m+i,n+m+1,1);
-    int ans=maxFlow(n+m,n+m+1);
-    cout<<ans<<endl;
-}
+int N,A[50];
 
 int main(void){
-    while(1){
-        cin>>m>>n;
-        if(n==0&&m==0)
-            break;
-        solve();
+    cin>>N;
+    REP(i,N)cin>>A[i];
+    int src=2*N,dst=2*N+1;
+    REP(i,N){
+        addEdge(src,i,1);
+        addEdge(N+i,dst,1);
+        REP(j,N)
+            if(j!=A[i])
+                addEdge(i,N+j,1);
+    }
+    int f=maxFlow(src,dst);
+    if(f==N){
+        REP(i,N)
+            REP(j,SZ(G[i]))
+                if(G[i][j].cap==0){
+                    cout<<G[i][j].to-N<<endl;
+                    break;
+                }
+    }else{
+        cout<<-1<<endl;
     }
      return 0;
 }
