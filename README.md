@@ -63,3 +63,7 @@ http://hamayanhamayan.hatenablog.jp/entry/2017/05/09/120253
 
 ## 強連結成分分解
 時間計算量O(|V|+|E|)。アルゴリズム自体はトポロジカルソートしてから逆グラフ?に対してDFSする。つまりDFSx2。
+# 間違えた問題
+## <http://agc004.contest.atcoder.jp/tasks/agc004_b>
+dpテーブルの更新時にメモリをケチって配列一つでうまくやろうとしたらバグった
+
