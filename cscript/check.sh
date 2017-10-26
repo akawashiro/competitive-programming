@@ -1,5 +1,5 @@
 #! /bin/sh
-g++ -std=c++11 source.cpp -Wall -o execution.out
+g++ -std=c++11 source.cpp -Wall
 if [ $? -eq 1 ]
 then
     exit 1
