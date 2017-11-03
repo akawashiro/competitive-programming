@@ -15,7 +15,7 @@ do
         i=`expr $i + 1`
         continue
     fi
-    ./execution.out < input$i.txt > output$i.txt
+    ./a.out < input$i.txt > output$i.txt
     printf "============================================\n"
     printf "check-$i\n"
     l=`cat output$i.txt | wc -l `
