@@ -1,4 +1,8 @@
 # 過去問の復習
+## [B - GCDロボット](http://ddcc2017-final.contest.atcoder.jp/tasks/ddcc2017_final_b)
+いろいろ考えるとgcdのlcmをとる問題になる
+## [E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip](http://arc061.contest.atcoder.jp/tasks/arc061_c)
+各駅を乗り入れてる路線分だけコピーして改札をでるみたいな頂点を付け加えるとダイクストラできる。
 ## [B - Contiguous Repainting](http://agc008.contest.atcoder.jp/tasks/agc008_b)
 列に対する操作は逆から見ていくといいことが多い
 ## [D - 切り分けできるかな？](http://arc013.contest.atcoder.jp/tasks/arc013_4)
