@@ -2,6 +2,11 @@
 ## [E - MUL](https://beta.atcoder.jp/contests/arc085/tasks/arc085_c)
 燃やす埋める問題に帰着できる。  
 [最小カットを使って「燃やす埋める問題」を解く](https://www.slideshare.net/shindannin/project-selection-problem)
+>N 個の要素がある。最初どの頂点も集合 B に属しているが、これを集合 A に移すことで利益を最大化したい。  
+>要素 i が A に属する時には利得 p_i を得るという情報が与えられる。  
+>さらに 3 つ組の列 (xj, yj, zj) が与えられ、これは xj が A に属し、かつ yj が B に属していた時に zj(≥ 0) だけ損失をすることを意味する。  
+>得られる利得の最大値を答えよ。  
+[ProjectSelectionProblem](http://tokoharuland.hateblo.jp/entry/2017/11/12/234636)
 ## [B - GCDロボット](http://ddcc2017-final.contest.atcoder.jp/tasks/ddcc2017_final_b)
 いろいろ考えるとgcdのlcmをとる問題になる
 ## [E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip](http://arc061.contest.atcoder.jp/tasks/arc061_c)
