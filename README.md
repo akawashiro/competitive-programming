@@ -8,6 +8,140 @@
 マッチング数分だけ節約できる。
 ## [E - Grouping](http://arc067.contest.atcoder.jp/)
 愚直に考えるとO($N^3$)だが、$\Sigma_{i=1}^N \frac{1}{i} = N log N$なので全体としてO(NlogN)
+## [C - 3 Steps](http://code-festival-2017-qualb.contest.atcoder.jp/tasks/code_festival_2017_qualb_c)
+奇サイクルが存在する = 二部グラフでない
+## [C. Points, Lines and Ready-made Titles](http://codeforces.com/contest/871/problem/C)
+グリッド系問題における、交点をエッジに変換する発想
+## [D - Menagerie](https://arc069.contest.atcoder.jp/submit)
+連続する２つがわかれば全部確定する
+## [C - 部門分け](http://arc056.contest.atcoder.jp/tasks/arc056_c)
+DP[S(=2^Nの部分集合)]=Sを分割して得られる信頼度の最大値、とする。  
+このとき各Sについて部分集合Tを列挙する操作を行うとO(2^N\*2^N)になると思いがち。  
+しかし実際には2^Nを３つの集合(T,S-T,U-S)に分割しているのでO(3^N)になる。  
+方法は↓  
+https://kimiyuki.net/blog/2017/07/16/enumerate-sets-with-bit-manipulation/  
+DP[S] = max_T ( K - (S-TとTの信頼度の和) + DP[T])  
+となる。ここで(S-TとTの信頼度の和)を愚直にO(N^2)で求めると  
+全体の計算量がO(N^2*3^N) = O(37,321,507,107) = O(37G)となり多分間に合わない。  
+
+そこでR[S] = Sの中の信頼度の和 を計算しておく。  
+すると  
+(S-TとTの信頼度の和) = R[S] - R[S-T] - R[T]  
+で求められる。  
+## [E - Cosmic Rays](http://arc064.contest.atcoder.jp/tasks/arc064_c)
+x_s,y_sを0番目のバリア、x_t,y_tをN+1番目のバリアとする。  
+このときバリアiとバリアjの間のコストをiからjに直線で動いた時に浴びる宇宙線の量とする。  
+このグラフで頂点0から頂点N+1にダイクストラすればよい。  
+## [E - Snuke Line](http://arc068.contest.atcoder.jp/tasks/arc068_c)
+まずd \in [1,M]とする。  
+dを固定するとN種類の名産品をひとつずつ調べることができて  
+この操作はM/d*N回かかる。  
+今dを1からMまで動かすと\sigma_d=1^M \frac{1}{d}  < log Mなので操作全体はO(M log M * N)かかる。  
+
+ここであるdについて  
+[1] d<=(r_i-l_i+1)なら区間iには必ず停車し  
+[2] r_i-l_i<=dなら区間iには多くても一回しか停車しないことに着目する。  
+よって[2]の場合を考えると  
+count[N] という配列を用意してr_i-l_i<=dとなるiについて  
+count[j]+=1 (j \in [r_i-l_i])  
+としてdずつ動かしてcount[N]の和を取れば良いということである。  
+
+さらに[2]を満たす区間はdについて単調性がある。  
+小さなdについて[2]なら大きなdについても[2]である。  
+よってdを1からNまで動かしながらcount[N]の[2]を満たす区間に効率よく  
+count[j]+=1 (j \in [r_i-l_i])  
+できれば良い。これはsegtreeでできる。区間加算、区間和のsegtreeである。  
+## [E - Frequency](http://arc069.contest.atcoder.jp/tasks/arc069_c)
+{a_i}を高さごとに分類し
+{b_{1,i}},{b_{2,i}},...,{b_{m,i}}とする。
+ただしb_{1,1} < b_{2,1} < ... < b_{m,1}である。
+
+数列sの最初にはb_{m,1}のインデックスxが入る。
+xが何個続くのだろうか。xが続く個数をy個とする。
+これはa_iの最大値がb_{m-1,1}になるまでである。
+このためにはb_{m,?}の各要素から(b_{m,1}-b_{m-1,1})を引けば良い。よって
+y=(b_{m,1}-b_{m-1,1})\*(b_{m,?}の個数) となる。
+xがy個続いたあとは数列の最大値はb_{m-1,1}になっている。
+つまりb_{m-1,?}の個数がb_{m,?}の個数分だけ増えることになる。
+次にアルゴリズムの最初に戻ってやり直せば良い。
+
+このアルゴリズムの実行時間は分類にO(n log n)、数列sの構成にO(n)かかるのでO(n log n)である。
+
+実際に実装するときはb_{i,j}の（値、個数、b_{i,1})のインデックスの組だけを記録すれば良い。
+## [E - Meaningful Mean](http://arc075.contest.atcoder.jp/tasks/arc075_c)
+まずすべてのiについてa_i-=Kとする。そして累積和s_iを求める。  
+このとき[i,j]で条件を満たすのはs_i<=s_jとなるi,jである。  
+さらにs_iの値をすべて座標圧縮したものに置き換える。  
+座標圧縮によって値の範囲は0~N-1になる。  
+座標圧縮してもi,jの条件は変わらない。  
+ここで数列を後ろから見ていく。  
+[k,i]で条件を満たすiを探すとき、s_{i+1}からs_{N-1}までをsegtreeに入れておく。  
+s_xをsegtreeにいれるとはsegtree[s_x]+=1を意味する。  
+こうすることで[k,i]の条件を満たすiの個数はsum(s_k,\inf)となる。
+segtreeへの挿入&和の操作がlog Nなので全体でO(N log N)で解ける
+## [E - Connected?](http://arc076.contest.atcoder.jp/tasks/arc076_c)
+たぶん両方共、辺の上にあるやつだけが問題になる。  
+辺の上にある数字を全部一直線上に並べる。カッコの対応を取る時のようにStackを使って見ていって全部対応が取れたらOK
+## [E - guruguru](http://arc077.contest.atcoder.jp/tasks/arc077_c)
+xをm通りすべて試すことを考える。m通り試したあと、愚直にボタンを押す回数を求めるとO(mn)かかってしまう。  
+ここで  
+x=[a_i+1,a_{i+1}) (a_i<=a_{i+1})  
+  =[a_i+1-m,a_{i+1}) (otherwise)  
+であれば、a_iからa_{i+1}への照明の切り替えの方法は「お気に入り」からの「順送り」であり
+その他の場合は「順送り」のみである  
+方法が変化するのはx=a_i+1 or a_i+1-mとなったときなので、これらの数値をmapに入れてO(log n)でチェックできるようにしておく  
+「お気に入り」からの「順送り」となる切り替えの個数をX個,「順送り」のみの切り替えの個数をY個とする。  
+
+x=kでのボタンを押す回数をrとする。ここでx=k+1とした時にrr回ボタンを押すとする。  
+x=k+1とした時X個のうちXX個が「順送り」になりY個のうちYY個が「お気に入り」からの「順送り」になったとする。  
+
+XX個については直前のx=k+1の時に一回で切り替わっている。  
+このためXX個についてrr+=(a_{i+1}-a_i+m)%m-1  
+次にYY個についてはボタンを押す回数は変わらない。  
+X-XX個はxの値が１増えたのでrr-=(X-XX)とする。  
+
+以上でrが更新できる。XXの和はNなのでこのアルゴリズム全体の計算量はO(m log n)になる  
+## [E - Young Maids](http://arc080.contest.atcoder.jp/tasks/arc080_c)
+入力例3をよく睨むと列を最後から確定できることがわかる。  
+具体的には p1 p2 p3 .... pn としたとき一番最後に取り出されるp_i,p_jは
+つぎの条件を満たす。  
+p1~p_i-1は取り出されている。つまりi-1は2で割り切れる  
+p_i+1~p_j-1は取り出されている。つまりj-i-1は2で割り切れる
+よって次のことが言える  
+i%2==1,j%2==0 (1-indexedで書いていることに注意)  
+以上からi%2==1であり数値が最小のものiとj%2==0でありi<jでありp_jが最小のものをとり出せばよい  
+
+p_iとp_jを取り出した数列に対しても同じことをすれば良いのだが上のアルゴリズムを愚直に実装するとN^2かかる  
+
+ここでp_iとp_jを取り出すと数列はA={p_1~p_i-1}、B={p_i+1~p_j-1}、C={p_j+1~p_n}に分割され
+AとBから要素を取ってきたり,AとCから、BとCから取ってくることはない。  
+よって問題が分割できる。  
+次に取り出すべき要素はAの最小値のうちindexが奇数のもの  
+Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが奇数のものである。  
+これはpriority_queueを用いて管理することで適切に取り出せる。  
+また最小値を取り出す操作は偶奇を分けたsegtreeをもてば良い。  
+
+青色の部分だが、実装するときには奇数、偶数ではなく  
+偶奇が区間の先頭のindexに等しいものとすれば実装が楽。  
+## [D - Teleporter](http://agc004.contest.atcoder.jp/tasks/agc004_d)
+だいたいの考察があっていた
+後で通してどうぞ
+## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c)
+木の中心という概念を自分で思いついた。偉い！
+## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c)
+考察を間違えた。
+## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639)
+「コスト、ボールの位置」でダイクストラでできる
+各マスカラのダイクストラとか思いつかないものが多数
+## [Kingdom of JOIOI](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0638)
+最小値と最大値に着目したうえで答えを二分探索し
+分割を試みる。スライドの分割のところは思いつかなかった。要復習
+## [Semiexpress](http://joi2017ho.contest.atcoder.jp/tasks/joi2017ho_b)
+DP[i][j]=区間i~i+1にj個準急停車駅をの挿入するときの条件を満たす駅の数
+## [Snake JOI](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0635)
+拡張ダイクストラ(ノード数=N * 温度 * 3)
+## [D - Fennec VS. Snuke](http://arc078.contest.atcoder.jp/tasks/arc078_b)
+1からNまでが一本線だと勘違いしてWAした
 # これから勉強したいアルゴリズム・定理
 
 ## 最大マッチング
@@ -86,4 +220,3 @@ REP(k,N)REP(i,N)REP(j,N)
 # 間違えた問題
 ## <http://agc004.contest.atcoder.jp/tasks/agc004_b>
 dpテーブルの更新時にメモリをケチって配列一つでうまくやろうとしたらバグった
-
