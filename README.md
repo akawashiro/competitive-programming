@@ -1,7 +1,13 @@
-# コンテストのちょっとしたテクニック
-<http://agc008.contest.atcoder.jp/tasks/agc008_b>
+# 過去問の復習
+## [B - Contiguous Repainting](http://agc008.contest.atcoder.jp/tasks/agc008_b)
 列に対する操作は逆から見ていくといいことが多い
-
+## [D - 切り分けできるかな？](http://arc013.contest.atcoder.jp/tasks/arc013_4)
+普通に考えると候補となる分銅の種類x2の鉄塊が必要。  
+しかし、ある分銅がX,YにわけられるならXとYはひとつの鉄塊で作れる。  
+よってX->Y,Y->Xに辺を貼って二部グラフの最大マッチングを求めると、  
+マッチング数分だけ節約できる。
+## [E - Grouping](http://arc067.contest.atcoder.jp/)
+愚直に考えるとO($N^3$)だが、$\Sigma_{i=1}^N \frac{1}{i} = N log N$なので全体としてO(NlogN)
 # これから勉強したいアルゴリズム・定理
 
 ## 最大マッチング
