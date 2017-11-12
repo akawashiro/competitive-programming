@@ -1,4 +1,7 @@
 # 過去問の復習
+## [E - MUL](https://beta.atcoder.jp/contests/arc085/tasks/arc085_c)
+燃やす埋める問題に帰着できる。  
+[最小カットを使って「燃やす埋める問題」を解く](https://www.slideshare.net/shindannin/project-selection-problem)
 ## [B - GCDロボット](http://ddcc2017-final.contest.atcoder.jp/tasks/ddcc2017_final_b)
 いろいろ考えるとgcdのlcmをとる問題になる
 ## [E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip](http://arc061.contest.atcoder.jp/tasks/arc061_c)
