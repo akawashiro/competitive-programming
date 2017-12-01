@@ -1,4 +1,11 @@
 # 過去問の復習
+
+## [D - Zabuton](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_d)
+制約からDPっぽいので良い順序を定めて入力を並び替える必要がありそう。  
+今回はH+Pで並び替えるのが良かった。パラメータの一次式を全部試したりするのも良いかも。
+## [C - Time Gap](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_c)
+24以上は鳩の巣原理から最大値sが0になるので考えなくて良い  
+24以下は全探索できる。ただし23の場合だけちょっと工夫してTLEを回避する必要がある。
 ## [E - MUL](https://beta.atcoder.jp/contests/arc085/tasks/arc085_c)
 燃やす埋める問題に帰着できる。  
 [最小カットを使って「燃やす埋める問題」を解く](https://www.slideshare.net/shindannin/project-selection-problem)
