@@ -1,10 +1,13 @@
 #define MAX_V 1000
 
-class Edge{
-    public:
+struct Edge{
         int to,cost;
-        Edge(int t,int c){to=t;cost=c;}
 };
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
-typedef vector<Edge> Graph[MAX_V];
+int N;
+vector<Edge> G[MAX_V];
+
+void addEdge(int from,int to,int cost){
+    G[from].push_back((Edge){to,cost});
+}
 

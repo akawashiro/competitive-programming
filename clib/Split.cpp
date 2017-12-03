@@ -12,5 +12,3 @@ vector<string> split(string s,char d){
     }
     return r;
 }
-
-
