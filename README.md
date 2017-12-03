@@ -1,5 +1,13 @@
 # 過去問の復習
 
+## [H - Union Sets](https://code-thanks-festival-2017.contest.atcoder.jp/tasks/code_thanks_festival_2017_h)
+### マージテクを使った解法
+N個の集合それぞれに関係する質問クエリをもたせる。  
+UnionFindで併合していく。  
+このとき質問クエリを小さい方の集合から大きい方の集合に移す。(マージテク)  
+また同時に小さい方の集合に入っているクエリの質問をチェックする。  
+ひとつの集合はたかだかlog N回しかマージされないのでオーダーはQ * log Nで抑えられる。
+### LCAを使った解法
 ## [D - Zabuton](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_d)
 制約からDPっぽいので良い順序を定めて入力を並び替える必要がありそう。  
 今回はH+Pで並び替えるのが良かった。パラメータの一次式を全部試したりするのも良いかも。
