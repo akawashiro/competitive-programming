@@ -1,4 +1,11 @@
 # 過去問の復習
+## [A Single One](https://csacademy.com/contest/archive/task/a-single-one/statement/)
+1が立つのは常に奇数/偶数のインデックスで連続した範囲。  
+BFSをしつつ連続したところからインデックスを削除していく。  
+setのlower_boundを使えばlog Nで検索できる。  
+対象の範囲を削除しながら答えを書き込んでいく。  
+set::lower_boundを呼び出さないと遅いので注意。  
+se.lower_bound(value)ということ。
 ## [0-K Multiple](https://csacademy.com/contest/archive/task/0-k-multiple/)
 数を小さい方から構成していくという発想が必要。  
 あまりの数は0~N-1しか取らないのでBFSできる。
