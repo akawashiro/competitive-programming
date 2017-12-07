@@ -1,5 +1,7 @@
 # 過去問の復習
-
+## [0-K Multiple](https://csacademy.com/contest/archive/task/0-k-multiple/)
+数を小さい方から構成していくという発想が必要。  
+あまりの数は0~N-1しか取らないのでBFSできる。
 ## [H - Union Sets](https://code-thanks-festival-2017.contest.atcoder.jp/tasks/code_thanks_festival_2017_h)
 ### マージテクを使った解法
 N個の集合それぞれに関係する質問クエリをもたせる。  
