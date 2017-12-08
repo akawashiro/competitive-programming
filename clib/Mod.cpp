@@ -18,4 +18,11 @@ LL COMB(LL n,LL k)
         r=DIV(MUL(r,n-i+1),i);
     return r;
 }
+LL FAC(LL n){
+    LL r=1;
+    for(LL i=1;i<=n;i++)
+        r*=i;
+    return r;
+}
+
 
