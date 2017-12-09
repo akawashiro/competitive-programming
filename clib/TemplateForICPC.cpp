@@ -17,6 +17,7 @@
 #define REP(i,n)    FOR(i,0,n)
 #define FORIT(i,c)	for(__typeof((c).begin())i=(c).begin();i!=(c).end();++i)
 #define SZ(i) ((int)i.size())
+#define GI(i) (scanf("%d",&i))
 #define pb          push_back
 #define mp          make_pair
 #define mt          make_tuple
