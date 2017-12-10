@@ -1,4 +1,6 @@
 # 過去問の復習
+## [C - Z塗り](https://arc040.contest.atcoder.jp/tasks/arc040_c)
+上の行から見ていって，まだ塗られていない最も右のマスを探し，そこを起点にして塗る．
 ## [E - 木と整数 / Integers on a Tree](https://arc063.contest.atcoder.jp/tasks/arc063_c)
 頂点にかけられている制約はすべて[l,r]={l,l+2,l+4,...,r-2,r}とかける。  
 この制約をDFSしながら伝搬していく。  
