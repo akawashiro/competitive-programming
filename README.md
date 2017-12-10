@@ -1,4 +1,10 @@
 # 過去問の復習
+## [D - Non-decreasing](https://beta.atcoder.jp/contests/arc086/tasks/arc086_b)
+### Catution! 発想ゲーです
+全部正ならa2+=a1;a3+=a2;...aN+=aN-1;で良い。  
+全部負ならaN-1+=aN;aN-2+=aN-1;...;a1+=a2;で良い。  
+つまり全部の符号を揃えれば良さそう。これは絶対値の最も大きい物をすべてに足せば良い。  
+思いつきはしたが、得られるものは特にない。
 ## [A Single One](https://csacademy.com/contest/archive/task/a-single-one/statement/)
 1が立つのは常に奇数/偶数のインデックスで連続した範囲。  
 BFSをしつつ連続したところからインデックスを削除していく。  
