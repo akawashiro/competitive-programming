@@ -27,24 +27,11 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] 0/1 の列たち a1, ..., ar, b1, ..., br  
 [出力] ai1ai2...aik = bi1bi2...bik となるような i1,i2, ..., ik (k > 0) は存在するか？ (ij は同じ値を複数回含んでもよい)  
 # 過去問の復習
-## [C - Z塗り](https://arc040.contest.atcoder.jp/tasks/arc040_c)
-上の行から見ていって，まだ塗られていない最も右のマスを探し，そこを起点にして塗る．
-## [E - 木と整数 / Integers on a Tree](https://arc063.contest.atcoder.jp/tasks/arc063_c)
-頂点にかけられている制約はすべて[l,r]={l,l+2,l+4,...,r-2,r}とかける。  
-この制約をDFSしながら伝搬していく。  
-親の制約が[l,r]であったとき子の制約は[l-1,r+1]になる。  
-途中に数字の書かれた頂点があったら区間は[v,v]の形に収束する。  
-収束したらDFSの帰りにその制約を伝搬する。  
-２つ以上の制約がかち合ったら共通部分を取る。このとき共通部分が空集合なら答えはNoになる。  
+## [E - 高橋君とホテル / Tak and Hotels](https://arc060.contest.atcoder.jp/tasks/arc060_c)　ダブリング
+r[i][k]=i番目のホテルから2^k日で到達できる最も右のホテルの番号  
+この配列はダブリングのテクニックで求められる。この配列を使えば各クエリを二分探索できる。  
 
-何が学べたのかよくわからない。
-## [D - Non-decreasing](https://beta.atcoder.jp/contests/arc086/tasks/arc086_b)
-### Catution! 発想ゲーです
-全部正ならa2+=a1;a3+=a2;...aN+=aN-1;で良い。  
-全部負ならaN-1+=aN;aN-2+=aN-1;...;a1+=a2;で良い。  
-つまり全部の符号を揃えれば良さそう。これは絶対値の最も大きい物をすべてに足せば良い。  
-思いつきはしたが、得られるものは特にない。
-## [D - Stamp Rally](https://agc002.contest.atcoder.jp/tasks/agc002_d)
+## [D - Stamp Rally](https://agc002.contest.atcoder.jp/tasks/agc002_d) 並列二分探索
 辺を増やしながら見ていくと、x[i],y[i]との連結成分の個数が初めてz[i]を超える時刻を求める問題だとわかる。  
 クエリが１つの場合は辺を増やすたびにチェックすれば良いのだが、この問題でそれをやるとO(M\*Q)となり間に合わない。  
 そこで並列二分探索と呼ばれるテクニックを使う。  
@@ -53,7 +40,7 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 チェックする時刻を範囲で持っておいて二分探索する。  
 つまり辺を１つずつ増やしてグラフを構成する操作をlogM回繰り返す。  
 こうすると全体の計算量がO(max(M,Q)\*logQ)となり間にあう。
-## [D - すぬけそだて――トレーニング――](https://colopl2018-qual.contest.atcoder.jp/tasks/colopl2018_qual_d)
+## [D - すぬけそだて――トレーニング――](https://colopl2018-qual.contest.atcoder.jp/tasks/colopl2018_qual_d) 二分探索
 まずスタミナを使うなら全部使ったほうがいいことがわかる。  
 また時刻T0においてはスタミナはXであり、それ以上増えないのでT0でとりあえず一回起動してスタミナを使いきったほうがいいことがわかる。  
 DP[i][j]=時刻TiからTNまでにj個のゲームを起動して得られる知能の最大値とすると  
@@ -65,7 +52,7 @@ DP[i][j]から次にゲームを起動するTkが最大N通り存在するので
 スタミナは単調増加するので二分探索が使えてTkの候補はlogNで列挙できる。  
 以上からO(N^2\*logN)でDPできる。  
 愚直に配列を取るとlong longを5000^2個取るのでメモリを使いまわして節約する必要がある。
-## [H - 穴あきケーキ](https://code-thanks-festival-2015-open.contest.atcoder.jp/tasks/code_thanks_festival_2015_h)
+## [H - 穴あきケーキ](https://code-thanks-festival-2015-open.contest.atcoder.jp/tasks/code_thanks_festival_2015_h) 二分探索 or 尺取り法
 まずある点(x,y)が与えられた時にそれより左上のカロリーの合計を計算しておく。  
 こうすることでimos法を使って(x,y),(z,w)で囲まれた長方形のカロリーがO(1)でもとまる。  
 カロリー1の物の数、カロリー2の物の数...を同様に記録すれば、  
@@ -77,8 +64,7 @@ wを増やすとカロリーも増えるので単調性が成り立ち、二分�
 よってO(R^2\*C\*log C)で計算できる。  
 
 x,yを固定した時にzを一増やすと対応するwは必ず増えるのでカロリーの和がK + 1より小さい場合はzを増やし、K + 1以上K + 9以下であれば繰り抜くことのできる穴の個数を計算する。カロリーの和がK + 9より大きくなればwを１つ増やして同じことを繰り返す。
-
-## [C - 高橋君、24歳](https://beta.atcoder.jp/contests/arc009/tasks/arc009_3)
+## [C - 高橋君、24歳](https://beta.atcoder.jp/contests/arc009/tasks/arc009_3) 巡回置換 and DP
 まずN-K人を選ぶ。これは組み合わせである。  
 このあとK人がみんな異なる手紙を受け取る組み合わせを考える。  
 DP[i]をi人がみんな異なる手紙を受け取る組み合わせとする。  
@@ -87,17 +73,17 @@ DP[i]をi人がみんな異なる手紙を受け取る組み合わせとする�
 ふたつ目の項がひとつとってきて2人の巡回置換を作りk-1人のものと組み合わせることを意味する。  
 
 全員異なる組み合わせはいくつかの互いに素な巡回置換の積で表される。  
-## [A Single One](https://csacademy.com/contest/archive/task/a-single-one/statement/)
+## [A Single One](https://csacademy.com/contest/archive/task/a-single-one/statement/) set上の二分探索、削除
 1が立つのは常に奇数/偶数のインデックスで連続した範囲。  
 BFSをしつつ連続したところからインデックスを削除していく。  
 setのlower_boundを使えばlog Nで検索できる。  
 対象の範囲を削除しながら答えを書き込んでいく。  
 set::lower_boundを呼び出さないと遅いので注意。  
 se.lower_bound(value)ということ。
-## [0-K Multiple](https://csacademy.com/contest/archive/task/0-k-multiple/)
+## [0-K Multiple](https://csacademy.com/contest/archive/task/0-k-multiple/) 数の構成 and BFS
 数を小さい方から構成していくという発想が必要。  
 あまりの数は0~N-1しか取らないのでBFSできる。
-## [H - Union Sets](https://code-thanks-festival-2017.contest.atcoder.jp/tasks/code_thanks_festival_2017_h)
+## [H - Union Sets](https://code-thanks-festival-2017.contest.atcoder.jp/tasks/code_thanks_festival_2017_h) マージテク or LCA or 永続化UnionFind
 ### マージテクを使った解法
 N個の集合それぞれに関係する質問クエリをもたせる。  
 UnionFindで併合していく。  
@@ -123,13 +109,10 @@ i個目のクエリをtiにチェックしたとする。
 ### 永続化配列を用いたUnionFindを使う二分探索
 時刻を指定した時にその時刻の配列を復元できるような機能をもたせる。  
 こうすると任意の時刻のUnionFindを復元できるので、各クエリについて二分探索ができるようになる。
-## [D - Zabuton](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_d)
+## [D - Zabuton](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_d) DPのための順序
 制約からDPっぽいので良い順序を定めて入力を並び替える必要がありそう。  
 今回はH+Pで並び替えるのが良かった。パラメータの一次式を全部試したりするのも良いかも。
-## [C - Time Gap](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_c)
-24以上は鳩の巣原理から最大値sが0になるので考えなくて良い  
-24以下は全探索できる。ただし23の場合だけちょっと工夫してTLEを回避する必要がある。
-## [E - MUL](https://beta.atcoder.jp/contests/arc085/tasks/arc085_c)
+## [E - MUL](https://beta.atcoder.jp/contests/arc085/tasks/arc085_c) ProjectSelectionProblem
 燃やす埋める問題に帰着できる。  
 [最小カットを使って「燃やす埋める問題」を解く](https://www.slideshare.net/shindannin/project-selection-problem)
 >N 個の要素がある。最初どの頂点も集合 B に属しているが、これを集合 A に移すことで利益を最大化したい。  
@@ -137,6 +120,32 @@ i個目のクエリをtiにチェックしたとする。
 >さらに 3 つ組の列 (xj, yj, zj) が与えられ、これは xj が A に属し、かつ yj が B に属していた時に zj(≥ 0) だけ損失をすることを意味する。  
 >得られる利得の最大値を答えよ。  
 [ProjectSelectionProblem](http://tokoharuland.hateblo.jp/entry/2017/11/12/234636)
+
+
+## [C - Z塗り](https://arc040.contest.atcoder.jp/tasks/arc040_c)
+上の行から見ていって，まだ塗られていない最も右のマスを探し，そこを起点にして塗る．
+## [E - 木と整数 / Integers on a Tree](https://arc063.contest.atcoder.jp/tasks/arc063_c)
+頂点にかけられている制約はすべて[l,r]={l,l+2,l+4,...,r-2,r}とかける。  
+この制約をDFSしながら伝搬していく。  
+親の制約が[l,r]であったとき子の制約は[l-1,r+1]になる。  
+途中に数字の書かれた頂点があったら区間は[v,v]の形に収束する。  
+収束したらDFSの帰りにその制約を伝搬する。  
+２つ以上の制約がかち合ったら共通部分を取る。このとき共通部分が空集合なら答えはNoになる。  
+
+何が学べたのかよくわからない。
+## [D - Non-decreasing](https://beta.atcoder.jp/contests/arc086/tasks/arc086_b) 発想
+### Catution! 発想ゲーです
+全部正ならa2+=a1;a3+=a2;...aN+=aN-1;で良い。  
+全部負ならaN-1+=aN;aN-2+=aN-1;...;a1+=a2;で良い。  
+つまり全部の符号を揃えれば良さそう。これは絶対値の最も大きい物をすべてに足せば良い。  
+思いつきはしたが、得られるものは特にない。
+
+
+
+
+## [C - Time Gap](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_c)
+24以上は鳩の巣原理から最大値sが0になるので考えなくて良い  
+24以下は全探索できる。ただし23の場合だけちょっと工夫してTLEを回避する必要がある。
 ## [B - GCDロボット](http://ddcc2017-final.contest.atcoder.jp/tasks/ddcc2017_final_b)
 いろいろ考えるとgcdのlcmをとる問題になる
 ## [E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip](http://arc061.contest.atcoder.jp/tasks/arc061_c)

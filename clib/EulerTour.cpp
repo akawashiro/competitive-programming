@@ -8,11 +8,13 @@ class Edge{
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
 typedef vector<Edge> Graph[MAX_V];
 
+Graph G;
+
 void addEdge(int from,int to,int cap){
     G[from].push_back((Edge){to,cap,(int)G[to].size()});
   }
 
-pair<vector<int>,vector<pair<int,int> > > EulerTour(Graph &G,int start){
+pair<vector<int>,vector<pair<int,int> > > EulerTour(int start){
     vector<int> tour;
     stack<int> st;
     vector<int> visited(SZ(G),0);
