@@ -316,7 +316,11 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 だいたいの考察があっていた
 後で通してどうぞ
 ## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c)
-木の中心という概念を自分で思いついた。偉い！
+木には中心という概念が定義できる。  
+木の直径をDとすると
+- Dが偶数の時、ある頂点vが存在してvから他の頂点への距離がすべてD/2以下になる
+- Dが奇数の時、ある辺eが存在してeから他の頂点への距離がすべて(D-1)/2以下になる
+この問題では中心を全探索したうえで削除すべき頂点を求めれば良い。
 ## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c)
 考察を間違えた。
 ## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639)
