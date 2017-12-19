@@ -321,8 +321,8 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 - Dが偶数の時、ある頂点vが存在してvから他の頂点への距離がすべてD/2以下になる
 - Dが奇数の時、ある辺eが存在してeから他の頂点への距離がすべて(D-1)/2以下になる
 この問題では中心を全探索したうえで削除すべき頂点を求めれば良い。
-## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c)
-考察を間違えた。
+## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c) パズル
+a_i + a_{i+1} \>= LであればPossible、そうでなければImpossible
 ## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639)
 「コスト、ボールの位置」でダイクストラでできる
 各マスカラのダイクストラとか思いつかないものが多数
