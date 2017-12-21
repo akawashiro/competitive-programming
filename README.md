@@ -281,7 +281,7 @@ xがy個続いたあとは数列の最大値はb_{m-1,1}になっている。
 s_xをsegtreeにいれるとはsegtree[s_x]+=1を意味する。  
 こうすることで[k,i]の条件を満たすiの個数はsum(s_k,\inf)となる。
 segtreeへの挿入&和の操作がlog Nなので全体でO(N log N)で解ける
-## [E - Connected?](http://arc076.contest.atcoder.jp/tasks/arc076_c)
+## [E - Connected?](http://arc076.contest.atcoder.jp/tasks/arc076_c) カッコの対応問題
 たぶん両方共、辺の上にあるやつだけが問題になる。  
 辺の上にある数字を全部一直線上に並べる。カッコの対応を取る時のようにStackを使って見ていって全部対応が取れたらOK
 ## [E - guruguru](http://arc077.contest.atcoder.jp/tasks/arc077_c)
@@ -328,7 +328,7 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 ## [D - Teleporter](http://agc004.contest.atcoder.jp/tasks/agc004_d)
 だいたいの考察があっていた
 後で通してどうぞ
-## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c)
+## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c) 木の中心
 木には中心という概念が定義できる。  
 木の直径をDとすると
 - Dが偶数の時、ある頂点vが存在してvから他の頂点への距離がすべてD/2以下になる
@@ -336,7 +336,7 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 この問題では中心を全探索したうえで削除すべき頂点を求めれば良い。
 ## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c) パズル
 a_i + a_{i+1} \>= LであればPossible、そうでなければImpossible
-## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639)
+## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639) 拡張ダイクストラ
 「コスト、ボールの位置」でダイクストラでできる
 各マスカラのダイクストラとか思いつかないものが多数
 ## [Kingdom of JOIOI](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0638)
