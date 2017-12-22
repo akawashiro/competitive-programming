@@ -27,6 +27,8 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] 0/1 の列たち a1, ..., ar, b1, ..., br  
 [出力] ai1ai2...aik = bi1bi2...bik となるような i1,i2, ..., ik (k > 0) は存在するか？ (ij は同じ値を複数回含んでもよい)  
 # 過去問の復習
+## [E - TrBBnsformBBtion](https://beta.atcoder.jp/contests/arc071/tasks/arc071_c) 同値関係を考える、累積和
+A=1,B=-1を割り当てる。AB=BA=""なのですべての文字列は数値の和で表される。さらにAAA=0,BBB=0,2=AA=BBBB=B=-1,-2=BB=AAAA=A=1なので必要な数値は-1,0,1であることがわかる。よってS,Tに対して累積和を計算しておきクエリに対してA=1,B-1の和を計算すればよい。
 ## [E - Decrease (Judge ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_c) パズル+シミュレーション
 操作はN<=a\_i以上の要素ならどの要素に対して行っても同じであることがわかる。a\_iに対する操作をまとめてa\_i<Nとなるまで行う。これをすべてのa\_iがN-1以下になるまで行う。この操作は十分高速である。  
 ## [Graph Construction](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2235)  クエリの平方分割
