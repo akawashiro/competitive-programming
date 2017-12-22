@@ -27,6 +27,8 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] 0/1 の列たち a1, ..., ar, b1, ..., br  
 [出力] ai1ai2...aik = bi1bi2...bik となるような i1,i2, ..., ik (k > 0) は存在するか？ (ij は同じ値を複数回含んでもよい)  
 # 過去問の復習
+## [E - Decrease (Judge ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_c) パズル+シミュレーション
+操作はN<=a\_i以上の要素ならどの要素に対して行っても同じであることがわかる。a\_iに対する操作をまとめてa\_i<Nとなるまで行う。これをすべてのa\_iがN-1以下になるまで行う。この操作は十分高速である。  
 ## [Graph Construction](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2235)  クエリの平方分割
 まずクエリをsqrt(k)個づつに分ける。sqrt(k)のクエリをクエリブロックと呼ぶ。各クエリブロックの始点でのグラフをGとする。クエリブロックの終点までクエリを見た時に一度も分割されない連結成分はUnionFindで１つに潰す。こうしておくとクエリブロック内で処理される連結成分は頂点をUnionFindで同一視すれば、sqrt(k)個ぐらいになる。クエリブロック内のクエリは単純に辺を追加/削除する。連結判定はDFSで行う。クエリブロック内に登場する頂点はsqrt(k)個ぐらいなので各クエリがsqrt(k)で処理でき、全体としてO(k\*sqrt(k))になる。
 ## [Tree - Diameter of a Tree](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A) 全方位木DP
