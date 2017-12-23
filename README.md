@@ -30,6 +30,12 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 ## [Festivals in JOI Kingdom](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0575) 複数始点Dijkstra + 最小全域木 + LCA
 まずお祭りが行われている街から複数始点Dijkstraで各街のお祭りまでの距離を求める。求めるものはs-tパスのうちパスに含まれている街のコストが最も大きいものである。ここで辺のコストを考えてみるとこれは辺の両端のうち小さい方のコストになる。よってクエリを最小全域木上で考えても良いことがわかる。今、問題は大量のクエリ(s,t)が与えられるので(s,t)間の距離を求める問題になった。これはLCAでできる。  
 なおバグ。辛い。
+## [E - TrBBnsformBBtion](https://beta.atcoder.jp/contests/arc071/tasks/arc071_c) 同値関係を考える、累積和
+A=1,B=-1を割り当てる。AB=BA=""なのですべての文字列は数値の和で表される。さらにAAA=0,BBB=0,2=AA=BBBB=B=-1,-2=BB=AAAA=A=1なので必要な数値は-1,0,1であることがわかる。よってS,Tに対して累積和を計算しておきクエリに対してA=1,B-1の和を計算すればよい。
+## [E - Decrease (Judge ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_c) パズル+シミュレーション
+操作はN<=a\_i以上の要素ならどの要素に対して行っても同じであることがわかる。a\_iに対する操作をまとめてa\_i<Nとなるまで行う。これをすべてのa\_iがN-1以下になるまで行う。この操作は十分高速である。  
+## [Graph Construction](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2235)  クエリの平方分割
+まずクエリをsqrt(k)個づつに分ける。sqrt(k)のクエリをクエリブロックと呼ぶ。各クエリブロックの始点でのグラフをGとする。クエリブロックの終点までクエリを見た時に一度も分割されない連結成分はUnionFindで１つに潰す。こうしておくとクエリブロック内で処理される連結成分は頂点をUnionFindで同一視すれば、sqrt(k)個ぐらいになる。クエリブロック内のクエリは単純に辺を追加/削除する。連結判定はDFSで行う。クエリブロック内に登場する頂点はsqrt(k)個ぐらいなので各クエリがsqrt(k)で処理でき、全体としてO(k\*sqrt(k))になる。
 ## [Tree - Diameter of a Tree](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A) 全方位木DP
 この問題は木の直径を求める問題なのである頂点からDFSして最遠点vを求め、vから再びDFSしてvからの最遠点wをもとめてv-w間の距離が答えになる。今回はこの問題を全方位木DPで解く。  
 通常の木DPは根付き木について各ノードはそのノードを根とする部分木の最適解を持つ。しかし全方位木DPではそれぞれのノードについてそのノードを根とする木を構成し、その最適解を求める。
@@ -282,7 +288,7 @@ xがy個続いたあとは数列の最大値はb_{m-1,1}になっている。
 s_xをsegtreeにいれるとはsegtree[s_x]+=1を意味する。  
 こうすることで[k,i]の条件を満たすiの個数はsum(s_k,\inf)となる。
 segtreeへの挿入&和の操作がlog Nなので全体でO(N log N)で解ける
-## [E - Connected?](http://arc076.contest.atcoder.jp/tasks/arc076_c)
+## [E - Connected?](http://arc076.contest.atcoder.jp/tasks/arc076_c) カッコの対応問題
 たぶん両方共、辺の上にあるやつだけが問題になる。  
 辺の上にある数字を全部一直線上に並べる。カッコの対応を取る時のようにStackを使って見ていって全部対応が取れたらOK
 ## [E - guruguru](http://arc077.contest.atcoder.jp/tasks/arc077_c)
@@ -329,7 +335,7 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 ## [D - Teleporter](http://agc004.contest.atcoder.jp/tasks/agc004_d)
 だいたいの考察があっていた
 後で通してどうぞ
-## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c)
+## [C - Shorten Diameter](http://agc001.contest.atcoder.jp/tasks/agc001_c) 木の中心
 木には中心という概念が定義できる。  
 木の直径をDとすると
 - Dが偶数の時、ある頂点vが存在してvから他の頂点への距離がすべてD/2以下になる
@@ -337,7 +343,7 @@ Bの最小値のうちindexが偶数のもの、Cの最小値のうちindexが�
 この問題では中心を全探索したうえで削除すべき頂点を求めれば良い。
 ## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c) パズル
 a_i + a_{i+1} \>= LであればPossible、そうでなければImpossible
-## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639)
+## [サッカー(Soccer)](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0639) 拡張ダイクストラ
 「コスト、ボールの位置」でダイクストラでできる
 各マスカラのダイクストラとか思いつかないものが多数
 ## [Kingdom of JOIOI](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0638)
