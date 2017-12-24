@@ -1,13 +1,13 @@
-const int MAX_N = 1 << 18;
-
 class RangeUpdateRangeSum{
     public:
         int sz;
-        LL node[MAX_N], lazy[MAX_N];
+        vector<LL> node, lazy;
 
         RangeUpdateRangeSum(int n) {
             sz = 1;
             while (n > sz )sz *= 2;
+            node.assign(2*sz+1,0);
+            lazy.assign(2*sz+1,0);
             for (int i = 0; i < 2 * sz - 1; i++)lazy[i] = -1;
         }
 
@@ -47,5 +47,4 @@ class RangeUpdateRangeSum{
             return x + y;
         }
 };
-
 
