@@ -27,6 +27,8 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] 0/1 の列たち a1, ..., ar, b1, ..., br  
 [出力] ai1ai2...aik = bi1bi2...bik となるような i1,i2, ..., ik (k > 0) は存在するか？ (ij は同じ値を複数回含んでもよい)  
 # 過去問の復習
+## [E. New Year Tree](http://codeforces.com/contest/620/problem/E) EulerTour + セグメント木
+部分木全てに変更する操作を行うのでEulerTourしたうえで区間更新区間ORのsegtreeを使う。区間更新区間ORは区間更新区間和のsegtreeをちょっと変更するとできる。
 ## [No.318 学学学学学](https://yukicoder.me/problems/no/318) セグメント木
 各tについて一番左のインデックスと一番右のインデックスを覚えておいて区間更新できるセグメント木で更新する
 ## [E - Papple Sort](https://beta.atcoder.jp/contests/arc088/tasks/arc088_c) バブルソートの交換回数
