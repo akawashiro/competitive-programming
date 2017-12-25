@@ -27,6 +27,12 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] 0/1 の列たち a1, ..., ar, b1, ..., br  
 [出力] ai1ai2...aik = bi1bi2...bik となるような i1,i2, ..., ik (k > 0) は存在するか？ (ij は同じ値を複数回含んでもよい)  
 # 過去問の復習
+## [PKU1741 Tree](http://poj.org/problem?id=1741) 重心分解
+木を重心分解して
+- 重心を通るパス
+- 部分木で完結するパス
+- 部分木から重心へのパス
+で分類して数える。
 ## [E. New Year Tree](http://codeforces.com/contest/620/problem/E) EulerTour + セグメント木
 部分木全てに変更する操作を行うのでEulerTourしたうえで区間更新区間ORのsegtreeを使う。区間更新区間ORは区間更新区間和のsegtreeをちょっと変更するとできる。
 ## [No.318 学学学学学](https://yukicoder.me/problems/no/318) セグメント木
