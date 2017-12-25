@@ -33,6 +33,8 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 - 部分木で完結するパス
 - 部分木から重心へのパス
 で分類して数える。
+## [AOJ2667 F : Tree / 木](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2667) EulerTour + セグメント木
+EulerTourで辺を一列に並べたあと、上向きの辺と下向きの辺に分けてそれぞれ範囲加算範囲和のセグメント木をつくる。
 ## [E. New Year Tree](http://codeforces.com/contest/620/problem/E) EulerTour + セグメント木
 部分木全てに変更する操作を行うのでEulerTourしたうえで区間更新区間ORのsegtreeを使う。区間更新区間ORは区間更新区間和のsegtreeをちょっと変更するとできる。
 ## [No.318 学学学学学](https://yukicoder.me/problems/no/318) セグメント木
