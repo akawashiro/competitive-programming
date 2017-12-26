@@ -38,6 +38,7 @@ for(int i=SZ(A)-1;0<=i;i--){
     if('0'<A[i]){A[i]--;break;}
     else{A[i]='9';}}
 ```
+[桁DPのわかりやすい解説](http://pekempey.hatenablog.com/entry/2015/12/09/000603)
 ## [B - ゲーム](https://tdpc.contest.atcoder.jp/tasks/tdpc_game) MinMax法
 すぬけ君の点数を評価関数としてMinMax法を行う
 ## [B : Colorful Slimes](http://agc004.contest.atcoder.jp/tasks/agc004_b) パラメータを固定してみる
