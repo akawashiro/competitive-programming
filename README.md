@@ -1,9 +1,3 @@
----
-title:  "Compettetive Programming"
-author: Akira KAWATA
-date:   2017/12/26
-output: pdf_document
----
 # 落ちたら危険！NP困難問題
 ## クリーク問題
 グラフGにサイズkのクリークが存在しますか?
