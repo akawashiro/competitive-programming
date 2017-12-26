@@ -1,4 +1,6 @@
 # 過去問の復習
+## [ジグザグ数 (Zig-Zag Numbers)](https://www.ioi-jp.org/joi/2011/2012-yo-prob_and_sol/2012-yo-t6/2012-yo-t6.html) 桁DP
+桁DPをする。先頭から0が続いた場合がコーナーケースになる。
 ## [No.260 世界のなんとか3](https://yukicoder.me/problems/no/260) 桁DP
 桁DPをする。桁DPの基本は
 ```C++
