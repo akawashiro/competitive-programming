@@ -1,4 +1,6 @@
 # 過去問の復習
+## [C - Cheating Nim](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_c)
+不正者はxor和($S = a_1 \oplus a_2 ... \oplus a_n$)を0にすれば良い。このとき$b_i = a_i\oplus (a_i-1) = 2^k -1 $になることを使う。$S$のビット列を上から見て1になっているところがあれば対応する$b_i$とのxorを取る。
 ## [yukicoder No.417 チューリップバブル](https://yukicoder.me/problems/no/417) 木DP
 ```C++
 rec(頂点 v,残り時間 t){
