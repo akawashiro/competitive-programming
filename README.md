@@ -1,4 +1,10 @@
 # 過去問の復習
+## [yukicoder No.573 a^2[i] = a[i]](https://yukicoder.me/problems/no/573) 数え上げ
+インデックス集合$A$を$A = \bigcup A_i ( i\neq j \Rightarrow 0 = A_i \cap A_j)$と分割すると各集合のうち少なくともひとつはa[i]=iを満たす。条件を満たす場合の数は$\sum_{\text{all dividion}} \prod |A_i|$となる。ただしこれは計算するのが難しい。
+
+$i \in X $についてa[i]=iとする。このとき$i \not \in X$となるa[i]はi以外の任意の値を取れるので$|X|^{(N-|X|)}$通りが条件を満たす。よって$\sum_{i=1}^{N} {}_N \mathrm{C}_i |X|^{(N-|X|)}$を計算すれば良い。
+
+おまけ:[$n$個の元を持つ集合の分割の総数はベル数$B_n$になる](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E3%81%AE%E5%88%86%E5%89%B2)。$B_{n+1} = \sum_{k=0}^n {}_n \mathrm{C}_k B_k$
 ## [yukicoder No.417 チューリップバブル](https://yukicoder.me/problems/no/417) 木DP
 ```C++
 rec(頂点 v,残り時間 t){
