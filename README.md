@@ -1,5 +1,8 @@
 # 過去問の復習
-## [C - Cheating Nim](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_c)
+## [F. Tree Destruction](http://codeforces.com/contest/911/problem/F) 木の直径
+## [B - Mysterious Light](https://beta.atcoder.jp/contests/agc001/tasks/agc001_b) extgcd + 発想
+最初の２辺を除くと辺の光の通った折れ線の辺の長さは$a,a,...,a,b,b,...,b,a\%b,a\%b,...,a\%b$となっていることがわかる。最初の2辺$a,b$が$a>b$のときは$a,b,a\%b,...,$となり、$a<b$のときは$a,b,a,b\%a,...,$となる。$a=b$のときは$a,a,a$で終了する。
+## [C - Cheating Nim](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_c) Nim
 不正者はxor和($S = a_1 \oplus a_2 ... \oplus a_n$)を0にすれば良い。このとき$b_i = a_i\oplus (a_i-1) = 2^k -1 $になることを使う。$S$のビット列を上から見て1になっているところがあれば対応する$b_i$とのxorを取る。
 ## [yukicoder No.573 a^2[i] = a[i]](https://yukicoder.me/problems/no/573) 数え上げ
 インデックス集合$A$を$A = \bigcup A_i ( i\neq j \Rightarrow 0 = A_i \cap A_j)$と分割すると各集合のうち少なくともひとつはa[i]=iを満たす。条件を満たす場合の数は$\sum_{\text{all dividion}} \prod |A_i|$となる。ただしこれは計算するのが難しい。
