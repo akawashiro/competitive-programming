@@ -1,5 +1,6 @@
 # 過去問の復習
 ## [F. Tree Destruction](http://codeforces.com/contest/911/problem/F) 木の直径
+[木の直径を求めるアルゴリズム](http://www.prefield.com/algorithm/graph/tree_diameter.html)から、木の最遠頂点対を $x$,$y$としたとき，$x$または$y$として$s$からの最遠頂点$u$を選んでもかまわない。ここからある頂点$s$への最長パスは$x-s$または$y-s$である。よって最遠頂点対$x,y$を求めたうえで$x-y$上に無い点sの最長パスは$x-s$または$y-s$であり、$x-y$上の点は端から削除すれば良い。
 ## [B - Mysterious Light](https://beta.atcoder.jp/contests/agc001/tasks/agc001_b) extgcd + 発想
 最初の２辺を除くと辺の光の通った折れ線の辺の長さは$a,a,...,a,b,b,...,b,a\%b,a\%b,...,a\%b$となっていることがわかる。最初の2辺$a,b$が$a>b$のときは$a,b,a\%b,...,$となり、$a<b$のときは$a,b,a,b\%a,...,$となる。$a=b$のときは$a,a,a$で終了する。
 ## [C - Cheating Nim](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_c) Nim
