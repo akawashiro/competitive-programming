@@ -1,4 +1,6 @@
 # 過去問の復習
+## [D - ABS](https://beta.atcoder.jp/contests/abc078/tasks/arc085_b) DP
+DP[i(=あと何枚残っているか)][j(=どちらの番か)] とすると(j^1)の持っているカードはa[i-1]なのでDPできる。
 ## [D - Built?](https://beta.atcoder.jp/contests/arc076/tasks/arc076_b) x座標とy座標を分けて考える
 最小全域木を求める問題である。しかし愚直にやると辺が$O(N^2)$本あるので間に合わない。ここでx軸とy軸に分けて考える。x座標で比較した時に$s,t,u$とならんでいるなら$s-u$の辺は必要ない。よって辺の数が$O(N)$になり最小全域木を求めることができる。
 ## [D - Alice&Brown](https://beta.atcoder.jp/contests/arc072/tasks/arc072_b) 実験
