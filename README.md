@@ -1,7 +1,11 @@
 # 過去問の復習
+## [D - Alice&Brown](https://beta.atcoder.jp/contests/arc072/tasks/arc072_b) 実験
+実験すると$|X-Y|<2$ならAliceが負けることがわかる。
+## [B - Boxes](https://beta.atcoder.jp/contests/agc010/tasks/agc010_b) 操作の合計回数 + 階差数列
+一回操作を行うと石が$\frac{N(N-1)}{2}$個減るので、最初にあった石を$S$個とすると操作の回数$K$は$S = K \frac{N(N-1)}{2}$になる。ここで階差数列$d_i = a_{(i+1)\%N} - a_i (1 \leq i \leq N)$を考える。一回操作を行うと$d_i$の一つが$+(N-1)$され$N-1$個が$-1$される。操作の合計回数$K$が分かっているので、一回の操作を$d_i + K$の一つを$+N$するというものに変換することができる。ここまで変換すると判定は$\forall i$について$0<d_i$かつ$d_i\% N = 0$でできる。
 ## [F. Tree Destruction](http://codeforces.com/contest/911/problem/F) 木の直径
 [木の直径を求めるアルゴリズム](http://www.prefield.com/algorithm/graph/tree_diameter.html)から、木の最遠頂点対を $x$,$y$としたとき，$x$または$y$として$s$からの最遠頂点$u$を選んでもかまわない。ここからある頂点$s$への最長パスは$x-s$または$y-s$である。よって最遠頂点対$x,y$を求めたうえで$x-y$上に無い点sの最長パスは$x-s$または$y-s$であり、$x-y$上の点は端から削除すれば良い。
-## [B - Mysterious Light](https://beta.atcoder.jp/contests/agc001/tasks/agc001_b) extgcd + 発想
+## [B - Mysterious Light](https://beta.atcoder.jp/contests/agc001/tasks/agc001_b) extgcd
 最初の２辺を除くと辺の光の通った折れ線の辺の長さは$a,a,...,a,b,b,...,b,a\%b,a\%b,...,a\%b$となっていることがわかる。最初の2辺$a,b$が$a>b$のときは$a,b,a\%b,...,$となり、$a<b$のときは$a,b,a,b\%a,...,$となる。$a=b$のときは$a,a,a$で終了する。
 ## [C - Cheating Nim](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_c) Nim
 不正者はxor和($S = a_1 \oplus a_2 ... \oplus a_n$)を0にすれば良い。このとき$b_i = a_i\oplus (a_i-1) = 2^k -1 $になることを使う。$S$のビット列を上から見て1になっているところがあれば対応する$b_i$とのxorを取る。
@@ -238,7 +242,12 @@ i個目のクエリを$t_i$にチェックしたとする。
 ## [E - Grouping](http://arc067.contest.atcoder.jp/) 1/Nテクニック
 愚直に考えるとO($N^3$)だが、$\sum_{i=1}^N \frac{1}{i} = N log N$なので全体として$O(N\log N)$
 ## [C - 3 Steps](http://code-festival-2017-qualb.contest.atcoder.jp/tasks/code_festival_2017_qualb_c)　二部グラフ判定
-奇サイクルが存在する = 二部グラフでない
+ある$s,t$間に奇数長のパスが存在するとき$s,t$間に辺を貼ることができる。ここで任意の$s,$間に奇数長のパスが存在するかどうかはグラフの中に奇サイクルが存在するかどうかに依存する。ここで"奇サイクルが存在する" = "二部グラフでない"である。
+- 二部グラフの時
+  グラフの頂点を二部$A$と$B$に分ける。$A$の内部、$B$の内部に新たに辺が追加されることはないので答えは$|A||B|-M$になる。
+- 二部グラフでないとき
+  任意の頂点間に辺を貼ることができるので$\frac{N(N-1)}{2} - M$が答えになる。
+二部グラフ判定はDFSで白と黒に塗ってみて、白と白または黒と黒が隣あっていなければ良い。
 ## [C. Points, Lines and Ready-made Titles](http://codeforces.com/contest/871/problem/C) x座標y座標を頂点、交点をエッジと見るやつ
 グリッド系問題における、交点をエッジに変換する発想
 
