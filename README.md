@@ -1,4 +1,6 @@
 # 過去問の復習
+## [B - Unplanned Queries](https://beta.atcoder.jp/contests/agc014/tasks/agc014_b)
+クエリの両端に出てくる頂点がすべて偶数回出現するかどうか。木はとりあえず根付き木にして、パスは(LCA-a)+(LCA-b)-2(根-LCA)とするのが典型。こうすることですべてのクエリは(根-a)+(根-b)とできる。(根-LCA)はmod 2で0になる。十分性は明らか。必要性を示す。書かれた数字が奇数である辺のうち最も根から遠いものを$e(=(u,v))$とする。ただし$v$が根から遠い方の頂点である。このとき$(?,v)$のクエリが必ず奇数回発行されている。
 ## [D - ABS](https://beta.atcoder.jp/contests/abc078/tasks/arc085_b) DP
 DP[i(=あと何枚残っているか)][j(=どちらの番か)] とすると(j^1)の持っているカードはa[i-1]なのでDPできる。
 ## [D - Built?](https://beta.atcoder.jp/contests/arc076/tasks/arc076_b) x座標とy座標を分けて考える
