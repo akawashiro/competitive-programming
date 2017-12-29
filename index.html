@@ -211,9 +211,112 @@ code.language-yaml {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h1 class="mume-header" id="%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</h1>
+      <h1 class="mume-header" id="%E8%A7%A3%E6%B3%95%E3%81%8C%E6%B5%AE%E3%81%8B%E3%81%B0%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB%E8%A9%A6%E3%81%99%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88">解法が浮かばない時に試すことリスト</h1>
 
-<h2 class="mume-header" id="b-unplanned-querieshttpsbetaatcoderjpcontestsagc014tasksagc014_b"><a href="https://beta.atcoder.jp/contests/agc014/tasks/agc014_b">B - Unplanned Queries</a></h2>
+<h2 class="mume-header" id="%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%95%8F%E9%A1%8C">シュミレーション問題</h2>
+
+<ul>
+<li>1ステップごとのシュミレーションの高速化
+<ul>
+<li>データ構造</li>
+</ul>
+</li>
+<li>複数ステップをまとめる
+<ul>
+<li>被ってる部分をまとめる</li>
+<li>ダブリング</li>
+</ul>
+</li>
+<li>ステップ回数を減らす
+<ul>
+<li>ループの検出</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="yes-or-no">Yes or No</h2>
+
+<ul>
+<li>探索・DP
+<ul>
+<li>全部調べられる場合</li>
+</ul>
+</li>
+<li>戦略決め打ち
+<ul>
+<li>貪欲</li>
+</ul>
+</li>
+<li>グラフ
+<ul>
+<li>到達可能性</li>
+<li>最大マッチング</li>
+</ul>
+</li>
+<li>最小・最大問題になっている</li>
+</ul>
+<h2 class="mume-header" id="%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7">最小・最大</h2>
+
+<ul>
+<li>整数値・実数値
+<ul>
+<li>探索・DP</li>
+<li>数学</li>
+<li>貪欲</li>
+<li>データをソートして尺取り</li>
+<li>二分探索</li>
+<li>グラフ
+<ul>
+<li>とりあえずグラフにして最短経路/最小全域木/最大流/最小費用流</li>
+</ul>
+</li>
+<li>畳み込み</li>
+<li>辞書順最小もこっち</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AE%E5%80%8B%E6%95%B0">組み合わせの個数</h2>
+
+<ul>
+<li>全探索</li>
+<li>数学(Combination/Permutation)</li>
+<li>含除原理</li>
+<li>最大・最小と組み合わせの個数<br>
+最大値とその組み合わせを記録するDP</li>
+</ul>
+<h2 class="mume-header" id="%E7%A2%BA%E7%8E%87">確率</h2>
+
+<ul>
+<li>全探索・メモ化</li>
+<li>とりあえずソートして貪欲</li>
+<li>枝狩り</li>
+<li>数学</li>
+</ul>
+<h2 class="mume-header" id="%E6%9C%9F%E5%BE%85%E5%80%A4">期待値</h2>
+
+<ul>
+<li>線形性</li>
+<li>確率と平均値をもってDP</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E5%8B%9D%E6%95%97%E5%88%A4%E5%AE%9A%E4%BA%8C%E4%BA%BA%E9%9B%B6%E5%92%8C%E6%9C%89%E9%99%90%E7%A2%BA%E5%AE%9A%E5%AE%8C%E5%85%A8%E6%83%85%E5%A0%B1%E3%82%B2%E3%83%BC%E3%83%A0">ゲームの勝敗判定(二人零和有限確定完全情報ゲーム)</h2>
+
+<ul>
+<li>MinMax法</li>
+<li>Grundy法</li>
+<li>必勝法で発見する</li>
+</ul>
+<h2 class="mume-header" id="%E7%AD%94%E3%81%88%E3%81%AE%E3%81%86%E3%81%A1%E4%B8%80%E3%81%A4%E4%BB%BB%E6%84%8F%E3%81%AE%E8%A7%A3">答えのうち一つ(任意の解)</h2>
+
+<ul>
+<li>全探索・枝狩り</li>
+<li>決め打ち</li>
+<li>最小問題を解いて復元</li>
+</ul>
+<h2 class="mume-header" id="%E5%8F%82%E8%80%83%E5%8B%95%E7%94%BB">参考動画</h2>
+
+<p><a href="%E3%83%AF%E3%83%B3%E3%83%A9%E3%83%B3%E3%82%AF%E4%B8%8A%E3%81%AB%E8%A1%8C%E3%81%8F%E3%83%97%E3%83%AD%E3%82%B3%E3%83%B3%E8%AC%9B%E5%BA%A7">https://www.youtube.com/watch?v=_Je4rukUcqE</a></p>
+<h1 class="mume-header" id="%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</h1>
+
+<h2 class="mume-header" id="b-unplanned-querieshttpsbetaatcoderjpcontestsagc014tasksagc014_b-%E6%9C%A8%E4%B8%8A%E3%81%AE%E3%83%91%E3%82%B9%E3%81%AFlca%E3%82%92%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%A6%E5%88%86%E8%A7%A3"><a href="https://beta.atcoder.jp/contests/agc014/tasks/agc014_b">B - Unplanned Queries</a> 木上のパスはLCAをつかって分解</h2>
 
 <p>クエリの両端に出てくる頂点がすべて偶数回出現するかどうか。木はとりあえず根付き木にして、パスは(LCA-a)+(LCA-b)-2(根-LCA)とするのが典型。こうすることですべてのクエリは(根-a)+(根-b)とできる。(根-LCA)はmod 2で0になる。十分性は明らか。必要性を示す。書かれた数字が奇数である辺のうち最も根から遠いものを<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mo>(</mo><mo>=</mo><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">e(=(u,v))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">e</span><span class="mopen">(</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">u</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>とする。ただし<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">v</span></span></span></span>が根から遠い方の頂点である。このとき<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>?</mo><mo separator="true">,</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(?,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mclose">?</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>のクエリが必ず奇数回発行されている。</p>
 <h2 class="mume-header" id="d-abshttpsbetaatcoderjpcontestsabc078tasksarc085_b-dp"><a href="https://beta.atcoder.jp/contests/abc078/tasks/arc085_b">D - ABS</a> DP</h2>
@@ -844,9 +947,22 @@ d[i][j]=min(d[i][k]+d[k][j],d[i][j])</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
+<li><a href="#%E8%A7%A3%E6%B3%95%E3%81%8C%E6%B5%AE%E3%81%8B%E3%81%B0%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB%E8%A9%A6%E3%81%99%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88">解法が浮かばない時に試すことリスト</a>
+<ul>
+<li><a href="#%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%95%8F%E9%A1%8C">シュミレーション問題</a></li>
+<li><a href="#yes-or-no">Yes or No</a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7">最小・最大</a></li>
+<li><a href="#%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AE%E5%80%8B%E6%95%B0">組み合わせの個数</a></li>
+<li><a href="#%E7%A2%BA%E7%8E%87">確率</a></li>
+<li><a href="#%E6%9C%9F%E5%BE%85%E5%80%A4">期待値</a></li>
+<li><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E5%8B%9D%E6%95%97%E5%88%A4%E5%AE%9A%E4%BA%8C%E4%BA%BA%E9%9B%B6%E5%92%8C%E6%9C%89%E9%99%90%E7%A2%BA%E5%AE%9A%E5%AE%8C%E5%85%A8%E6%83%85%E5%A0%B1%E3%82%B2%E3%83%BC%E3%83%A0">ゲームの勝敗判定(二人零和有限確定完全情報ゲーム)</a></li>
+<li><a href="#%E7%AD%94%E3%81%88%E3%81%AE%E3%81%86%E3%81%A1%E4%B8%80%E3%81%A4%E4%BB%BB%E6%84%8F%E3%81%AE%E8%A7%A3">答えのうち一つ(任意の解)</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E5%8B%95%E7%94%BB">参考動画</a></li>
+</ul>
+</li>
 <li><a href="#%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</a>
 <ul>
-<li><a href="#b-unplanned-querieshttpsbetaatcoderjpcontestsagc014tasksagc014_b">B - Unplanned Queries</a></li>
+<li><a href="#b-unplanned-querieshttpsbetaatcoderjpcontestsagc014tasksagc014_b-%E6%9C%A8%E4%B8%8A%E3%81%AE%E3%83%91%E3%82%B9%E3%81%AFlca%E3%82%92%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%A6%E5%88%86%E8%A7%A3">B - Unplanned Queries 木上のパスはLCAをつかって分解</a></li>
 <li><a href="#d-abshttpsbetaatcoderjpcontestsabc078tasksarc085_b-dp">D - ABS DP</a></li>
 <li><a href="#d-builthttpsbetaatcoderjpcontestsarc076tasksarc076_b-x%E5%BA%A7%E6%A8%99%E3%81%A8y%E5%BA%A7%E6%A8%99%E3%82%92%E5%88%86%E3%81%91%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B">D - Built? x座標とy座標を分けて考える</a></li>
 <li><a href="#d-alicebrownhttpsbetaatcoderjpcontestsarc072tasksarc072_b-%E5%AE%9F%E9%A8%93">D - Alice&amp;Brown 実験</a></li>
