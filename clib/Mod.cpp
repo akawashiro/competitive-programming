@@ -1,4 +1,4 @@
-static const LL MOD = 1777777777;
+static const LL MOD = 1e9+7;
 LL ADD(LL x,LL y){	return (x+y)%MOD;	}
 LL SUB(LL x,LL y){	return (x-y+MOD)%MOD;	}
 LL MUL(LL x,LL y){	return ((x*y)%MOD+MOD)%MOD;	}

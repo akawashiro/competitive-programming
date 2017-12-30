@@ -52,6 +52,11 @@
 ## 参考動画
 [https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
 # 過去問の復習
+## [Good Bye 2017 D. New Year and Arbitrary Arrangement](http://codeforces.com/contest/908/problem/D) 期待値DP
+$P_a = \frac{p_a}{p_a + p_b},P_b = \frac{p_b}{p_a + p_b}$とする。DP[i][j]=prefixの中に'ab'がi個、'a'がj個存在するときの'ab'の個数の期待値としてDPする。
+DP[i(=aの数)][j(=abの数)] = $P_a$ DP[i][j+1] + $P_b$ DP[i+j][j]
+ただしこのままでは'bbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaab'のようなケースで無限長になってしまう。そこでまず'bbbbbb'の部分は$\frac{1}{1-P_b} DP[0][1]$として処理する。'aaaaaaaa'の部分はk<=i+jのときは末尾に確定で'b'をくっつけることにする。さらにj=kのときは'a'を無限個くっつけることにして'a'の無限列に対応する。
+この問題では期待値が浮動小数点ではなくmodで問われているが浮動小数点の場合と同じように計算して良い。
 ## [B - Unplanned Queries](https://beta.atcoder.jp/contests/agc014/tasks/agc014_b) 木上のパスはLCAをつかって分解
 クエリの両端に出てくる頂点がすべて偶数回出現するかどうか。木はとりあえず根付き木にして、パスは(LCA-a)+(LCA-b)-2(根-LCA)とするのが典型。こうすることですべてのクエリは(根-a)+(根-b)とできる。(根-LCA)はmod 2で0になる。十分性は明らか。必要性を示す。書かれた数字が奇数である辺のうち最も根から遠いものを$e(=(u,v))$とする。ただし$v$が根から遠い方の頂点である。このとき$(?,v)$のクエリが必ず奇数回発行されている。
 ## [D - ABS](https://beta.atcoder.jp/contests/abc078/tasks/arc085_b) DP
