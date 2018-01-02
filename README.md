@@ -52,6 +52,12 @@
 ## 参考動画
 [https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
 # 過去問の復習
+## [D - Restoring Road Network](https://beta.atcoder.jp/contests/abc074/tasks/arc083_b) Warshall–Floyd
+与えられた行列に対してWarshall–Floydして書き換えが起こったら最短ではない。書き換えが起こらなかった場合は最小全域木を求めれば良い。
+## [D - 3N Numbers](https://beta.atcoder.jp/contests/abc062/tasks/arc074_b) priority_queue
+$N\leq k < 2N$を固定する。このとき$a_i (i<k)$のなかから$N$個を前半、$a_i (k\leq i)$の中から$N$個を後半として選ぶ。前半はできるだけ和が大きいように、後半はできるだけ和が小さいように選ぶ。このような選び方は$k$をひとつずつ増やしながらpriority_queueで求めることができる。
+## [D - An Ordinary Game](https://beta.atcoder.jp/contests/abc048/tasks/arc064_b) 発想
+文字を１つも取り除けなくなったとき、文字列$S$は$S=$"ababababa"または$S=$"abababab"の形になっている。このゲームでは両端の文字は変化しないので最終的な文字列のぐう機は最初の文字と最後の文字の比較のみで定まる。
 ## [D - 桁和 / Digit Sum](https://beta.atcoder.jp/contests/abc044/tasks/arc060_b) ?進数
 $b<\sqrt{n}$かどうかで場合分けする。
 ## [ABC021 C - 正直者の高橋くん](https://beta.atcoder.jp/contests/abc021/tasks/abc021_c) 最短路DAG
