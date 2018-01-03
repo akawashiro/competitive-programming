@@ -52,6 +52,8 @@
 ## 参考動画
 [https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
 # 過去問の復習
+## [D - 旅行会社高橋君](https://arc039.contest.atcoder.jp/tasks/arc039_d) 橋 + LCA
+グラフを二重連結成分を同一視して木に変換する。この時頂点$A,B,C$が条件を満たすのは変換後のグラフで$A\to B\to C$のパスが存在するかどうかと同値になる。これは$\text{dist}(A,B) + \text{dist}(B,C) = \text{dist}(A,C)$であるかどうかと同値であり、LCAで高速に$\text{dist}(x,y)$を求められるようにしておけば良い。
 ## [ABC021 C - 正直者の高橋くん](https://beta.atcoder.jp/contests/abc021/tasks/abc021_c) 最短路DAG
 まず頂点$a$からDijkstraして全頂点への距離$d$を求める。ここですべての辺$e=(u,v)$について$d[u]=d[v]+e.\text{cost}$なら$e$を残し、そうでなければ$e$を削除する。このようにしてできたグラフを最短路DAGと呼ぶ。この最短路DAG上で$a$から$b$への経路の数を数えれば良い。
 ## [Good Bye 2017 D. New Year and Arbitrary Arrangement](http://codeforces.com/contest/908/problem/D) 期待値DP
