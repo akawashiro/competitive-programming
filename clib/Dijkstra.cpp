@@ -1,17 +1,14 @@
-#define MAX_V 1000
-
 struct Edge{
         int to,cost;
 };
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
-vector<Edge> G[MAX_V];
-int n;
+typedef vector<vector<Edge>> Graph;
 
-void addEdge(int from,int to,int cost){
-    G[from].push_back((Edge){to,cost});
+void addEdge(Graph &g,int from,int to,int cost){
+    g[from].push_back((Edge){to,cost});
 }
 
-int dijkstra(int s,int g)
+int dijkstra(const Graph &G,int s,int g)
 {
     vector<int> dist(n,INT_MAX/2);
     priority_queue<Edge> que;
@@ -27,3 +24,4 @@ int dijkstra(int s,int g)
     }
     return dist[g];
 }
+

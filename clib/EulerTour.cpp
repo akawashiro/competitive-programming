@@ -4,15 +4,15 @@ struct Edge{
         int to,cost;
 };
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
-int N;
-vector<Edge> G[MAX_V];
+typedef vector<vector<Edge>> Graph;
 
-void addEdge(int from,int to,int cost){
-    G[from].push_back((Edge){to,cost});
+void addEdge(Graph &g,int from,int to,int cost){
+    g[from].push_back((Edge){to,cost});
 }
 
 // < vertexes order in EulerTour, < left position of vertex in EulerTour, right position of vertex in EulerTour>
-pair<vector<int>,vector<pair<int,int> > > eulerTour(int start){
+pair<vector<int>,vector<pair<int,int> > > eulerTour(const Graph &g,int start){
+    int N = g.size();
     vector<int> tour;
     stack<int> st;
     vector<int> visited(N,0);
@@ -23,9 +23,9 @@ pair<vector<int>,vector<pair<int,int> > > eulerTour(int start){
         if(visited[p])continue;
         st.push(p);
         visited[p]=1;
-        FOR(i,0,SZ(G[p]))
-            if(!visited[G[p][i].to])
-                st.push(G[p][i].to);
+        FOR(i,0,SZ(g[p]))
+            if(!visited[g[p][i].to])
+                st.push(g[p][i].to);
     }
     vector<pair<int,int> > index(SZ(tour)/2);
     FOR(i,0,SZ(index))index[i]=make_pair(-1,-1);

@@ -1,16 +1,16 @@
 #define MAX_V 1000
 typedef pair<int,int> P;
 struct edge{ int to,cap,cost,rev;   };
-int V;
-vector<edge> G[MAX_V];
+typedef vector<vector<Edge>> Graph;
 int h[MAX_V];
 int dist[MAX_V];
 int prevv[MAX_V],preve[MAX_V];
-void add_edge(int from,int to,int cap,int cost){
+void add_edge(Graph &G,int from,int to,int cap,int cost){
     G[from].push_back((edge){to,cap,cost,(int)G[to].size()});
     G[to].push_back((edge){from,0,-cost,(int)G[from].size()-1});
 }
-int min_cost_flor(int s,int t,int f){
+int min_cost_flor(Graph &G,int s,int t,int f){
+    int V = G.size();
     int res=0;
     int INF=(1<<29);
     fill(h,h+V,0);

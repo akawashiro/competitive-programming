@@ -5,25 +5,24 @@ struct Edge{
     int to,cost;
 };
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
-int N,root;
-vector<Edge> G[MAX_V];
+typedef vector<vector<Edge>> Graph;
 
-void addEdge(int from,int to,int cap){
-    G[from].push_back((Edge){to,cap});
+void addEdge(Graph &g,int from,int to,int cap){
+    g[from].push_back((Edge){to,cap});
 }
 
 int parent[MAX_LOG_V][MAX_V];
 int depth[MAX_V];
 
-void dfs(int v,int p,int d){
+void dfs(const Graph &g,int v,int p,int d){
     parent[0][v] = p;
     depth[v] = d;
-    for(int i=0;i<G[v].size();i++)
-        if(G[v][i].to != p)
-            dfs(G[v][i].to, v, d+1);
+    for(int i=0;i<g[v].size();i++)
+        if(g[v][i].to != p)
+            dfs(g[v][i].to, v, d+1);
 }
 
-void init(){
+void init(int root){
     dfs(root,-1,0);
 
     for(int k=0;k+1<MAX_LOG_V;k++)
