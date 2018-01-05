@@ -5,25 +5,26 @@ bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERS
 typedef vector<vector<Edge>> Graph;
 Graph g;
 
-void addEdge(Graph &g,int from,int to,int cost){
-    g[from].push_back((Edge){to,cost});
-}
+void bridgeDfs(const Graph &g,int cur, int prev, vector<pair<int,int> > &brg, vector<vector<int> > &each_bcc, stack<int> &roots, stack<int> &S, vector<bool> &inS, vector<int> &order, int &k){
 
-void dfs(const Graph &g,int cur, int prev, vector<pair<int,int> > &brg, vector<vector<int> > &each_bcc, stack<int> &roots, stack<int> &S, vector<bool> &inS, vector<int> &order, int &k){
+    // fprintf(stderr,"LINE=%d\n",__LINE__);
     order[cur] = ++k;
     S.push(cur); inS[cur] = true;
     roots.push(cur);
 
-    for(int i=0;i<g[cur].size();i++){
+    for(int i=0;i<(int)g[cur].size();i++){
         int to = g[cur][i].to;
         if(order[to]==0){
-            dfs(g,to,cur,brg,each_bcc,roots,S,inS,order,k);
+            bridgeDfs(g,to,cur,brg,each_bcc,roots,S,inS,order,k);
         }
         else if(to!=prev && inS[to]){	//後退辺をたどる
-            while(order[roots.top()] > order[to]) roots.pop();	//cur〜toまで(toは含まない)の頂点をrootsから捨てる
+            // fprintf(stderr,"LINE=%d\n",__LINE__);
+            while(order[roots.top()] > order[to]) 
+                roots.pop();	//cur〜toまで(toは含まない)の頂点をrootsから捨てる
         }
     }
 
+    // fprintf(stderr,"LINE=%d\n",__LINE__);
     if(cur==roots.top()){
         if(prev!=-1)brg.push_back(pair<int,int>(prev,cur));
         vector<int> bcc;
@@ -35,32 +36,32 @@ void dfs(const Graph &g,int cur, int prev, vector<pair<int,int> > &brg, vector<v
         each_bcc.push_back(bcc);
         roots.pop();
     }
+
 }
 
 void bridge(const Graph &g,vector<pair<int,int>> &brg, vector<vector<int>> &each_bcc){
-    vector<int> order(g.size());
-    vector<bool> inS(g.size());
+    vector<int> order(MAX_V);
+    vector<bool> inS(MAX_V);
     stack<int> roots, S;
     int k=0;
-    for(int i=0;i<g.size();i++){
+    for(int i=0;i<(int)g.size();i++){
         if(order[i]==0){
-            dfs(g,i,-1,brg,each_bcc,roots,S,inS,order,k);
+            bridgeDfs(g,i,-1,brg,each_bcc,roots,S,inS,order,k);
         }
     }
 }
 
-void compressToTree(const Graph &g,const vector<vector<int>> &bcc,Graph &h,UnionFind &u){
-    u = UnionFind(g.size());
-    for(auto v : bcc){
-        int a = v[0];
-        for(auto b : v)
-            u.set(a,b);
+// m is a map from old vertex in g to new vertex in h
+void compressToTree(const Graph &g,const vector<vector<int>> &each_bcc,Graph &h,map<int,int> &m){
+    for(int i=0;i<(int)each_bcc.size();i++){
+        for(int j=0;j<(int)each_bcc[i].size();j++)
+            m[each_bcc[i][j]] = i;
     }
-    h = Graph(g.size());
-    for(int i=0;i<g.size();i++){
+    h = Graph(each_bcc.size());
+    for(int i=0;i<(int)g.size();i++){
         for(auto e : g[i])
-            if(u.root(i) != u.root(e.to)){
-                addEdge(h,u.root(i),u.root(e.to),e.cost);
+            if(m[i] != m[e.to]){
+                addEdge(h,m[i],m[e.to],e.cost);
             }
     }
 }
