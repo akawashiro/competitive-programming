@@ -52,6 +52,8 @@
 ## 参考動画
 [https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
 # 過去問の復習
+## [B - Palindrome-phobia](https://beta.atcoder.jp/contests/cf17-final-open/tasks/cf17_final_b) 回文
+二文字か三文字の回文が出てこなければ良い。つまり同一文字は常に2文字以上離れていなければならない。これは'a','b','c'の出現頻度の差が1以下のとき実現できる。
 ## [No.631 Noelちゃんと電車旅行](https://yukicoder.me/problems/no/631) segtree + 最初に待っても各駅で待っても同じ
 各駅で電車が来るまで待つのと駅1でまとめて待つのでは到着時間が変わらない。よって最初の駅でまとめて待つことにする。このとき駅1以外で待つことはないので待つ時間を$d$とすると駅$i$につくのは時刻$d + 3(i-1)$である。駅$i$の始発を$T_i'$とするとすべての$i$について$d + 3(i-1) \leq T_i'$なので$d \leq T_i' - 3(i-1)$である。よってすべてのクエリについて$T_i' - 3(i-1)$の最大値を求めれば良い。これは区間加算区間最大値のsegtree(Starry Sky Tree)でできる。
 ## [No.630 門松グラフ](https://yukicoder.me/problems/no/630) 二部グラフ=奇サイクルが存在しない
@@ -293,17 +295,9 @@ i個目のクエリを$t_i$にチェックしたとする。
 この問題では中心を全探索したうえで削除すべき頂点を求めれば良い。  
 
 ## [E - 木と整数 / Integers on a Tree](https://arc063.contest.atcoder.jp/tasks/arc063_c)　木上の区間のマージ
-頂点にかけられている制約はすべて[l,r]={l,l+2,l+4,...,r-2,r}とかける。  
-この制約をDFSしながら伝搬していく。  
-親の制約が[l,r]であったとき子の制約は[l-1,r+1]になる。  
-途中に数字の書かれた頂点があったら区間は[v,v]の形に収束する。  
-収束したらDFSの帰りにその制約を伝搬する。  
-２つ以上の制約がかち合ったら共通部分を取る。このとき共通部分が空集合なら答えはNoになる。  
-
-
+頂点にかけられている制約はすべて[l,r]={l,l+2,l+4,...,r-2,r}とかける。この制約をDFSしながら伝搬していく。親の制約が[l,r]であったとき子の制約は[l-1,r+1]になる。途中に数字の書かれた頂点があったら区間は[v,v]の形に収束する。収束したらDFSの帰りにその制約を伝搬する。２つ以上の制約がかち合ったら共通部分を取る。このとき共通部分が空集合なら答えはNoになる。
 ## [C - Time Gap](https://cf17-final.contest.atcoder.jp/tasks/cf17_final_c) 鳩の巣原理
-24以上は鳩の巣原理から最大値sが0になるので考えなくて良い  
-24以下は全探索できる。ただし23の場合だけちょっと工夫してTLEを回避する必要がある。
+24以上は鳩の巣原理から最大値sが0になるので考えなくて良い。24以下は全探索できる。ただし23の場合だけちょっと工夫してTLEを回避する必要がある。
 ## [B - GCDロボット](http://ddcc2017-final.contest.atcoder.jp/tasks/ddcc2017_final_b) GCDのLCMとるやつ
 いろいろ考えるとgcdのlcmをとる問題になる
 ## [E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip](http://arc061.contest.atcoder.jp/tasks/arc061_c) 頂点を増やしてダイクストラ
@@ -311,10 +305,7 @@ i個目のクエリを$t_i$にチェックしたとする。
 ## [B - Contiguous Repainting](http://agc008.contest.atcoder.jp/tasks/agc008_b)
 列に対する操作は逆から見ていくといいことが多い
 ## [D - 切り分けできるかな？](http://arc013.contest.atcoder.jp/tasks/arc013_4) 二部グラフの最大マッチング
-普通に考えると候補となる分銅の種類x2の鉄塊が必要。  
-しかし、ある分銅がX,YにわけられるならXとYはひとつの鉄塊で作れる。  
-よってX->Y,Y->Xに辺を貼って二部グラフの最大マッチングを求めると、  
-マッチング数分だけ節約できる。
+普通に考えると候補となる分銅の種類x2の鉄塊が必要。しかし、ある分銅がX,YにわけられるならXとYはひとつの鉄塊で作れる。よってX->Y,Y->Xに辺を貼って二部グラフの最大マッチングを求めると、マッチング数分だけ節約できる。
 ## [E - Grouping](http://arc067.contest.atcoder.jp/) 1/Nテクニック
 愚直に考えるとO($N^3$)だが、$\sum_{i=1}^N \frac{1}{i} = N log N$なので全体として$O(N\log N)$
 ## [C - 3 Steps](http://code-festival-2017-qualb.contest.atcoder.jp/tasks/code_festival_2017_qualb_c)　二部グラフ判定
@@ -327,7 +318,7 @@ i個目のクエリを$t_i$にチェックしたとする。
 ## [C. Points, Lines and Ready-made Titles](http://codeforces.com/contest/871/problem/C) x座標y座標を頂点、交点をエッジと見るやつ
 グリッド系問題における、交点をエッジに変換する発想
 
-## [C - 部門分け](http://arc056.contest.atcoder.jp/tasks/arc056_c)　3^n系DP
+## [C - 部門分け](http://arc056.contest.atcoder.jp/tasks/arc056_c)　$3^n$系DP
 DP[S(=2^Nの部分集合)]=Sを分割して得られる信頼度の最大値、とする。  
 このとき各Sについて部分集合Tを列挙する操作を行うと$O(2^N \cdot 2^N)$になると思いがち。  
 しかし実際には$2^N$を３つの集合(T,S-T,U-S)に分割しているので$O(3^N)$になる。  
@@ -485,6 +476,20 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 ## Post の対応問題(決定不能)
 [入力] $\{0,1\}$ の列たち $a_1, ..., a_r, b_1, ..., b_{r}$  
 [出力] $a_{i_1},a_{i_2}...a_{i_k} = b_{j_1},b_{j_2}...b_{j_k}$ となるような $i_1,i_2, ..., i_k (k > 0)$ は存在するか？ (${i},{j}$ は同じ値を複数回含んでもよい)  
+
+# 未解決問題
+## 600点
+- [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
+- [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
+- [C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
+- [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
+## 400点
+- [D - Insertion](https://beta.atcoder.jp/contests/abc064/tasks/abc064_d)
+- [B - Median Pyramid Easy](https://beta.atcoder.jp/contests/agc006/tasks/agc006_b)
+- [D - いろはちゃんとマス目 / Iroha and a Grid](https://beta.atcoder.jp/contests/abc042/tasks/arc058_b)
+- [D - アンバランス / Unbalanced](https://beta.atcoder.jp/contests/arc059/tasks/arc059_b)
+- [D - Card Eater](https://beta.atcoder.jp/contests/arc068/tasks/arc068_b)
+- [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # これから勉強したいアルゴリズム・定理
 
