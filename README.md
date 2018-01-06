@@ -52,6 +52,10 @@
 ## 参考動画
 [https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
 # 過去問の復習
+## [No.631 Noelちゃんと電車旅行](https://yukicoder.me/problems/no/631) segtree + 最初に待っても各駅で待っても同じ
+各駅で電車が来るまで待つのと駅1でまとめて待つのでは到着時間が変わらない。よって最初の駅でまとめて待つことにする。このとき駅1以外で待つことはないので待つ時間を$d$とすると駅$i$につくのは時刻$d + 3(i-1)$である。駅$i$の始発を$T_i'$とするとすべての$i$について$d + 3(i-1) \leq T_i'$なので$d \leq T_i' - 3(i-1)$である。よってすべてのクエリについて$T_i' - 3(i-1)$の最大値を求めれば良い。これは区間加算区間最大値のsegtree(Starry Sky Tree)でできる。
+## [No.630 門松グラフ](https://yukicoder.me/problems/no/630) 二部グラフ=奇サイクルが存在しない
+奇サイクルがあったら門松グラフにはできない。逆に奇サイクルがなかったら二部グラフなので頂点を赤と青に彩色していい感じに$a_i$を割り当てれば門松グラフになる。よって$N,M$に対して二部グラフを構成すれば良い。連結な二部グラフは$N-1\leq M \leq \frac{N(N-1)}{2}$の時に構成できる。$M = N - 1$の時グラフは木になり、$M = \frac{N(N-1)}{2}$の時グラフは密な二部グラフになる。  
 ## [D - 旅行会社高橋君](https://arc039.contest.atcoder.jp/tasks/arc039_d) 橋 + LCA
 グラフを二重連結成分を同一視して木に変換する。この時頂点$A,B,C$が条件を満たすのは変換後のグラフで$A\to B\to C$のパスが存在するかどうかと同値になる。これは$\text{dist}(A,B) + \text{dist}(B,C) = \text{dist}(A,C)$であるかどうかと同値であり、LCAで高速に$\text{dist}(x,y)$を求められるようにしておけば良い。
 ## [D - Restoring Road Network](https://beta.atcoder.jp/contests/abc074/tasks/arc083_b) Warshall–Floyd
