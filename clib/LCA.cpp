@@ -18,6 +18,17 @@ int depth[MAX_V];
 void lcaDfs(const Graph &g,int v,int p,int d){
     parent[0][v] = p;
     depth[v] = d;
+    for(int i=0;i<g[v].size();i++)
+        if(g[v][i].to != p)
+            dfs(g,g[v][i].to, v, d+1);
+}
+
+void init(const Graph &g,int root){
+    dfs(g,root,-1,0);
+
+    for(int k=0;k+1<MAX_LOG_V;k++)
+        for(int v=0;v<(int)g.size();v++){
+            if(parent[k][v]<0)
     for(int i=0;i<(int)g[v].size();i++)
         if(g[v][i].to != p){
             distData[0][g[v][i].to] = g[v][i].cost;
