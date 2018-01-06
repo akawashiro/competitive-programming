@@ -19,14 +19,14 @@ void dfs(const Graph &g,int v,int p,int d){
     depth[v] = d;
     for(int i=0;i<g[v].size();i++)
         if(g[v][i].to != p)
-            dfs(g[v][i].to, v, d+1);
+            dfs(g,g[v][i].to, v, d+1);
 }
 
-void init(int root){
-    dfs(root,-1,0);
+void init(const Graph &g,int root){
+    dfs(g,root,-1,0);
 
     for(int k=0;k+1<MAX_LOG_V;k++)
-        for(int v=0;v<N;v++){
+        for(int v=0;v<(int)g.size();v++){
             if(parent[k][v]<0)
                 parent[k+1][v]=-1;
             else
@@ -34,10 +34,10 @@ void init(int root){
         }
 }
 
-int lca(int u,int v){
+int lca(const Graph &g,int u,int v){
     if(depth[u]>depth[v])
         swap(u,v);
-    for(int k=0;k<N;k++)
+    for(int k=0;k<(int)g.size();k++)
         if((depth[v] - depth[u]) >> k & 1)
             v = parent[k][v];
     if(u == v)
