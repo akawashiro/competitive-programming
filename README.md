@@ -1,57 +1,29 @@
-# 解法が浮かばない時に試すことリスト
-## シュミレーション問題
-- 1ステップごとのシュミレーションの高速化
-  - データ構造
-- 複数ステップをまとめる
-  - 被ってる部分をまとめる
-  - ダブリング
-- ステップ回数を減らす
-  - ループの検出
-## Yes or No
-- 探索・DP
-  - 全部調べられる場合
-- 戦略決め打ち
-  - 貪欲
-- グラフ
-  - 到達可能性
-  - 最大マッチング
-- 最小・最大問題になっている
-## 最小・最大
-- 整数値・実数値
-  - 探索・DP
-  - 数学
-  - 貪欲
-  - データをソートして尺取り
-  - 二分探索
-  - グラフ
-    - とりあえずグラフにして最短経路/最小全域木/最大流/最小費用流
-  - 畳み込み
-  - 辞書順最小もこっち
-## 組み合わせの個数
-  - 全探索
-  - 数学(Combination/Permutation)
-  - 含除原理
-  - 最大・最小と組み合わせの個数
-    最大値とその組み合わせを記録するDP
-## 確率
-  - 全探索・メモ化
-  - とりあえずソートして貪欲
-  - 枝狩り
-  - 数学
-## 期待値
-  - 線形性
-  - 確率と平均値をもってDP
-## ゲームの勝敗判定(二人零和有限確定完全情報ゲーム)
-  - MinMax法
-  - Grundy法
-  - 必勝法で発見する
-## 答えのうち一つ(任意の解)
-  - 全探索・枝狩り
-  - 決め打ち
-  - 最小問題を解いて復元
-## 参考動画
-[https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
+# 未解決問題
+## 600点
+- [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
+- [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
+- [C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
+- [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
+## 500点
+- [D - IntegerotS](https://beta.atcoder.jp/contests/tenka1-2017/tasks/tenka1_2017_d)
+- [D - 井井井 / ###](https://beta.atcoder.jp/contests/abc058/tasks/arc071_b)
+## 400点
+- [D - Insertion](https://beta.atcoder.jp/contests/abc064/tasks/abc064_d)
+- [B - Median Pyramid Easy](https://beta.atcoder.jp/contests/agc006/tasks/agc006_b)
+- [D - いろはちゃんとマス目 / Iroha and a Grid](https://beta.atcoder.jp/contests/abc042/tasks/arc058_b)
+- [D - アンバランス / Unbalanced](https://beta.atcoder.jp/contests/arc059/tasks/arc059_b)
+- [D - Card Eater](https://beta.atcoder.jp/contests/arc068/tasks/arc068_b)
+- [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
+
 # 過去問の復習
+## [B - Reverse and Compare](https://beta.atcoder.jp/contests/agc019/tasks/agc019_b) 回文の性質
+$A_i = A_j$なら$A_i,...,A_j$を反転した文字列は$A_{i+1},...,A_{j-1}$を反転した文字列と同一なので、答えは$i<j \text{and} A_i \neq A_j$となる$i,j$の組の数になる。否定をとるとこれは簡単に数えることができる。$i<j \text{and} A_i = A_j$となる$i,j$の組の数を数える。$A_1,...,A_n$のなかに文字$c$が$S[n][c]$個存在したとする。$i$を固定すると条件を満たす$j$は$S[n][A_i] - S[i+1][A_i]$となる。これの$i$に関する和を$N(N-1)/2$から引けば良い。
+## [B - Inscribed Bicycle](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_b) 二部探索
+半径$x$の円が書けるかどうか判定する。半径$x$の円の中心が存在する範囲はは元の三角形と相似であり、その三角形は内接円の半径を$r$とすると相似比$1-x/r$である。よって$x < (1-x/r)\max(a,b,c)$で判定できる。あとはこれを使って二分探索。
+## [B - Hamiltonish Path](https://beta.atcoder.jp/contests/agc013/tasks/agc013_b)
+条件を満たすまでパスの端点を伸ばせば良い
+## [D - Wide Flip](https://beta.atcoder.jp/contests/arc088/tasks/arc088_b)
+$M$個0or1が連続している区間があったとする。このとき$M+1$個0が連続している区間をつくることができる。このように$M+1,M+2,...,N$が作れるので、答えはもっとも大きい$M$について$M+1$。
 ## [B - Palindrome-phobia](https://beta.atcoder.jp/contests/cf17-final-open/tasks/cf17_final_b) 回文
 二文字か三文字の回文が出てこなければ良い。つまり同一文字は常に2文字以上離れていなければならない。これは'a','b','c'の出現頻度の差が1以下のとき実現できる。
 ## [D - ハシポン](https://tenka1-2015-quala.contest.atcoder.jp/tasks/tenka1_2015_qualA_d) 橋
@@ -174,17 +146,11 @@ Xの範囲が大きい場合は座標圧縮が必要。
 部分木のサイズを持つ平衡二分木でも良さそう。
 ## [B - 駐車場](https://beta.atcoder.jp/contests/arc056/tasks/arc056_b) 操作を逆順で考える
 ### UnionFind
-操作を逆順で考えるとk番目の人が駐車するとき1~k-1は埋まっている。  
-よってk番目の人が駐車するときに使える辺はx-y(k<=x,k<=y)のものだけ。  
-これを用いてUnionFindで判定する。
+操作を逆順で考えるとk番目の人が駐車するとき1~k-1は埋まっている。よってk番目の人が駐車するときに使える辺はx-y(k<=x,k<=y)のものだけ。これを用いてUnionFindで判定する。
 ### ダイクストラ
-パスのコストを通った頂点のうち最も大きい頂点の番号と定義する。  
-このとき頂点iに来れるかどうかはi<=cost(S-i)で判定できる。  
-各頂点へのコストはダイクストラで求められる。
+パスのコストを通った頂点のうち最も大きい頂点の番号と定義する。このとき頂点iに来れるかどうかはi<=cost(S-i)で判定できる。各頂点へのコストはダイクストラで求められる。
 ## [D - FT Robot](https://beta.atcoder.jp/contests/arc087/tasks/arc087_b) x軸とy軸を分けて考える
-x軸方向の移動とy_軸方向の移動に分けることができる。  
-各軸についてナップサック問題を解くと到達できるかどうか判定できる。  
-直前に回転が無い最初の前進だけは方向が選べないので注意。
+x軸方向の移動とy_軸方向の移動に分けることができる。各軸についてナップサック問題を解くと到達できるかどうか判定できる。直前に回転が無い最初の前進だけは方向が選べないので注意。
 ## [D - No Need](https://beta.atcoder.jp/contests/abc056/tasks/arc070_b) 単調性を生かして二部探索&内部でDPする二分探索
 まず$a_i \leq a_j$のとき、$a_i$が必要ならば$a_j$も必要である。つまり単調性が成り立つ。  この性質を用いると二分探索ができる。$a_i$が必要かどうかは和が$S$であって、$K \leq a_i+S \leq K+a_i$となる部分集合が存在するかどうかを判定すればよい。これはナップサック問題である。一回のナップサック問題を解くのに$O(NK)$かかるので全体として$O(NK\log N)$かかる。
 ## [C - だれじゃ](https://beta.atcoder.jp/contests/arc024/tasks/arc024_3) ヒストグラム
@@ -479,19 +445,60 @@ Gの辺をk本だけ残した部分グラフで強連結なものは存在する
 [入力] $\{0,1\}$ の列たち $a_1, ..., a_r, b_1, ..., b_{r}$  
 [出力] $a_{i_1},a_{i_2}...a_{i_k} = b_{j_1},b_{j_2}...b_{j_k}$ となるような $i_1,i_2, ..., i_k (k > 0)$ は存在するか？ (${i},{j}$ は同じ値を複数回含んでもよい)  
 
-# 未解決問題
-## 600点
-- [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
-- [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
-- [C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
-- [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
-## 400点
-- [D - Insertion](https://beta.atcoder.jp/contests/abc064/tasks/abc064_d)
-- [B - Median Pyramid Easy](https://beta.atcoder.jp/contests/agc006/tasks/agc006_b)
-- [D - いろはちゃんとマス目 / Iroha and a Grid](https://beta.atcoder.jp/contests/abc042/tasks/arc058_b)
-- [D - アンバランス / Unbalanced](https://beta.atcoder.jp/contests/arc059/tasks/arc059_b)
-- [D - Card Eater](https://beta.atcoder.jp/contests/arc068/tasks/arc068_b)
-- [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
+# 解法が浮かばない時に試すことリスト
+## シュミレーション問題
+- 1ステップごとのシュミレーションの高速化
+  - データ構造
+- 複数ステップをまとめる
+  - 被ってる部分をまとめる
+  - ダブリング
+- ステップ回数を減らす
+  - ループの検出
+## Yes or No
+- 探索・DP
+  - 全部調べられる場合
+- 戦略決め打ち
+  - 貪欲
+- グラフ
+  - 到達可能性
+  - 最大マッチング
+- 最小・最大問題になっている
+## 最小・最大
+- 整数値・実数値
+  - 探索・DP
+  - 数学
+  - 貪欲
+  - データをソートして尺取り
+  - 二分探索
+  - グラフ
+    - とりあえずグラフにして最短経路/最小全域木/最大流/最小費用流
+  - 畳み込み
+  - 辞書順最小もこっち
+## 組み合わせの個数
+  - 全探索
+  - 数学(Combination/Permutation)
+  - 含除原理
+  - 最大・最小と組み合わせの個数
+    最大値とその組み合わせを記録するDP
+## 確率
+  - 全探索・メモ化
+  - とりあえずソートして貪欲
+  - 枝狩り
+  - 数学
+## 期待値
+  - 線形性
+  - 確率と平均値をもってDP
+## ゲームの勝敗判定(二人零和有限確定完全情報ゲーム)
+  - MinMax法
+  - Grundy法
+  - 必勝法で発見する
+## 答えのうち一つ(任意の解)
+  - 全探索・枝狩り
+  - 決め打ち
+  - 最小問題を解いて復元
+## 参考動画
+[https://www.youtube.com/watch?v=_Je4rukUcqE](ワンランク上に行くプロコン講座)
+
 
 # これから勉強したいアルゴリズム・定理
 
@@ -511,7 +518,7 @@ http://hamayanhamayan.hatenablog.jp/entry/2017/05/09/120253
 ## 最小シュタイナー木
 最小全域木の一般化版で指定された頂点を連結にする重み最小の木。
 
-## 関節点・橋
+## 関節点
 取り除くと連結成分の個数が増加するような頂点・辺のこと。
 
 ## 黄金分割法
