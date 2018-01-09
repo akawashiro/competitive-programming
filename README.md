@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [CF Hello 2018 D. Too Easy Problems](http://codeforces.com/contest/913/problem/D) 二分探索
+解ける問題の数$s$を固定する。こうすると$s \leq a_i$である$i$について$t_i$の小さい順にとけば良い
 ## [B - Reverse and Compare](https://beta.atcoder.jp/contests/agc019/tasks/agc019_b) 回文の性質
 $A_i = A_j$なら$A_i,...,A_j$を反転した文字列は$A_{i+1},...,A_{j-1}$を反転した文字列と同一なので、答えは$i<j \text{and} A_i \neq A_j$となる$i,j$の組の数になる。否定をとるとこれは簡単に数えることができる。$i<j \text{and} A_i = A_j$となる$i,j$の組の数を数える。$A_1,...,A_n$のなかに文字$c$が$S[n][c]$個存在したとする。$i$を固定すると条件を満たす$j$は$S[n][A_i] - S[i+1][A_i]$となる。これの$i$に関する和を$N(N-1)/2$から引けば良い。
 ## [B - Inscribed Bicycle](https://beta.atcoder.jp/contests/cf16-exhibition-final/tasks/cf16_exhibition_final_b) 二部探索
