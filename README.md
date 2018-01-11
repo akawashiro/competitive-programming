@@ -16,6 +16,12 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC084 D - Small Multiple](https://beta.atcoder.jp/contests/arc084/tasks/arc084_b) グラフを作れないか疑ってみる
+すべての整数は0から初めて
+- 1を足す
+- 10倍するという操作  
+
+で作ることができる。それぞれの操作で各桁の和は1増える/変わらない。これでは頂点数が無限になってしまうが、今回$\text{mod} K$で等しいものは同一視できるので頂点数は$K$になる。よってこれは01BFSまたはDijkstraで求めることができる。
 ## [CSA Min Swaps](https://csacademy.com/contest/archive/task/min-swaps/statement/) Greedy
 まず並び替えた後の数列はジグザグになってそうだということがわかる。$L_1,S_1,L_2,...,S_{N/2}$ or $S_1,L_1,...,S_{N/2},L_{N/2}$。ここで最終的に計算されるコストは$\sum_i^{N/2} 2L_i - \sum_i^{N/2} 2S_i - L_1 + S_{N/2}$ or $\sum_i^{N/2} 2L_i - \sum_i^{N/2} 2S_i - L_{N/2} + S_{1}$となる(この式を思いつけないのが痛い)。ここから$\{L_i\} = \{N/2+1,...,N\},\{S_i\} = \{1,...,N/2\}$であることがわかる。$L_1 = N/2+1,S_{N/2} = N/2$ or $L_{N/2} = N/2+1,S_{1} = N/2$は確定。他はどうでもいいのでできるだけ元の順列に近い形で並び替える。
 ## [CSA Amusement Park](https://csacademy.com/contest/archive/task/amusement-park/statement/) DP
