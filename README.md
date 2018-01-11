@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [コドフェス2017予選C D - Yet Another Palindrome Partitioning](https://beta.atcoder.jp/contests/code-festival-2017-qualc/tasks/code_festival_2017_qualc_d) 回文の性質 + segtree
+
 ## [ARC084 D - Small Multiple](https://beta.atcoder.jp/contests/arc084/tasks/arc084_b) グラフを作れないか疑ってみる
 すべての整数は0から初めて
 - 1を足す
