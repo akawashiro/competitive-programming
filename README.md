@@ -16,9 +16,11 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
-## [コドフェス2014予選B D - 登山家](https://beta.atcoder.jp/contests/code-festival-2014-qualb/tasks/code_festival_qualB_d)
+## [コドフェス2014予選B D - 登山家](https://beta.atcoder.jp/contests/code-festival-2014-qualb/tasks/code_festival_qualB_d) 二分探索,stackの利用
 ### 二分探索
 部分点解法を考える。山小屋$i$から見える最も右の山小屋を求める。左側は同様にできる。求めたい山小屋の番号$j$は$w_i = \{j|i<j \wedge h_i < h_{j+1}\}$の中で最小のものである。これを愚直に求めると$O(N)$かかり全体で$O(N^2)$となるため間に合わない。ここで最も標高の高い山小屋$i_1$から$j$を求めていくことを考える。最初$w_{i_1}$は$\phi$である。$i_1$を処理したあと$w_{i_2}$には$i_1$が入る。よって$w$をstd::setで管理すれば挿入、検索が$O(\log N)$で行えて全体として$O(N \log N)$になる。検索はstd::set::upper_boundで$i$より大きい元が求まり、upper_boundでも止まったiteratorをデクリメントすれば$i$より小さい元が求まる。
+### stackの利用
+stackを用意する。山小屋$i$から見える最も右の山小屋を求める。これは東から順番にh[i] > h[stackの先頭]である限りstackをpopする。このあとのstackのtopが最も右の山小屋になる。山小屋$i$から見た単調増加部分列を求めるイメージ。増加部分列を求めるのにstackは使える。
 ## [コドフェス2014予選B C - 錬金術士](https://beta.atcoder.jp/contests/code-festival-2014-qualb/tasks/code_festival_qualB_c) ヒストグラム
 まず$S_3$は並び替えられるので文字列をヒストグラムとして扱って良い。$S_1$の中の文字$c$の数を$N_{1,c}$、$S_2$の中の文字$c$の数を$N_{2,c}$、$S_3$の中の文字$c$の数を$N_{3,c}$とする。このとき$N_{1,c} + N_{2,c} \geq N_{3,c}$は必要条件。$S_1$から取ってくる$c$の文字数$n_{1,c}$は$N_{3,c} - N_{2,c} \leq n_{1,c} \leq N_{1,c}$、$n_{2,c}$は$N_{3,c} - N_{1,c} \leq n_{2,c} \leq N_{2,c}$を満たす。これらの範囲をAからZまでのすべての文字について足し算してその範囲が$N$を含むかどうか確かめれば良い。
 ## [コドフェス2017予選C D - Yet Another Palindrome Partitioning](https://beta.atcoder.jp/contests/code-festival-2017-qualc/tasks/code_festival_2017_qualc_d) 回文の性質をつかったDPの高速化
