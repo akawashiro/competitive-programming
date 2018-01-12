@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [コドフェス2014予選B C - 錬金術士](https://beta.atcoder.jp/contests/code-festival-2014-qualb/tasks/code_festival_qualB_c) ヒストグラム
+まず$S_3$は並び替えられるので文字列をヒストグラムとして扱って良い。$S_1$の中の文字$c$の数を$N_{1,c}$、$S_2$の中の文字$c$の数を$N_{2,c}$、$S_3$の中の文字$c$の数を$N_{3,c}$とする。このとき$N_{1,c} + N_{2,c} \geq N_{3,c}$は必要条件。$S_1$から取ってくる$c$の文字数$n_{1,c}$は$N_{3,c} - N_{2,c} \leq n_{1,c} \leq N_{1,c}$、$n_{2,c}$は$N_{3,c} - N_{1,c} \leq n_{2,c} \leq N_{2,c}$を満たす。これらの範囲をAからZまでのすべての文字について足し算してその範囲が$N$を含むかどうか確かめれば良い。
 ## [コドフェス2017予選C D - Yet Another Palindrome Partitioning](https://beta.atcoder.jp/contests/code-festival-2017-qualc/tasks/code_festival_2017_qualc_d) 回文の性質をつかったDPの高速化
 とりあえずDPを立式して高速化してみる?
 $S[c][i] = s[0:i)$の$c$の個数とすると、$s[i,j)$が回文である条件は「$S[c][j]-S[c][i]$がすべての$c$について偶数、またはひとつの$c$についてのみ奇数」となる。この条件には偶数と奇数しか出てこないので$S[c][i]$の値としては偶奇だけを持っておけば良い。さらに$S['a'][i],S['b'][i],...,S['z'][i]$をビット列でまとめて表現して$S[i]$とする。このとき上記の条件は「$S[j]\oplus S[i]$が0または2のべき乗」となる。この条件を用いてDPする。$DP[i]=s[i:)$の最大の分割の数とする。$DP[i]=1 + max(DP[j])$(ただし$s[i,j)$は回文)で計算できる。ただしこれでは$O(|S|^2)$で間に合わない。$S[i]\oplus x$が条件を満たす$x$を列挙する。このような$x$は27通りしかない。よって$x \to DP[i]$(ただし$S[i]=x$)のmapを持っておけばDPが高速化できる。
