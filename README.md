@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [第4回ドワコン予選 E - ニワンゴくんの家探し](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_e) 重心分解
+重心分解して重心に近い２つで聞くのが良い。直径でやるのはアカン…。
 ## [第4回ドワコン予選 D - ディスクの節約](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_d) ビットDP
 DP[$s$] = $s$の実行結果が書き込まれている状態を作り出すのに必要なディスクの容量。DP[0] = 0。遷移は$s$に含まれないタスク$i$をひとつ選んで実行し、$s$から$i$の実行に必要なタスクを消す。最小値を求める配るDPなのでダイクストラでやる。DP[1]が答え。$N < 20$なのでビットDPを疑うべき。
 ## [コドフェス2017予選B D - 101 to 010](https://beta.atcoder.jp/contests/code-festival-2017-qualb/tasks/code_festival_2017_qualb_d) DP + 文字列に対する考察

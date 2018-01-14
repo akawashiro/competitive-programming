@@ -1,24 +1,23 @@
 const int MAXN = 10010;
 const int INF = 1e9;
 
-struct Edge {
-    int to,cost;
+struct Edge{
+        int to,cost;
 };
-vector<Edge> G[MAXN];
+bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
+typedef vector<vector<Edge>> Graph;
 
-void addEdge(int from,int to,int cost)
-{
-    G[from].push_back((Edge){to,cost});
+void addEdge(Graph &g,int from,int to,int cost){
+    g[from].push_back((Edge){to,cost});
 }
 
-int N, K;
 // 重心として使われてるかのフラグ
 bool centroid[MAXN];
 // 部分木のサイズ
 int subSize[MAXN];
 
 // 部分木のサイズを計算する
-int getSubSize(int v, int p) {
+int getSubSize(const Graph &G,int v, int p) {
     int& ret = subSize[v];
     ret = 1;
     for (int i = 0; i < G[v].size(); i++) {
@@ -31,7 +30,7 @@ int getSubSize(int v, int p) {
 
 // 重心となる頂点を探す
 // first: 最大サイズ second: 対応する頂点
-pair<int,int> getCentroid(int v, int p, int t) {
+pair<int,int> getCentroid(const Graph &G,int v, int p, int t) {
     pair<int,int> ret(INF, -1);
     int sum = 1, m = 0;
     for (int i = 0; i < G[v].size(); i++) {
