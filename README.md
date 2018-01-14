@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [第4回ドワコン予選 D - ディスクの節約](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_d) ビットDP
+DP[$s$] = $s$の実行結果が書き込まれている状態を作り出すのに必要なディスクの容量。DP[0] = 0。遷移は$s$に含まれないタスク$i$をひとつ選んで実行し、$s$から$i$の実行に必要なタスクを消す。最小値を求める配るDPなのでダイクストラでやる。DP[1]が答え。$N < 20$なのでビットDPを疑うべき。
 ## [コドフェス2017予選B D - 101 to 010](https://beta.atcoder.jp/contests/code-festival-2017-qualb/tasks/code_festival_2017_qualb_d) DP + 文字列に対する考察
 トークンを削除できるのは1111,...,1101or101111,...,111の形の時だけである。$\text{DP}[i]=s[i:)$から削除できるトークンの数。このとき$\text{DP}[i]=\max(\text{token}(s[i,j)) + \text{DP}[j]|\forall j(i<j))$となる。このままだと$O(|s|^2)$で間に合わない。ここで$j$の候補として11,...,11←ここ01か11,...,110ここ→1しかないことを考えると$O(N)$になる。とりあえずDPの式にしてみるというのは有効。
 ## [コドフェス2014予選B D - 登山家](https://beta.atcoder.jp/contests/code-festival-2014-qualb/tasks/code_festival_qualB_d) 二分探索,stackの利用
