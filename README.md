@@ -17,7 +17,7 @@
 
 # 過去問の復習
 ## [AGC020 C - Median Sum](https://agc020.contest.atcoder.jp/tasks/agc020_c) DP(部分和問題) + bitset
-$D = \sum_i^N A_i$とする。このとき$S_i$の部分和で$s$が作れるなら部分集合の有無を反転することで$D-s$も作れる。$s \leq D-s$とすると$s \leq D/2 \leq D-s$なので、部分和で作れるものの半分は$D/2$以下であり、後の半分は$D/2$以上である。よって部分和で作れる$s$のうち$D/2$以上で最も小さいものが答えになる。これは01ナップサック問題(部分和問題)であり$O(ND)$かかる。これを高速化することを考える。$\text{DP}[i][j] = $を$A_1$から$A_i$までを使って$j$が作れるか?とする。このとき$\text{DP}[i][j+A[i]] |= \text{DP}[i][j];\text{DP}[i][j] |= \text{DP}[i][j];$であるが、$\text{DP}[i] = A_i$までを使って作れる部分和の集合(をbitsetでもったもの)とすると$\text{DP}[i] = 2^A_i \text{DP}[i] \text{or} \text{DP}[i]$となる。bitsetを使うことで少なくとも64bitずつまとめて計算されるので$$O(ND/64)$となり間に合う。
+$D = \sum_i^N A_i$とする。このとき$A_i$の部分和で$s$が作れるなら部分集合の有無を反転することで$D-s$も作れる。$s \leq D-s$とすると$s \leq D/2 \leq D-s$なので、部分和で作れるものの半分は$D/2$以下であり、後の半分は$D/2$以上である。よって部分和で作れる$s$のうち$D/2$以上で最も小さいものが答えになる。これは01ナップサック問題(部分和問題)であり$O(ND)$かかる。これを高速化することを考える。$\text{DP}[i][j] = $を$A_1$から$A_i$までを使って$j$が作れるか?とする。このとき$\text{DP}[i][j+A[i]] |= \text{DP}[i][j];\text{DP}[i][j] |= \text{DP}[i][j];$であるが、$\text{DP}[i] = A_i$までを使って作れる部分和の集合(をbitsetでもったもの)とすると$\text{DP}[i] = 2^A_i \text{DP}[i] \text{or} \text{DP}[i]$となる。bitsetを使うことで少なくとも64bitずつまとめて計算されるので$O(ND/64)$となり間に合う。
 ## [第4回ドワコン予選 E - ニワンゴくんの家探し](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_e) 重心分解
 重心分解して重心に近い２つで聞くのが良い。直径でやるのはアカン…。
 ## [第4回ドワコン予選 D - ディスクの節約](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_d) ビットDP
