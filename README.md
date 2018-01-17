@@ -19,7 +19,7 @@
 ## [第4回ドワコン予選 C - Kill/Death](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_c) DP + 写像12相
 基本的には$\text{DP}[i][j] = i$番目までに$j$個配る場合の数で良い。しかしkill数が同じプレイヤーがいた時はそのプレイヤーのdeath数は昇順になっていないといけない。これはkill数が同じプレイヤーをまとめてdeath数を配れば良い。これは[写像12相](https://mathtrain.jp/twelveway)のうちのn個の玉をk個の箱に0個以上づつ配るケースに該当し、分割数を計算することで求められる。
 ## [ARC081 F - Flip and Rectangles](https://beta.atcoder.jp/contests/arc081/tasks/arc081_d) XORを取ってみる + stackで長方形の面積を求めるやつ
-$i$行を上端とする長方形を考える。$i$行は全部黒なので$i$行を反転させるかどうかを決めればどの列を反転させるかが決まる。列を反転させるかどうかを決めれば隣接する列とのXORがわかる。このXORは事前計算しておけば$O(1)$でわかる。XORの$i$行目以降で一番初めに1になったところを求めて、stackで長方形の面積を求めるやつをやる。$O(HW\log H)$
+$i$行を上端とする長方形を考える。$i$行は全部黒なので$i$行を反転させるかどうかを決めればどの列を反転させるかが決まる。列を反転させるかどうかを決めれば隣接する列とのXORがわかる。このXORは事前計算しておけば$O(1)$でわかる。XORの$i$行目以降で一番初めに1になったところを求めて、stackで長方形の面積を求めるやつをやる。stackの中身が常に単調増加する感じにしておく。$O(HW\log H)$。
 ## [ABC014 C - Closed Rooms](https://beta.atcoder.jp/contests/agc014/tasks/agc014_c) BFS
 最初に'.'の部屋だけでBFSする。その後は任意の部屋を$K$個開ける、距離$K$だけBFSするというのを繰り返せばいい。
 ## [AGC020 C - Median Sum](https://agc020.contest.atcoder.jp/tasks/agc020_c) DP(部分和問題) + bitset
