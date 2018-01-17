@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [第4回ドワコン予選 C - Kill/Death](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_c) DP + 写像12相
+基本的には$\text{DP}[i][j] = i$番目までに$j$個配る場合の数で良い。しかしkill数が同じプレイヤーがいた時はそのプレイヤーのdeath数は昇順になっていないといけない。これはkill数が同じプレイヤーをまとめてdeath数を配れば良い。これは[写像12相](https://mathtrain.jp/twelveway)のうちのn個の玉をk個の箱に0個以上づつ配るケースに該当し、分割数を計算することで求められる。
 ## [ARC081 F - Flip and Rectangles](https://beta.atcoder.jp/contests/arc081/tasks/arc081_d) XORを取ってみる + stackで長方形の面積を求めるやつ
 $i$行を上端とする長方形を考える。$i$行は全部黒なので$i$行を反転させるかどうかを決めればどの列を反転させるかが決まる。列を反転させるかどうかを決めれば隣接する列とのXORがわかる。このXORは事前計算しておけば$O(1)$でわかる。XORの$i$行目以降で一番初めに1になったところを求めて、stackで長方形の面積を求めるやつをやる。$O(HW\log H)$
 ## [ABC014 C - Closed Rooms](https://beta.atcoder.jp/contests/agc014/tasks/agc014_c) BFS
