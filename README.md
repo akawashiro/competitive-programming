@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC081 F - Flip and Rectangles](https://beta.atcoder.jp/contests/arc081/tasks/arc081_d) XORを取ってみる + stackで長方形の面積を求めるやつ
+$i$行を上端とする長方形を考える。$i$行は全部黒なので$i$行を反転させるかどうかを決めればどの列を反転させるかが決まる。列を反転させるかどうかを決めれば隣接する列とのXORがわかる。このXORは事前計算しておけば$O(1)$でわかる。XORの$i$行目以降で一番初めに1になったところを求めて、stackで長方形の面積を求めるやつをやる。$O(HW\log H)$
 ## [ABC014 C - Closed Rooms](https://beta.atcoder.jp/contests/agc014/tasks/agc014_c) BFS
 最初に'.'の部屋だけでBFSする。その後は任意の部屋を$K$個開ける、距離$K$だけBFSするというのを繰り返せばいい。
 ## [AGC020 C - Median Sum](https://agc020.contest.atcoder.jp/tasks/agc020_c) DP(部分和問題) + bitset
