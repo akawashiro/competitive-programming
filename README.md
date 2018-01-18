@@ -16,6 +16,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC073 E: Ball Coloring](https://beta.atcoder.jp/contests/arc073/tasks/arc073_c)
+まず最大値を$\text{MAX}$、最小値を$\text{MIN}$とする。青と赤を入れ替えても一般性を失わない。$R_{\text{MAX}} = \text{MAX},R_{\text{MIN}} = \text{MIN}$のときは$B_{\text{MAX}} - B_{\text{MIN}}$をできるだけ小さくしたい。これは、最初全ての袋について小さい方のボールを選んだと仮定し、それをそのなかで小さい順に並べ、順番に、そのボールを袋のもう一つのボールと交換する、ということを行えば良いです。$R_{\text{MAX}} = \text{MAX},B_{\text{MIN}} = \text{MIN}$のときはそれぞれ大きい物を赤、小さいものを青で塗る。
 ## [AGC016 B - Colorful Hats](https://beta.atcoder.jp/contests/agc016/tasks/agc016_b) とりあえずソートしてみる + 実験
 とっかかりがつかめないのでとりあえずソートしてみる。$a_1 + 1 < a_N$はおかしい。なぜなら一人しか入れ替わっていないのに2色以上増えるはずがない。$a_1 = a_N$のときは全員の色が異なる($a_1 = N-1$)か、色的に孤立した人がいない($2a_1 \leq N$)ならOK。$a_1 + 1 = a_N$なら孤立した猫の数$x$が$x < a_N$かつ孤立してない猫の数$y$が$2(a_N - x)\leq y$ならOK。
 ## [第4回ドワコン予選 C - Kill/Death](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_c) DP + 写像12相
