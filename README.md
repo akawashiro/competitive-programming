@@ -1,4 +1,12 @@
 # 未解決問題
+## 700点
+- [C - Nuske vs Phantom Thnook](https://beta.atcoder.jp/contests/agc015/tasks/agc015_c)
+- [C - +/- Rectangle](https://beta.atcoder.jp/contests/agc016/tasks/agc016_c)
+- [E - ConvexScore](https://beta.atcoder.jp/contests/arc082/tasks/arc082_c)
+- [F - Sandglass](https://beta.atcoder.jp/contests/arc082/tasks/arc082_d)
+- [D - Four Coloring](https://beta.atcoder.jp/contests/code-festival-2017-quala/tasks/code_festival_2017_quala_d)
+- [D - 101 to 010](https://beta.atcoder.jp/contests/code-festival-2017-qualb/tasks/code_festival_2017_qualb_d)
+- [E - Prefix-free Game](https://beta.atcoder.jp/contests/arc087/tasks/arc087_c)
 ## 600点
 - [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
 - [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
