@@ -2,7 +2,7 @@ template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
   int n;
-  static enable_if_t<IsPrime, ll> inv(ll a, ll p) {
+  static ll inv(ll a, ll p) {
     return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p);
   }
 public:
@@ -31,10 +31,10 @@ public:
     Modulo res = (a * a) ^ (n / 2);
     return n % 2 ? res * a : res;
   }
-  enable_if_t<IsPrime, Modulo> operator/(const Modulo &a) const {
+  Modulo operator/(const Modulo &a) const {
     return *this * inv(ll(a), M);
   }
-  enable_if_t<IsPrime, Modulo> operator/=(const Modulo &a) {
+  Modulo operator/=(const Modulo &a) {
     return *this *= inv(ll(a), M);
   }
 };
@@ -46,6 +46,7 @@ int abs(Modulo<M, IsPrime> x) { return int(x); }
 
 const int mod = 1000000007;
 
+// swがtrueなら逆数が返ってくる
 template<int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
   static vector<Modulo<M, true>> v1 = {1}, v2 = {1};
   if (n >= (int)v1.size()) {

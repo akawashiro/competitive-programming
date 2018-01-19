@@ -24,6 +24,14 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [POJ2348 Euclid's Game](http://poj.org/problem?id=2348) 1か2以上かが大違い
+数$a,b (a<b)$が与えられた時
+- case 1:$b\%a=0$なら勝ち
+- case 2:$b\%a\neq0$のとき、$(b\%a,a)$がcase 1だったとする。このとき$b/a=1$なら負け、$1<b/a$なら勝ち。
+
+よってより早く$1<b/a$の状況に辿りつけた人の勝ち。
+## [POJ2484 A Funny Game](http://poj.org/problem?id=2484) 対象な状況を作る
+場に長さ$m$の鎖が２つあった時を考える。このときAliceの番ならAliceは負である。なぜならBobはAliceと同じ行為を行うことによって対象な状況を維持できる。よって$2<n$なら必ずAliceが負ける。
 ## [ARC073 E: Ball Coloring](https://beta.atcoder.jp/contests/arc073/tasks/arc073_c)
 まず最大値を$\text{MAX}$、最小値を$\text{MIN}$とする。青と赤を入れ替えても一般性を失わない。$R_{\text{MAX}} = \text{MAX},R_{\text{MIN}} = \text{MIN}$のときは$B_{\text{MAX}} - B_{\text{MIN}}$をできるだけ小さくしたい。これは、最初全ての袋について小さい方のボールを選んだと仮定し、それをそのなかで小さい順に並べ、順番に、そのボールを袋のもう一つのボールと交換する、ということを行えば良いです。$R_{\text{MAX}} = \text{MAX},B_{\text{MIN}} = \text{MIN}$のときはそれぞれ大きい物を赤、小さいものを青で塗る。
 ## [AGC016 B - Colorful Hats](https://beta.atcoder.jp/contests/agc016/tasks/agc016_b) とりあえずソートしてみる + 実験
