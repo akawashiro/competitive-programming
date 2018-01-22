@@ -23,6 +23,8 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC089 D - Checker](https://beta.atcoder.jp/contests/arc089/tasks/arc089_b) 2次元累積和
+まず普通に考えると盤面が大きすぎる。しかし$(x_i,y_i)$に白/黒色を塗るのと$(x_i-2K,y_i-2K)$に白/黒色を塗るのは同値。よって$2K\times 2K$の盤面を考えて$(x_i\% 2K,y_i\% 2K)$に色を塗れば良い。盤面の左下を$2K\times 2K$の範囲で動かして正しく色を塗れた点の数を数える。点を数えるのは2次元累積和を使う。解説では条件を満たす左下の範囲に1を足していって左下の最大値を取る。$\{(x,y) | x\in [x_1,x_2], y \in [y_1,y_2]\}$に1を足すには$(x_1,y_1),(x_2,y_2)$に1を足し、$(x_2,y_1),(x_1,y_2)$に-1を足す。その後$x$方向に累積和を取り、$y$方向に累積和を取れば良い。
 ## [AGC018 B - Sports Festival](https://beta.atcoder.jp/contests/agc018/tasks/agc018_b) シュミレーション + 単調性の発見 + ボトルネック改善
 とりあえず全スポーツ開催することにする。このとき最も多くの人が参加するスポーツを除く。そして最大参加人数を数える。これを繰り返す。
 ## [POJ2348 Euclid's Game](http://poj.org/problem?id=2348) 1か2以上かが大違い
