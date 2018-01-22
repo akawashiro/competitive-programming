@@ -1,4 +1,12 @@
 # 未解決問題
+## 700点
+- [C - Nuske vs Phantom Thnook](https://beta.atcoder.jp/contests/agc015/tasks/agc015_c)
+- [C - +/- Rectangle](https://beta.atcoder.jp/contests/agc016/tasks/agc016_c)
+- [E - ConvexScore](https://beta.atcoder.jp/contests/arc082/tasks/arc082_c)
+- [F - Sandglass](https://beta.atcoder.jp/contests/arc082/tasks/arc082_d)
+- [D - Four Coloring](https://beta.atcoder.jp/contests/code-festival-2017-quala/tasks/code_festival_2017_quala_d)
+- [D - 101 to 010](https://beta.atcoder.jp/contests/code-festival-2017-qualb/tasks/code_festival_2017_qualb_d)
+- [E - Prefix-free Game](https://beta.atcoder.jp/contests/arc087/tasks/arc087_c)
 ## 600点
 - [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
 - [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
@@ -18,6 +26,18 @@
 # 過去問の復習
 ## [AGC018 B - Sports Festival](https://beta.atcoder.jp/contests/agc018/tasks/agc018_b) シュミレーション + 単調性の発見 + ボトルネック改善
 とりあえず全スポーツ開催することにする。このとき最も多くの人が参加するスポーツを除く。そして最大参加人数を数える。これを繰り返す。
+## [POJ2348 Euclid's Game](http://poj.org/problem?id=2348) 1か2以上かが大違い
+数$a,b (a<b)$が与えられた時
+- case 1:$b\%a=0$なら勝ち
+- case 2:$b\%a\neq0$のとき、$(b\%a,a)$がcase 1だったとする。このとき$b/a=1$なら負け、$1<b/a$なら勝ち。
+
+よってより早く$1<b/a$の状況に辿りつけた人の勝ち。
+## [POJ2484 A Funny Game](http://poj.org/problem?id=2484) 対象な状況を作る
+場に長さ$m$の鎖が２つあった時を考える。このときAliceの番ならAliceは負である。なぜならBobはAliceと同じ行為を行うことによって対象な状況を維持できる。よって$2<n$なら必ずAliceが負ける。
+## [ARC073 E: Ball Coloring](https://beta.atcoder.jp/contests/arc073/tasks/arc073_c)
+まず最大値を$\text{MAX}$、最小値を$\text{MIN}$とする。青と赤を入れ替えても一般性を失わない。$R_{\text{MAX}} = \text{MAX},R_{\text{MIN}} = \text{MIN}$のときは$B_{\text{MAX}} - B_{\text{MIN}}$をできるだけ小さくしたい。これは、最初全ての袋について小さい方のボールを選んだと仮定し、それをそのなかで小さい順に並べ、順番に、そのボールを袋のもう一つのボールと交換する、ということを行えば良いです。$R_{\text{MAX}} = \text{MAX},B_{\text{MIN}} = \text{MIN}$のときはそれぞれ大きい物を赤、小さいものを青で塗る。
+## [AGC016 B - Colorful Hats](https://beta.atcoder.jp/contests/agc016/tasks/agc016_b) とりあえずソートしてみる + 実験
+とっかかりがつかめないのでとりあえずソートしてみる。$a_1 + 1 < a_N$はおかしい。なぜなら一人しか入れ替わっていないのに2色以上増えるはずがない。$a_1 = a_N$のときは全員の色が異なる($a_1 = N-1$)か、色的に孤立した人がいない($2a_1 \leq N$)ならOK。$a_1 + 1 = a_N$なら孤立した猫の数$x$が$x < a_N$かつ孤立してない猫の数$y$が$2(a_N - x)\leq y$ならOK。
 ## [第4回ドワコン予選 C - Kill/Death](https://dwacon2018-prelims.contest.atcoder.jp/tasks/dwacon2018_prelims_c) DP + 写像12相
 基本的には$\text{DP}[i][j] = i$番目までに$j$個配る場合の数で良い。しかしkill数が同じプレイヤーがいた時はそのプレイヤーのdeath数は昇順になっていないといけない。これはkill数が同じプレイヤーをまとめてdeath数を配れば良い。これは[写像12相](https://mathtrain.jp/twelveway)のうちのn個の玉をk個の箱に0個以上づつ配るケースに該当し、分割数を計算することで求められる。
 ## [ARC081 F - Flip and Rectangles](https://beta.atcoder.jp/contests/arc081/tasks/arc081_d) XORを取ってみる + stackで長方形の面積を求めるやつ
