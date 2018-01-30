@@ -23,6 +23,11 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [サウコン C - 広告](https://beta.atcoder.jp/contests/soundhound2018/tasks/soundhound2018_c) 最大独立集合問題
+グリッドなので$(i,j)$について$i+j$の偶奇で分けると二部グラフになる。二部グラフ上で頂点を共有しない辺の集合であって大きさが最大のものを求める問題である。これは最大独立集合問題と呼ばれる。二部グラフ上の最大独立集合問題は最大流で求めることができる。
+- |最大マッチング(たがいに端点を共有しない)| + |最小辺カバー(すべての頂点がカバーされている)| = |V|
+- |最大安定集合(どの二点も隣接していない)| + |最小点カバー(すべての辺がカバーされている)| = |V|
+- グラフが二部グラフの時 |最大マッチング| = |最初点カバー|
 ## [ARC090 E - Avoiding Collision](https://beta.atcoder.jp/contests/arc090/tasks/arc090_c) 最短路DAG + パスの個数
 まず$S\to T$の最短路DAGを構築する。これは$S$からの全点最短距離$distS$と$T$からの最短距離$distT$を求める。また$S\to T$の最短距離を$dST$とする。このとき$distS[v] + distT[v] = dST$なら$v$は最短路DAGに含まれる。また$e=(u,v)$は$dist[u] + e.cost + dist[v] = dST$なら最短路DAGに含まれる。次に最短路DAG上で$S\to T$のパスの個数$P$を数える。高橋くんと青木くんのパスの選び方の総数は衝突するものも含めて$P^2$になる。最後に高橋くんと青木くんが衝突するパスの選び方を求める。まず頂点$v$で衝突するのは$distS[v]=dST/2$であるときに(($S\to v$のパスの個数)$\times$($v\to T$のパスの個数))$^2$である。次に辺$e=(u,v)$上で衝突するパターンは$distS[u]<dST/2<distS[v]$のときに (($S\to u$のパスの個数)$\times$($v\to T$のパスの個数))$^2$。これらを$P^2$から引く。引く数を二乗するのを忘れた。また点の場合と辺の場合を一緒に考えていた。
 ## [ARC074 F - Lotus Leaves](https://beta.atcoder.jp/contests/arc074/tasks/arc074_d) $x$軸と$y$軸を頂点と見る + 最大流
