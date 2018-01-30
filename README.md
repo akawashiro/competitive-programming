@@ -23,6 +23,9 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC090 D - People on a Line](https://beta.atcoder.jp/contests/arc090/tasks/arc090_b) マージテク
+- DFSで座標を決めていく
+- $(l,r,d)$というクエリに対して$l$と$r$をマージする。この時小さい方の集合の座標を変更して$u$と$v$の差が$d$になるようにする。$u$と$v$が同じ集合に属しているときはその差が$d$であることをチェックする。
 ## [サウコン C - 広告](https://beta.atcoder.jp/contests/soundhound2018/tasks/soundhound2018_c) 最大独立集合問題
 グリッドなので$(i,j)$について$i+j$の偶奇で分けると二部グラフになる。二部グラフ上で頂点を共有しない辺の集合であって大きさが最大のものを求める問題である。これは最大独立集合問題と呼ばれる。二部グラフ上の最大独立集合問題は最大流で求めることができる。
 - |最大マッチング(たがいに端点を共有しない)| + |最小辺カバー(すべての頂点がカバーされている)| = |V|
