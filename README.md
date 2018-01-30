@@ -23,6 +23,10 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+## [ARC090 E - Avoiding Collision](https://beta.atcoder.jp/contests/arc090/tasks/arc090_c) 最短路DAG + パスの個数
+まず$S\to T$の最短路DAGを構築する。これは$S$からの全点最短距離$distS$と$T$からの最短距離$distT$を求める。また$S\to T$の最短距離を$dST$とする。このとき$distS[v] + distT[v] = dST$なら$v$は最短路DAGに含まれる。また$e=(u,v)$は$dist[u] + e.cost + dist[v] = dST$なら最短路DAGに含まれる。次に最短路DAG上で$S\to T$のパスの個数$P$を数える。高橋くんと青木くんのパスの選び方の総数は衝突するものも含めて$P^2$になる。最後に高橋くんと青木くんが衝突するパスの選び方を求める。まず頂点$v$で衝突するのは$distS[v]=dST/2$であるときに(($S\to v$のパスの個数)$\times$($v\to T$のパスの個数))$^2$である。次に辺$e=(u,v)$上で衝突するパターンは$distS[u]<dST/2<distS[v]$のときに (($S\to u$のパスの個数)$\times$($v\to T$のパスの個数))$^2$。これらを$P^2$から引く。引く数を二乗するのを忘れた。また点の場合と辺の場合を一緒に考えていた。
+## [ARC074 F - Lotus Leaves](https://beta.atcoder.jp/contests/arc074/tasks/arc074_d) $x$軸と$y$軸を頂点と見る + 最大流
+$x$軸と$y$軸を頂点と見ると葉$(s,t)$は$s\to t,t \to s$の辺。よって最大流で解ける。
 ## [天一2016予選B C - 天下一プログラマーコンテスト1999](https://beta.atcoder.jp/contests/tenka1-2016-qualb/tasks/tenka1_2016_qualB_c) 独立に計算できる事象はまとめると簡単
 安藤君の結果で選手を並び替える。このとき$\textrm{DP}[i][j]=$橋本君の順位が$i$位から$N$位まで安藤君の順位と一致しており、$i-1$位の人が$j$勝している確率、とする。この時$\textrm{DP}[i][j]=\sum_{k=0}^{j-1 \text{or} j} DP[i+1][k] P(i,k)$で更新できる。$P(i,k)$は安藤君の順位で$i$の人が橋本君の結果で$k$勝する確率である。安藤君の順位で$a_i$勝していたとすると$l\ (0\le l \le a_i),m\ (0\le m\le N-1-a_i)$で$l$回勝ちの記録を間違えて、$m$回負けの記録を間違えた時の確率が計算できて$P(i,k)$が配るDPで計算できる。$O(N^3)$なので制約の間違いを疑ってしまった。
 ## [ARC089 D - Checker](https://beta.atcoder.jp/contests/arc089/tasks/arc089_b) 2次元累積和
