@@ -23,7 +23,6 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
-<<<<<<< HEAD
 - 蟻本p45 Best Cow Line
   反転して比較する発想
 - 蟻本p43 区間スケジューリング問題
@@ -31,10 +30,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
-=======
 ## [サウコン D - 建物](https://soundhound2018.contest.atcoder.jp/tasks/soundhound2018_d) DP($\forall$を一つ前の添字を使って$O(1)$で計算する)
 $\text{DP}[i][j] = (1,1)$から$(i,j)$に移動したときの利益の最大値とする。このとき$\text{DP}[i][j] = \max_{k\in [1,w]}(\text{DP}[i-1][k] + i\text{階で}k\to j\text{での利益}+$ $ i\text{階で}\min(k,j)\text{から左に往復することで得られる利益の最大値}+$ $i\text{階で}\max(k,j)\text{から右に往復することで得られる利益の最大値})$。$k<j$とすると左に往復するやつは$\text{DP}1[l]=P_{i,l}-2F_{i,l} + \max(0,\text{DP}1[l-1])$。右のやつは$\text{DP}2[l]=P_{i,l}-2F_{i,l} + \max(0,\text{DP}1[l+1])$で求まる。$\text{DP3}[l]=\max(\text{DP}[i-1][l],DP[i-1][l]+DP1[l-1],DP3[l-1]) + P_{i,l} - F_{i,l}$として$\text{DP}[i][j] = \max(0,\text{DP2}[j+1]) + \text{DP3}[j]$
->>>>>>> 4bcc59d021a8e5bd086628d0dff8f3ce8fdb7b1d
 ## [ARC090 D - People on a Line](https://beta.atcoder.jp/contests/arc090/tasks/arc090_b) マージテク
 - DFSで座標を決めていく
 - $(l,r,d)$というクエリに対して$l$と$r$をマージする。この時小さい方の集合の座標を変更して$u$と$v$の差が$d$になるようにする。$u$と$v$が同じ集合に属しているときはその差が$d$であることをチェックする。
