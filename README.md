@@ -41,6 +41,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [ARC049 B - 高橋ノルム君 ](https://beta.atcoder.jp/contests/arc049/tasks/arc049_b) 二分探索、長方形の重なる範囲
+最小の時間$t$について二分探索する。$t$を定めると$i$さんが$(x_i,y_i)$から動ける範囲は正方形の形になる。これを$1\le i \le N$について重ねあわせる。長方形同士の重なった範囲は長方形になるので簡単に求められる。
 ## [サウコン D - 建物](https://soundhound2018.contest.atcoder.jp/tasks/soundhound2018_d) DP($\forall$を一つ前の添字を使って$O(1)$で計算する)
 $\text{DP}[i][j] = (1,1)$から$(i,j)$に移動したときの利益の最大値とする。このとき$\text{DP}[i][j] = \max_{k\in [1,w]}(\text{DP}[i-1][k] + i\text{階で}k\to j\text{での利益}+$ $ i\text{階で}\min(k,j)\text{から左に往復することで得られる利益の最大値}+$ $i\text{階で}\max(k,j)\text{から右に往復することで得られる利益の最大値})$。$k<j$とすると左に往復するやつは$\text{DP}1[l]=P_{i,l}-2F_{i,l} + \max(0,\text{DP}1[l-1])$。右のやつは$\text{DP}2[l]=P_{i,l}-2F_{i,l} + \max(0,\text{DP}1[l+1])$で求まる。$\text{DP3}[l]=\max(\text{DP}[i-1][l],DP[i-1][l]+DP1[l-1],DP3[l-1]) + P_{i,l} - F_{i,l}$として$\text{DP}[i][j] = \max(0,\text{DP2}[j+1]) + \text{DP3}[j]$
 ## [ARC090 D - People on a Line](https://beta.atcoder.jp/contests/arc090/tasks/arc090_b) マージテク
