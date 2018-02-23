@@ -73,6 +73,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [AGC003 C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
+奇数番目と偶数番目を入れ替えらればあとはいいのでソートしてその数が奇数番になるか偶数番になるかを判定し、違っているものの数を数えればよい。
 ## [APC001 D - Forest](https://beta.atcoder.jp/contests/apc001/tasks/apc001_d)
 まず各連結成分からひとつは頂点を選ばないといけない。さらに全体で頂点は$2(N-M+1)$個必要である。この条件を見たすように最小重みで選べば良い。
 ## [ARC049 B - 高橋ノルム君 ](https://beta.atcoder.jp/contests/arc049/tasks/arc049_b) 二分探索、長方形の重なる範囲
