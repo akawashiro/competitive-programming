@@ -73,6 +73,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [E - 和風いろはちゃん / Iroha and Haiku](https://beta.atcoder.jp/contests/arc058/tasks/arc058_c) 補集合を考える
+補集合を考える。この場合は１つもXYZを１つも含まない数列を数えればよい。直前17個の数をメモ化すると$10^17$個必要。しかし和が17以上のものはメモ化しなくてよいのでそれらを省くと、$2^17$になる。
 ## [AGC003 C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
 奇数番目と偶数番目を入れ替えらればあとはいいのでソートしてその数が奇数番になるか偶数番になるかを判定し、違っているものの数を数えればよい。
 ## [APC001 D - Forest](https://beta.atcoder.jp/contests/apc001/tasks/apc001_d)
