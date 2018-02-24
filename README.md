@@ -9,7 +9,6 @@
 ## 600点
 - [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
 - [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
-- [C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
 - [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
 ## 500点
 - [D - IntegerotS](https://beta.atcoder.jp/contests/tenka1-2017/tasks/tenka1_2017_d)
@@ -73,6 +72,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b) 補集合を考える
+$k$個選ぶとき、補集合を考え、${}_{n+1} C_k$から重複しているものを引く。$n$種類の数字で長さ$n+1$の数列を作るので重複するのは１種類だけ。その1種類の位置を$l,r$とする。このとき重複しているのは$l<x<r$のなかから一つも選ばず、$l,r$のどちらか一つを選んだ場合。よって${}_{n+1} C_k - {}_{l-1+n-r} C_{k-1}$が答え。
 ## [E - 和風いろはちゃん / Iroha and Haiku](https://beta.atcoder.jp/contests/arc058/tasks/arc058_c) 補集合を考える
 補集合を考える。この場合は１つもXYZを１つも含まない数列を数えればよい。直前17個の数をメモ化すると$10^17$個必要。しかし和が17以上のものはメモ化しなくてよいのでそれらを省くと、$2^17$になる。
 ## [AGC003 C - BBuBBBlesort!](https://beta.atcoder.jp/contests/agc003/tasks/agc003_c)
