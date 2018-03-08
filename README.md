@@ -22,6 +22,10 @@
 - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
 
 # 過去問の復習
+- setのk番目を求めたいときはg++拡張のtreeが使える
+  <http://hogloid.hatenablog.com/entry/2014/09/23/132440>
+  <https://gcc.gnu.org/onlinedocs/gcc-4.6.4/libstdc++/api/classes.html>
+  を参照せよ
 - 蟻本p219 式変形で1対1割当の最小コストを求める問題に変形→二部グラフの最小費用流
 - 蟻本p217 フローfがその流量における最小費用流=fの残余グラフに負閉路が存在しない
 - 蟻本p212 ProjectSelectionProblem
