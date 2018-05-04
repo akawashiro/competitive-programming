@@ -76,6 +76,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [500-yen Saving](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1603) DP + 回答が全順序になるタイプのDP
+回答は2種類の数字の組だがその組は全順序になっている。
 ## [D - Grid Components](https://beta.atcoder.jp/contests/arc093/tasks/arc093_b) 発想 + 構築
   100x100のマスを半分ずつに割って必要な分だけ小さな四角形を埋め込む。言われればまあそうかという感じだが。
 ## [第17回JOI　予選 L番目のK番目の数](https://www.ei1333.site/problems/7) 小さい方から何番目の数$\to$$x$以下が何個?の二分探索、ぴったり$x$より$x$以下のほうが簡単
