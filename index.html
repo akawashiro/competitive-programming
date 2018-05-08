@@ -15,6 +15,7 @@
       
       
       
+      
 
       <style> 
       /**
@@ -251,6 +252,10 @@ code.language-yaml {
 <h1 class="mume-header" id="%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</h1>
 
 <ul>
+<li>setのk番目を求めたいときはg++拡張のtreeが使える<br>
+<a href="http://hogloid.hatenablog.com/entry/2014/09/23/132440">http://hogloid.hatenablog.com/entry/2014/09/23/132440</a><br>
+<a href="https://gcc.gnu.org/onlinedocs/gcc-4.6.4/libstdc++/api/classes.html">https://gcc.gnu.org/onlinedocs/gcc-4.6.4/libstdc++/api/classes.html</a><br>
+を参照せよ</li>
 <li>蟻本p219 式変形で1対1割当の最小コストを求める問題に変形→二部グラフの最小費用流</li>
 <li>蟻本p217 フローfがその流量における最小費用流=fの残余グラフに負閉路が存在しない</li>
 <li>蟻本p212 ProjectSelectionProblem<br>
@@ -308,6 +313,20 @@ DP[品物のindex][価値] = 実現する最小の重さ(存在しない場合�
 <li>蟻本p27 くじびき<br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">n</span></span></span></span>個の数字<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span>から重複を許して４つ取り出すとき合計を<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">m</span></span></span></span>にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>。</li>
 </ul>
+<h2 class="mume-header" id="%E5%A4%8F%E5%90%88%E5%AE%BF%E3%81%AE%E6%9C%9D%E3%81%AF%E6%97%A9%E3%81%84httpjudgeu-aizuacjponlinejudgedescriptionjspid2748-%E5%BC%B7%E9%80%A3%E7%B5%90%E6%88%90%E5%88%86%E5%88%86%E8%A7%A3%E6%9C%A8%E3%81%AB%E3%81%AA%E3%82%8B"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2748">夏合宿の朝は早い</a> 強連結成分分解→木になる</h2>
+
+<p>グラフを強連結成分分解すると <strong><em>木になる</em></strong>。この木の葉のところの確率を全部掛けあわせたのが答え。</p>
+<h2 class="mume-header" id="daruma-otoshihttpjudgeu-aizuacjponlinejudgedescriptionjspid1611-%E9%95%B7%E3%81%95%E3%82%92%E6%B1%BA%E3%82%81%E3%81%A6%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%81%9A%E3%81%A4%E4%BC%B8%E3%81%B0%E3%81%99%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AEdp"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1611">Daruma Otoshi</a> 長さを決めてちょっとずつ伸ばすタイプのDP</h2>
+
+<p>まずある範囲が落とせるかどうかをちょっとずるのばすDP<br>
+その後どこを切るかをDP</p>
+<h2 class="mume-header" id="500-yen-savinghttpjudgeu-aizuacjponlinejudgedescriptionjspid1603-dp-%E5%9B%9E%E7%AD%94%E3%81%8C%E5%85%A8%E9%A0%86%E5%BA%8F%E3%81%AB%E3%81%AA%E3%82%8B%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AEdp"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1603">500-yen Saving</a> DP + 回答が全順序になるタイプのDP</h2>
+
+<p>回答は2種類の数字の組だがその組は全順序になっている。<br>
+最終的な答えには500円玉の最大枚数だけでなく、そのときに必要なお金の総額の最小値も必要ですが、少し工夫するだけで対応できます。具体的には、500円玉の最大枚数の表と同じ大きさの表を用意して、500円玉の最大枚数の表が更新されたときだけ更新するだけでOKです。</p>
+<h2 class="mume-header" id="d-grid-componentshttpsbetaatcoderjpcontestsarc093tasksarc093_b-%E7%99%BA%E6%83%B3-%E6%A7%8B%E7%AF%89"><a href="https://beta.atcoder.jp/contests/arc093/tasks/arc093_b">D - Grid Components</a> 発想 + 構築</h2>
+
+<p>100x100のマスを半分ずつに割って必要な分だけ小さな四角形を埋め込む。言われればまあそうかという感じだが。</p>
 <h2 class="mume-header" id="%E7%AC%AC17%E5%9B%9Ejoi-%E4%BA%88%E9%81%B8-l%E7%95%AA%E7%9B%AE%E3%81%AEk%E7%95%AA%E7%9B%AE%E3%81%AE%E6%95%B0httpswwwei1333siteproblems7-%E5%B0%8F%E3%81%95%E3%81%84%E6%96%B9%E3%81%8B%E3%82%89%E4%BD%95%E7%95%AA%E7%9B%AE%E3%81%AE%E6%95%B0tox%E4%BB%A5%E4%B8%8B%E3%81%8C%E4%BD%95%E5%80%8B%E3%81%AE%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8Ax%E3%82%88%E3%82%8Ax%E4%BB%A5%E4%B8%8B%E3%81%AE%E3%81%BB%E3%81%86%E3%81%8C%E7%B0%A1%E5%8D%98"><a href="https://www.ei1333.site/problems/7">第17回JOI　予選 L番目のK番目の数</a> 小さい方から何番目の数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">→</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下が何個?の二分探索、ぴったり<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>より<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下のほうが簡単</h2>
 
 <p>いきなりL番目を求めるのは難しい。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo></mrow><annotation encoding="application/x-tex">f(x)=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span></span></span></span>番目に小さい数からなる数列の中に<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下の数字が何個含まれるか、を使う。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span>を使えば<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>の値が二分探索できる。次に<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span>の計算方法を考える。数列の中に<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下の数が<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span></span></span></span>個以上含まれていれば<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span></span></span></span>番目の数は<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下になる。ここで数列の左端<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">L</span></span></span></span>を決定すると右端<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.00773em;">R</span></span></span></span>の最小値は尺取法を使えば<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>で求まる。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.00773em;">R</span></span></span></span>はいくら大きくしても条件を満たすので<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>R</mi><mo separator="true">,</mo><mi>N</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[R,N]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">]</span></span></span></span>が右端の範囲。</p>
@@ -537,7 +556,7 @@ DP[i(=aの数)][j(=abの数)] = <span class="katex"><span class="katex-mathml"><
 <h2 class="mume-header" id="no260-%E4%B8%96%E7%95%8C%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B3httpsyukicodermeproblemsno260-%E6%A1%81dp"><a href="https://yukicoder.me/problems/no/260">No.260 世界のなんとか3</a> 桁DP</h2>
 
 <p>桁DPをする。桁DPの基本は</p>
-<pre data-role="codeBlock" data-info="C++" class="language-cpp">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>l<span class="token punctuation">]</span>  <span class="token comment" spellcheck="true">//i:上からi桁目まで見ている j:A未満であることが確定している k:すでに3を選んでいる l:mod 3の値</span>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>l<span class="token punctuation">]</span>  <span class="token comment">//i:上からi桁目まで見ている j:A未満であることが確定している k:すでに3を選んでいる l:mod 3の値</span>
 </pre><p>こんな感じ。今回の問題ではさらに<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A\le x \le B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span>という条件が追加されていたが、これは<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span>以下の条件を満たす数から<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span>以下の条件を満たす数を引けば良い。このためには<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span>の文字列が必要であり以下のコードで求められる。</p>
 <pre data-role="codeBlock" data-info="C++" class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token function">SZ</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&lt;=</span>i<span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token operator">&lt;</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span><span class="token keyword">break</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
@@ -1167,237 +1186,14 @@ d[i][j]=min(d[i][k]+d[k][j],d[i][j])<br>
 </ul>
 
       </div>
-      <div class="md-sidebar-toc"><ul>
-<li><a href="#%E6%9C%AA%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C">未解決問題</a>
-<ul>
-<li><a href="#700%E7%82%B9">700点</a></li>
-<li><a href="#600%E7%82%B9">600点</a></li>
-<li><a href="#500%E7%82%B9">500点</a></li>
-<li><a href="#400%E7%82%B9">400点</a></li>
-</ul>
-</li>
-<li><a href="#%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</a>
-<ul>
-<li><a href="#%E7%AC%AC17%E5%9B%9Ejoi-%E4%BA%88%E9%81%B8-l%E7%95%AA%E7%9B%AE%E3%81%AEk%E7%95%AA%E7%9B%AE%E3%81%AE%E6%95%B0httpswwwei1333siteproblems7-%E5%B0%8F%E3%81%95%E3%81%84%E6%96%B9%E3%81%8B%E3%82%89%E4%BD%95%E7%95%AA%E7%9B%AE%E3%81%AE%E6%95%B0tox%E4%BB%A5%E4%B8%8B%E3%81%8C%E4%BD%95%E5%80%8B%E3%81%AE%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8Ax%E3%82%88%E3%82%8Ax%E4%BB%A5%E4%B8%8B%E3%81%AE%E3%81%BB%E3%81%86%E3%81%8C%E7%B0%A1%E5%8D%98">第17回JOI　予選 L番目のK番目の数 小さい方から何番目の数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">→</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下が何個?の二分探索、ぴったり<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>より<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>以下のほうが簡単</a></li>
-<li><a href="#d-%E3%82%B5%E3%83%97%E3%83%AA%E3%83%A1%E3%83%B3%E3%83%88httpsbetaatcoderjpcontestsabc017tasksabc017_4-%E5%87%BA%E7%8F%BE%E9%A0%BB%E5%BA%A6%E3%82%92%E6%9D%A1%E4%BB%B6%E3%81%A8%E3%81%99%E3%82%8B%E5%B0%BA%E5%8F%96%E3%82%8A%E6%B3%95">D - サプリメント 出現頻度を条件とする尺取り法</a></li>
-<li><a href="#d-%E9%81%93%E3%82%92%E7%9B%B4%E3%81%99%E3%81%8A%E4%BB%95%E4%BA%8Bhttpsbetaatcoderjpcontestsarc026tasksarc026_4-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">D - 道を直すお仕事 二分探索</a></li>
-<li><a href="#c-%E3%83%90%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%BC%E3%83%98%E3%83%B3baumkuchenhttpsjoi2014hocontestatcoderjpimgotherjoi2014hojoi2014ho3pdf-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2%E5%B0%BA%E5%8F%96%E3%82%8A">C - バームクーヘン（Baumkuchen） 二分探索+尺取り</a></li>
-<li><a href="#%E3%81%BF%E3%82%93%E3%83%97%E3%83%AD2018%E4%BA%88%E9%81%B8-c%E9%A7%86%E5%BC%95%E5%8F%96%E5%BC%95httpsyahoo-procon2018-qualcontestatcoderjptasksyahoo_procon2018_qual_c-bitdp%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96">みんプロ2018予選 C:駆引取引 bitDPの高速化</a></li>
-<li><a href="#d-11httpsbetaatcoderjpcontestsabc066tasksarc077_b-%E8%A3%9C%E9%9B%86%E5%90%88%E3%82%92%E8%80%83%E3%81%88%E3%82%8B">D - 11 補集合を考える</a></li>
-<li><a href="#e-%E5%92%8C%E9%A2%A8%E3%81%84%E3%82%8D%E3%81%AF%E3%81%A1%E3%82%83%E3%82%93-iroha-and-haikuhttpsbetaatcoderjpcontestsarc058tasksarc058_c-%E8%A3%9C%E9%9B%86%E5%90%88%E3%82%92%E8%80%83%E3%81%88%E3%82%8B">E - 和風いろはちゃん / Iroha and Haiku 補集合を考える</a></li>
-<li><a href="#agc003-c-bbubbblesorthttpsbetaatcoderjpcontestsagc003tasksagc003_c">AGC003 C - BBuBBBlesort!</a></li>
-<li><a href="#apc001-d-foresthttpsbetaatcoderjpcontestsapc001tasksapc001_d">APC001 D - Forest</a></li>
-<li><a href="#arc049-b-%E9%AB%98%E6%A9%8B%E3%83%8E%E3%83%AB%E3%83%A0%E5%90%9B-httpsbetaatcoderjpcontestsarc049tasksarc049_b-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-%E9%95%B7%E6%96%B9%E5%BD%A2%E3%81%AE%E9%87%8D%E3%81%AA%E3%82%8B%E7%AF%84%E5%9B%B2">ARC049 B - 高橋ノルム君  二分探索、長方形の重なる範囲</a></li>
-<li><a href="#%E3%82%B5%E3%82%A6%E3%82%B3%E3%83%B3-d-%E5%BB%BA%E7%89%A9httpssoundhound2018contestatcoderjptaskssoundhound2018_d-dpforall%E3%82%92%E4%B8%80%E3%81%A4%E5%89%8D%E3%81%AE%E6%B7%BB%E5%AD%97%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6o1%E3%81%A7%E8%A8%88%E7%AE%97%E3%81%99%E3%82%8B">サウコン D - 建物 DP(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi></mrow><annotation encoding="application/x-tex">\forall</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord">∀</span></span></span></span>を一つ前の添字を使って<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>で計算する)</a></li>
-<li><a href="#arc090-d-people-on-a-linehttpsbetaatcoderjpcontestsarc090tasksarc090_b-%E3%83%9E%E3%83%BC%E3%82%B8%E3%83%86%E3%82%AF">ARC090 D - People on a Line マージテク</a></li>
-<li><a href="#%E3%82%B5%E3%82%A6%E3%82%B3%E3%83%B3-c-%E5%BA%83%E5%91%8Ahttpsbetaatcoderjpcontestssoundhound2018taskssoundhound2018_c-%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86%E5%90%88%E5%95%8F%E9%A1%8C">サウコン C - 広告 最大独立集合問題</a></li>
-<li><a href="#arc090-e-avoiding-collisionhttpsbetaatcoderjpcontestsarc090tasksarc090_c-%E6%9C%80%E7%9F%AD%E8%B7%AFdag-%E3%83%91%E3%82%B9%E3%81%AE%E5%80%8B%E6%95%B0">ARC090 E - Avoiding Collision 最短路DAG + パスの個数</a></li>
-<li><a href="#arc074-f-lotus-leaveshttpsbetaatcoderjpcontestsarc074tasksarc074_d-x%E8%BB%B8%E3%81%A8y%E8%BB%B8%E3%82%92%E9%A0%82%E7%82%B9%E3%81%A8%E8%A6%8B%E3%82%8B-%E6%9C%80%E5%A4%A7%E6%B5%81">ARC074 F - Lotus Leaves <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>軸と<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>軸を頂点と見る + 最大流</a></li>
-<li><a href="#%E5%A4%A9%E4%B8%802016%E4%BA%88%E9%81%B8b-c-%E5%A4%A9%E4%B8%8B%E4%B8%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%881999httpsbetaatcoderjpconteststenka1-2016-qualbtaskstenka1_2016_qualb_c-%E7%8B%AC%E7%AB%8B%E3%81%AB%E8%A8%88%E7%AE%97%E3%81%A7%E3%81%8D%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AF%E3%81%BE%E3%81%A8%E3%82%81%E3%82%8B%E3%81%A8%E7%B0%A1%E5%8D%98">天一2016予選B C - 天下一プログラマーコンテスト1999 独立に計算できる事象はまとめると簡単</a></li>
-<li><a href="#arc089-d-checkerhttpsbetaatcoderjpcontestsarc089tasksarc089_b-2%E6%AC%A1%E5%85%83%E7%B4%AF%E7%A9%8D%E5%92%8C">ARC089 D - Checker 2次元累積和</a></li>
-<li><a href="#agc018-b-sports-festivalhttpsbetaatcoderjpcontestsagc018tasksagc018_b-%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E5%8D%98%E8%AA%BF%E6%80%A7%E3%81%AE%E7%99%BA%E8%A6%8B-%E3%83%9C%E3%83%88%E3%83%AB%E3%83%8D%E3%83%83%E3%82%AF%E6%94%B9%E5%96%84">AGC018 B - Sports Festival シュミレーション + 単調性の発見 + ボトルネック改善</a></li>
-<li><a href="#poj2348-euclids-gamehttppojorgproblemid2348-1%E3%81%8B2%E4%BB%A5%E4%B8%8A%E3%81%8B%E3%81%8C%E5%A4%A7%E9%81%95%E3%81%84">POJ2348 Euclid's Game 1か2以上かが大違い</a></li>
-<li><a href="#poj2484-a-funny-gamehttppojorgproblemid2484-%E5%AF%BE%E8%B1%A1%E3%81%AA%E7%8A%B6%E6%B3%81%E3%82%92%E4%BD%9C%E3%82%8B">POJ2484 A Funny Game 対象な状況を作る</a></li>
-<li><a href="#arc073-e-ball-coloringhttpsbetaatcoderjpcontestsarc073tasksarc073_c">ARC073 E: Ball Coloring</a></li>
-<li><a href="#agc016-b-colorful-hatshttpsbetaatcoderjpcontestsagc016tasksagc016_b-%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E3%82%BD%E3%83%BC%E3%83%88%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B-%E5%AE%9F%E9%A8%93">AGC016 B - Colorful Hats とりあえずソートしてみる + 実験</a></li>
-<li><a href="#%E7%AC%AC4%E5%9B%9E%E3%83%89%E3%83%AF%E3%82%B3%E3%83%B3%E4%BA%88%E9%81%B8-c-killdeathhttpsdwacon2018-prelimscontestatcoderjptasksdwacon2018_prelims_c-dp-%E5%86%99%E5%83%8F12%E7%9B%B8">第4回ドワコン予選 C - Kill/Death DP + 写像12相</a></li>
-<li><a href="#arc081-f-flip-and-rectangleshttpsbetaatcoderjpcontestsarc081tasksarc081_d-xor%E3%82%92%E5%8F%96%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B-stack%E3%81%A7%E9%95%B7%E6%96%B9%E5%BD%A2%E3%81%AE%E9%9D%A2%E7%A9%8D%E3%82%92%E6%B1%82%E3%82%81%E3%82%8B%E3%82%84%E3%81%A4">ARC081 F - Flip and Rectangles XORを取ってみる + stackで長方形の面積を求めるやつ</a></li>
-<li><a href="#abc014-c-closed-roomshttpsbetaatcoderjpcontestsagc014tasksagc014_c-bfs">ABC014 C - Closed Rooms BFS</a></li>
-<li><a href="#agc020-c-median-sumhttpsagc020contestatcoderjptasksagc020_c-dp%E9%83%A8%E5%88%86%E5%92%8C%E5%95%8F%E9%A1%8C-bitset">AGC020 C - Median Sum DP(部分和問題) + bitset</a></li>
-<li><a href="#%E7%AC%AC4%E5%9B%9E%E3%83%89%E3%83%AF%E3%82%B3%E3%83%B3%E4%BA%88%E9%81%B8-e-%E3%83%8B%E3%83%AF%E3%83%B3%E3%82%B4%E3%81%8F%E3%82%93%E3%81%AE%E5%AE%B6%E6%8E%A2%E3%81%97httpsdwacon2018-prelimscontestatcoderjptasksdwacon2018_prelims_e-%E9%87%8D%E5%BF%83%E5%88%86%E8%A7%A3">第4回ドワコン予選 E - ニワンゴくんの家探し 重心分解</a></li>
-<li><a href="#%E7%AC%AC4%E5%9B%9E%E3%83%89%E3%83%AF%E3%82%B3%E3%83%B3%E4%BA%88%E9%81%B8-d-%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E3%81%AE%E7%AF%80%E7%B4%84httpsdwacon2018-prelimscontestatcoderjptasksdwacon2018_prelims_d-%E3%83%93%E3%83%83%E3%83%88dp">第4回ドワコン予選 D - ディスクの節約 ビットDP</a></li>
-<li><a href="#%E3%82%B3%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92017%E4%BA%88%E9%81%B8b-d-101-to-010httpsbetaatcoderjpcontestscode-festival-2017-qualbtaskscode_festival_2017_qualb_d-dp-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E8%80%83%E5%AF%9F">コドフェス2017予選B D - 101 to 010 DP + 文字列に対する考察</a></li>
-<li><a href="#%E3%82%B3%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92014%E4%BA%88%E9%81%B8b-d-%E7%99%BB%E5%B1%B1%E5%AE%B6httpsbetaatcoderjpcontestscode-festival-2014-qualbtaskscode_festival_qualb_d-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2stack%E3%81%AE%E5%88%A9%E7%94%A8">コドフェス2014予選B D - 登山家 二分探索,stackの利用</a>
-<ul>
-<li><a href="#%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">二分探索</a></li>
-<li><a href="#stack%E3%81%AE%E5%88%A9%E7%94%A8">stackの利用</a></li>
-</ul>
-</li>
-<li><a href="#%E3%82%B3%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92014%E4%BA%88%E9%81%B8b-c-%E9%8C%AC%E9%87%91%E8%A1%93%E5%A3%ABhttpsbetaatcoderjpcontestscode-festival-2014-qualbtaskscode_festival_qualb_c-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0">コドフェス2014予選B C - 錬金術士 ヒストグラム</a></li>
-<li><a href="#%E3%82%B3%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92017%E4%BA%88%E9%81%B8c-d-yet-another-palindrome-partitioninghttpsbetaatcoderjpcontestscode-festival-2017-qualctaskscode_festival_2017_qualc_d-%E5%9B%9E%E6%96%87%E3%81%AE%E6%80%A7%E8%B3%AA%E3%82%92%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%9Fdp%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96">コドフェス2017予選C D - Yet Another Palindrome Partitioning 回文の性質をつかったDPの高速化</a></li>
-<li><a href="#arc084-d-small-multiplehttpsbetaatcoderjpcontestsarc084tasksarc084_b-%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E4%BD%9C%E3%82%8C%E3%81%AA%E3%81%84%E3%81%8B%E7%96%91%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B">ARC084 D - Small Multiple グラフを作れないか疑ってみる</a></li>
-<li><a href="#csa-min-swapshttpscsacademycomcontestarchivetaskmin-swapsstatement-greedy">CSA Min Swaps Greedy</a></li>
-<li><a href="#csa-amusement-parkhttpscsacademycomcontestarchivetaskamusement-parkstatement-dp">CSA Amusement Park DP</a></li>
-<li><a href="#problem-j-merry-christmashttpjudgeu-aizuacjponlinejudgedescriptionjspid2251-dag%E3%81%AE%E6%9C%80%E5%B0%8F%E3%83%91%E3%82%B9%E8%A2%AB%E8%A6%86">Problem J: Merry Christmas DAGの最小パス被覆</a></li>
-<li><a href="#cf-hello-2018-d-too-easy-problemshttpcodeforcescomcontest913problemd-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">CF Hello 2018 D. Too Easy Problems 二分探索</a></li>
-<li><a href="#b-reverse-and-comparehttpsbetaatcoderjpcontestsagc019tasksagc019_b-%E5%9B%9E%E6%96%87%E3%81%AE%E6%80%A7%E8%B3%AA">B - Reverse and Compare 回文の性質</a></li>
-<li><a href="#b-inscribed-bicyclehttpsbetaatcoderjpcontestscf16-exhibition-finaltaskscf16_exhibition_final_b-%E4%BA%8C%E9%83%A8%E6%8E%A2%E7%B4%A2">B - Inscribed Bicycle 二部探索</a></li>
-<li><a href="#b-hamiltonish-pathhttpsbetaatcoderjpcontestsagc013tasksagc013_b">B - Hamiltonish Path</a></li>
-<li><a href="#d-wide-fliphttpsbetaatcoderjpcontestsarc088tasksarc088_b">D - Wide Flip</a></li>
-<li><a href="#b-palindrome-phobiahttpsbetaatcoderjpcontestscf17-final-opentaskscf17_final_b-%E5%9B%9E%E6%96%87">B - Palindrome-phobia 回文</a></li>
-<li><a href="#d-%E3%83%8F%E3%82%B7%E3%83%9D%E3%83%B3httpstenka1-2015-qualacontestatcoderjptaskstenka1_2015_quala_d-%E6%A9%8B">D - ハシポン 橋</a></li>
-<li><a href="#no631-noel%E3%81%A1%E3%82%83%E3%82%93%E3%81%A8%E9%9B%BB%E8%BB%8A%E6%97%85%E8%A1%8Chttpsyukicodermeproblemsno631-segtree-%E6%9C%80%E5%88%9D%E3%81%AB%E5%BE%85%E3%81%A3%E3%81%A6%E3%82%82%E5%90%84%E9%A7%85%E3%81%A7%E5%BE%85%E3%81%A3%E3%81%A6%E3%82%82%E5%90%8C%E3%81%98">No.631 Noelちゃんと電車旅行 segtree + 最初に待っても各駅で待っても同じ</a></li>
-<li><a href="#no630-%E9%96%80%E6%9D%BE%E3%82%B0%E3%83%A9%E3%83%95httpsyukicodermeproblemsno630-%E4%BA%8C%E9%83%A8%E3%82%B0%E3%83%A9%E3%83%95%E5%A5%87%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%81%8C%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84">No.630 門松グラフ 二部グラフ=奇サイクルが存在しない</a></li>
-<li><a href="#d-%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E9%AB%98%E6%A9%8B%E5%90%9Bhttpsarc039contestatcoderjptasksarc039_d-%E6%A9%8B-lca">D - 旅行会社高橋君 橋 + LCA</a></li>
-<li><a href="#d-restoring-road-networkhttpsbetaatcoderjpcontestsabc074tasksarc083_b-warshallfloyd">D - Restoring Road Network Warshall–Floyd</a></li>
-<li><a href="#d-3n-numbershttpsbetaatcoderjpcontestsabc062tasksarc074_b-priority_queue">D - 3N Numbers priority_queue</a></li>
-<li><a href="#d-an-ordinary-gamehttpsbetaatcoderjpcontestsabc048tasksarc064_b-%E7%99%BA%E6%83%B3">D - An Ordinary Game 発想</a></li>
-<li><a href="#d-%E6%A1%81%E5%92%8C-digit-sumhttpsbetaatcoderjpcontestsabc044tasksarc060_b-%E9%80%B2%E6%95%B0">D - 桁和 / Digit Sum ?進数</a></li>
-<li><a href="#abc021-c-%E6%AD%A3%E7%9B%B4%E8%80%85%E3%81%AE%E9%AB%98%E6%A9%8B%E3%81%8F%E3%82%93httpsbetaatcoderjpcontestsabc021tasksabc021_c-%E6%9C%80%E7%9F%AD%E8%B7%AFdag">ABC021 C - 正直者の高橋くん 最短路DAG</a></li>
-<li><a href="#good-bye-2017-d-new-year-and-arbitrary-arrangementhttpcodeforcescomcontest908problemd-%E6%9C%9F%E5%BE%85%E5%80%A4dp">Good Bye 2017 D. New Year and Arbitrary Arrangement 期待値DP</a></li>
-<li><a href="#b-unplanned-querieshttpsbetaatcoderjpcontestsagc014tasksagc014_b-%E6%9C%A8%E4%B8%8A%E3%81%AE%E3%83%91%E3%82%B9%E3%81%AFlca%E3%82%92%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%A6%E5%88%86%E8%A7%A3">B - Unplanned Queries 木上のパスはLCAをつかって分解</a></li>
-<li><a href="#d-abshttpsbetaatcoderjpcontestsabc078tasksarc085_b-dp">D - ABS DP</a></li>
-<li><a href="#d-builthttpsbetaatcoderjpcontestsarc076tasksarc076_b-x%E5%BA%A7%E6%A8%99%E3%81%A8y%E5%BA%A7%E6%A8%99%E3%82%92%E5%88%86%E3%81%91%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B">D - Built? x座標とy座標を分けて考える</a></li>
-<li><a href="#d-alicebrownhttpsbetaatcoderjpcontestsarc072tasksarc072_b-%E5%AE%9F%E9%A8%93">D - Alice&amp;Brown 実験</a></li>
-<li><a href="#b-boxeshttpsbetaatcoderjpcontestsagc010tasksagc010_b-%E6%93%8D%E4%BD%9C%E3%81%AE%E5%90%88%E8%A8%88%E5%9B%9E%E6%95%B0-%E9%9A%8E%E5%B7%AE%E6%95%B0%E5%88%97">B - Boxes 操作の合計回数 + 階差数列</a></li>
-<li><a href="#f-tree-destructionhttpcodeforcescomcontest911problemf-%E6%9C%A8%E3%81%AE%E7%9B%B4%E5%BE%84">F. Tree Destruction 木の直径</a></li>
-<li><a href="#b-mysterious-lighthttpsbetaatcoderjpcontestsagc001tasksagc001_b-extgcd">B - Mysterious Light extgcd</a></li>
-<li><a href="#c-cheating-nimhttpsbetaatcoderjpcontestscf16-exhibition-finaltaskscf16_exhibition_final_c-nim">C - Cheating Nim Nim</a></li>
-<li><a href="yukicoder_No.573_a^2[i]_=_a[i.md">yukicoder No.573 a^2[i] = a[i</a>(<a href="https://yukicoder.me/problems/no/573">https://yukicoder.me/problems/no/573</a>) 数え上げ](#yukicoder-no573-a2i-aihttpsyukicodermeproblemsno573-数え上げ)</li>
-<li><a href="#yukicoder-no417-%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%83%E3%83%97%E3%83%90%E3%83%96%E3%83%ABhttpsyukicodermeproblemsno417-%E6%9C%A8dp">yukicoder No.417 チューリップバブル 木DP</a></li>
-<li><a href="#%E3%82%B8%E3%82%B0%E3%82%B6%E3%82%B0%E6%95%B0-zig-zag-numbershttpswwwioi-jporgjoi20112012-yo-prob_and_sol2012-yo-t62012-yo-t6html-%E6%A1%81dp">ジグザグ数 (Zig-Zag Numbers) 桁DP</a></li>
-<li><a href="#no260-%E4%B8%96%E7%95%8C%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B3httpsyukicodermeproblemsno260-%E6%A1%81dp">No.260 世界のなんとか3 桁DP</a></li>
-<li><a href="#b-%E3%82%B2%E3%83%BC%E3%83%A0httpstdpccontestatcoderjptaskstdpc_game-minmax%E6%B3%95">B - ゲーム MinMax法</a></li>
-<li><a href="#b-colorful-slimeshttpagc004contestatcoderjptasksagc004_b-%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%92%E5%9B%BA%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B">B : Colorful Slimes パラメータを固定してみる</a></li>
-<li><a href="#g-mixture-drughttpsbetaatcoderjpcontestscode-thanks-festival-2017taskscode_thanks_festival_2017_g-%E5%8D%8A%E5%88%86%E5%85%A8%E5%88%97%E6%8C%99-bitdp">G - Mixture Drug 半分全列挙 + bitDP</a></li>
-<li><a href="#e-xenia-and-treehttpcodeforcescomproblemsetproblem342e-%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%AE%E5%B9%B3%E6%96%B9%E5%88%86%E5%89%B2-lca">E. Xenia and Tree クエリの平方分割 + LCA</a></li>
-<li><a href="#pku1741-treehttppojorgproblemid1741-%E9%87%8D%E5%BF%83%E5%88%86%E8%A7%A3">PKU1741 Tree 重心分解</a></li>
-<li><a href="#aoj2667-f-tree-%E6%9C%A8httpjudgeu-aizuacjponlinejudgedescriptionjspid2667-eulertour-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88%E6%9C%A8">AOJ2667 F : Tree / 木 EulerTour + セグメント木</a></li>
-<li><a href="#e-new-year-treehttpcodeforcescomcontest620probleme-eulertour-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88%E6%9C%A8">E. New Year Tree EulerTour + セグメント木</a></li>
-<li><a href="#no318-%E5%AD%A6%E5%AD%A6%E5%AD%A6%E5%AD%A6%E5%AD%A6httpsyukicodermeproblemsno318-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88%E6%9C%A8">No.318 学学学学学 セグメント木</a></li>
-<li><a href="#e-papple-sorthttpsbetaatcoderjpcontestsarc088tasksarc088_c-%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88%E3%81%AE%E4%BA%A4%E6%8F%9B%E5%9B%9E%E6%95%B0">E - Papple Sort バブルソートの交換回数</a></li>
-<li><a href="#festivals-in-joi-kingdomhttpjudgeu-aizuacjponlinejudgedescriptionjspid0575-%E8%A4%87%E6%95%B0%E5%A7%8B%E7%82%B9dijkstra-%E6%9C%80%E5%B0%8F%E5%85%A8%E5%9F%9F%E6%9C%A8-lca">Festivals in JOI Kingdom 複数始点Dijkstra + 最小全域木 + LCA</a></li>
-<li><a href="#e-trbbnsformbbtionhttpsbetaatcoderjpcontestsarc071tasksarc071_c-%E5%90%8C%E5%80%A4%E9%96%A2%E4%BF%82%E3%82%92%E8%80%83%E3%81%88%E3%82%8B-%E7%B4%AF%E7%A9%8D%E5%92%8C">E - TrBBnsformBBtion 同値関係を考える、累積和</a></li>
-<li><a href="#e-decrease-judge-verhttpsbetaatcoderjpcontestsarc079tasksarc079_c-%E3%83%91%E3%82%BA%E3%83%AB%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">E - Decrease (Judge ver.) パズル+シミュレーション</a></li>
-<li><a href="#graph-constructionhttpjudgeu-aizuacjponlinejudgedescriptionjspid2235-%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%AE%E5%B9%B3%E6%96%B9%E5%88%86%E5%89%B2">Graph Construction  クエリの平方分割</a></li>
-<li><a href="#tree-diameter-of-a-treehttpjudgeu-aizuacjponlinejudgedescriptionjspidgrl_5_a-%E5%85%A8%E6%96%B9%E4%BD%8D%E6%9C%A8dp">Tree - Diameter of a Tree 全方位木DP</a></li>
-<li><a href="#black-white-treehttpscsacademycomcontestround-55taskblack-white-tree-%E5%85%A8%E6%96%B9%E4%BD%8D%E6%9C%A8dp%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%AE%E5%B9%B3%E6%96%B9%E5%88%86%E5%89%B2lca">Black White Tree 全方位木DP+クエリの平方分割+LCA</a></li>
-<li><a href="#c-%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0httpsarc033contestatcoderjptasksarc033_3-segment-tree%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">C - データ構造 Segment Treeを用いた二分探索</a>
-<ul>
-<li><a href="#segment-tree">Segment Tree</a></li>
-<li><a href="#%E4%BA%8C%E5%88%86%E6%9C%A8">二分木</a></li>
-</ul>
-</li>
-<li><a href="#b-%E9%A7%90%E8%BB%8A%E5%A0%B4httpsbetaatcoderjpcontestsarc056tasksarc056_b-%E6%93%8D%E4%BD%9C%E3%82%92%E9%80%86%E9%A0%86%E3%81%A7%E8%80%83%E3%81%88%E3%82%8B">B - 駐車場 操作を逆順で考える</a>
-<ul>
-<li><a href="#unionfind">UnionFind</a></li>
-<li><a href="#%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9">ダイクストラ</a></li>
-</ul>
-</li>
-<li><a href="#d-ft-robothttpsbetaatcoderjpcontestsarc087tasksarc087_b-x%E8%BB%B8%E3%81%A8y%E8%BB%B8%E3%82%92%E5%88%86%E3%81%91%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B">D - FT Robot x軸とy軸を分けて考える</a></li>
-<li><a href="#d-no-needhttpsbetaatcoderjpcontestsabc056tasksarc070_b-%E5%8D%98%E8%AA%BF%E6%80%A7%E3%82%92%E7%94%9F%E3%81%8B%E3%81%97%E3%81%A6%E4%BA%8C%E9%83%A8%E6%8E%A2%E7%B4%A2%E5%86%85%E9%83%A8%E3%81%A7dp%E3%81%99%E3%82%8B%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">D - No Need 単調性を生かして二部探索&amp;内部でDPする二分探索</a></li>
-<li><a href="#c-%E3%81%A0%E3%82%8C%E3%81%98%E3%82%83httpsbetaatcoderjpcontestsarc024tasksarc024_3-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0">C - だれじゃ ヒストグラム</a></li>
-<li><a href="#e-dont-be-a-subsequencehttpsbetaatcoderjpcontestsarc081tasksarc081_c-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%A7%8B%E6%88%90">E - Don't Be a Subsequence 文字列の構成</a></li>
-<li><a href="#e-%E9%AB%98%E6%A9%8B%E5%90%9B%E3%81%A8%E3%83%9B%E3%83%86%E3%83%AB-tak-and-hotelshttpsarc060contestatcoderjptasksarc060_c-%E3%83%80%E3%83%96%E3%83%AA%E3%83%B3%E3%82%B0">E - 高橋君とホテル / Tak and Hotels　ダブリング</a></li>
-<li><a href="#d-stamp-rallyhttpsagc002contestatcoderjptasksagc002_d-%E4%B8%A6%E5%88%97%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">D - Stamp Rally 並列二分探索</a></li>
-<li><a href="#d-%E3%81%99%E3%81%AC%E3%81%91%E3%81%9D%E3%81%A0%E3%81%A6%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0httpscolopl2018-qualcontestatcoderjptaskscolopl2018_qual_d-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">D - すぬけそだて――トレーニング―― 二分探索</a></li>
-<li><a href="#h-%E7%A9%B4%E3%81%82%E3%81%8D%E3%82%B1%E3%83%BC%E3%82%ADhttpscode-thanks-festival-2015-opencontestatcoderjptaskscode_thanks_festival_2015_h-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-or-%E5%B0%BA%E5%8F%96%E3%82%8A%E6%B3%95">H - 穴あきケーキ 二分探索 or 尺取り法</a>
-<ul>
-<li><a href="#%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-1">二分探索</a></li>
-<li><a href="#%E5%B0%BA%E5%8F%96%E3%82%8A%E6%B3%95">尺取り法</a></li>
-</ul>
-</li>
-<li><a href="#c-%E9%AB%98%E6%A9%8B%E5%90%9B-24%E6%AD%B3httpsbetaatcoderjpcontestsarc009tasksarc009_3-%E5%B7%A1%E5%9B%9E%E7%BD%AE%E6%8F%9B-and-dp">C - 高橋君、24歳 巡回置換 and DP</a></li>
-<li><a href="#a-single-onehttpscsacademycomcontestarchivetaska-single-onestatement-set%E4%B8%8A%E3%81%AE%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2-%E5%89%8A%E9%99%A4">A Single One set上の二分探索、削除</a></li>
-<li><a href="#0-k-multiplehttpscsacademycomcontestarchivetask0-k-multiple-%E6%95%B0%E3%81%AE%E6%A7%8B%E6%88%90-and-bfs">0-K Multiple 数の構成 and BFS</a></li>
-<li><a href="#h-union-setshttpscode-thanks-festival-2017contestatcoderjptaskscode_thanks_festival_2017_h-%E3%83%9E%E3%83%BC%E3%82%B8%E3%83%86%E3%82%AF-or-lca-or-%E6%B0%B8%E7%B6%9A%E5%8C%96unionfind">H - Union Sets マージテク or LCA or 永続化UnionFind</a>
-<ul>
-<li><a href="#%E3%83%9E%E3%83%BC%E3%82%B8%E3%83%86%E3%82%AF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E8%A7%A3%E6%B3%95">マージテクを使った解法</a></li>
-<li><a href="#lca%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E8%A7%A3%E6%B3%95">LCAを使った解法</a></li>
-<li><a href="#%E4%B8%A6%E5%88%97%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2%E3%82%92%E4%BD%BF%E3%81%86%E6%96%B9%E6%B3%95">並列二分探索を使う方法</a></li>
-<li><a href="#%E6%B0%B8%E7%B6%9A%E5%8C%96%E9%85%8D%E5%88%97%E3%82%92%E7%94%A8%E3%81%84%E3%81%9Funionfind%E3%82%92%E4%BD%BF%E3%81%86%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2">永続化配列を用いたUnionFindを使う二分探索</a></li>
-</ul>
-</li>
-<li><a href="#d-zabutonhttpscf17-finalcontestatcoderjptaskscf17_final_d-dp%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E9%A0%86%E5%BA%8F">D - Zabuton DPのための順序</a></li>
-<li><a href="#e-mulhttpsbetaatcoderjpcontestsarc085tasksarc085_c-projectselectionproblem%E7%87%83%E3%82%84%E3%81%99%E5%9F%8B%E3%82%81%E3%82%8B%E5%95%8F%E9%A1%8C">E - MUL  ProjectSelectionProblem(燃やす埋める問題)</a></li>
-<li><a href="#c-shorten-diameterhttpagc001contestatcoderjptasksagc001_c-%E6%9C%A8%E3%81%AE%E4%B8%AD%E5%BF%83">C - Shorten Diameter 木の中心</a></li>
-<li><a href="#e-%E6%9C%A8%E3%81%A8%E6%95%B4%E6%95%B0-integers-on-a-treehttpsarc063contestatcoderjptasksarc063_c-%E6%9C%A8%E4%B8%8A%E3%81%AE%E5%8C%BA%E9%96%93%E3%81%AE%E3%83%9E%E3%83%BC%E3%82%B8">E - 木と整数 / Integers on a Tree　木上の区間のマージ</a></li>
-<li><a href="#c-time-gaphttpscf17-finalcontestatcoderjptaskscf17_final_c-%E9%B3%A9%E3%81%AE%E5%B7%A3%E5%8E%9F%E7%90%86">C - Time Gap 鳩の巣原理</a></li>
-<li><a href="#b-gcd%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88httpddcc2017-finalcontestatcoderjptasksddcc2017_final_b-gcd%E3%81%AElcm%E3%81%A8%E3%82%8B%E3%82%84%E3%81%A4">B - GCDロボット GCDのLCMとるやつ</a></li>
-<li><a href="#e-%E3%81%99%E3%81%AC%E3%81%91%E5%90%9B%E3%81%AE%E5%9C%B0%E4%B8%8B%E9%89%84%E6%97%85%E8%A1%8C-snukes-subway-triphttparc061contestatcoderjptasksarc061_c-%E9%A0%82%E7%82%B9%E3%82%92%E5%A2%97%E3%82%84%E3%81%97%E3%81%A6%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9">E - すぬけ君の地下鉄旅行 / Snuke's Subway Trip 頂点を増やしてダイクストラ</a></li>
-<li><a href="#b-contiguous-repaintinghttpagc008contestatcoderjptasksagc008_b">B - Contiguous Repainting</a></li>
-<li><a href="#d-%E5%88%87%E3%82%8A%E5%88%86%E3%81%91%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%8B%E3%81%AAhttparc013contestatcoderjptasksarc013_4-%E4%BA%8C%E9%83%A8%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E6%9C%80%E5%A4%A7%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0">D - 切り分けできるかな？ 二部グラフの最大マッチング</a></li>
-<li><a href="#e-groupinghttparc067contestatcoderjp-1n%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF">E - Grouping 1/Nテクニック</a></li>
-<li><a href="#c-3-stepshttpcode-festival-2017-qualbcontestatcoderjptaskscode_festival_2017_qualb_c-%E4%BA%8C%E9%83%A8%E3%82%B0%E3%83%A9%E3%83%95%E5%88%A4%E5%AE%9A">C - 3 Steps　二部グラフ判定</a></li>
-<li><a href="#c-points-lines-and-ready-made-titleshttpcodeforcescomcontest871problemc-x%E5%BA%A7%E6%A8%99y%E5%BA%A7%E6%A8%99%E3%82%92%E9%A0%82%E7%82%B9-%E4%BA%A4%E7%82%B9%E3%82%92%E3%82%A8%E3%83%83%E3%82%B8%E3%81%A8%E8%A6%8B%E3%82%8B%E3%82%84%E3%81%A4">C. Points, Lines and Ready-made Titles x座標y座標を頂点、交点をエッジと見るやつ</a></li>
-<li><a href="#c-%E9%83%A8%E9%96%80%E5%88%86%E3%81%91httparc056contestatcoderjptasksarc056_c-3n%E7%B3%BBdp">C - 部門分け　<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">3^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span></span></span></span>系DP</a></li>
-<li><a href="#e-cosmic-rayshttparc064contestatcoderjptasksarc064_c-%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9">E - Cosmic Rays ダイクストラ</a></li>
-<li><a href="#e-snuke-linehttparc068contestatcoderjptasksarc068_c-segtree">E - Snuke Line segtree</a></li>
-<li><a href="#e-frequencyhttparc069contestatcoderjptasksarc069_c">E - Frequency</a></li>
-<li><a href="#e-meaningful-meanhttparc075contestatcoderjptasksarc075_c-%E5%BA%A7%E6%A8%99%E5%9C%A7%E7%B8%AE-segtree">E - Meaningful Mean 座標圧縮 + segtree</a></li>
-<li><a href="#e-connectedhttparc076contestatcoderjptasksarc076_c-%E3%82%AB%E3%83%83%E3%82%B3%E3%81%AE%E5%AF%BE%E5%BF%9C%E5%95%8F%E9%A1%8C">E - Connected? カッコの対応問題</a></li>
-<li><a href="#e-guruguruhttparc077contestatcoderjptasksarc077_c">E - guruguru</a></li>
-<li><a href="#e-young-maidshttparc080contestatcoderjptasksarc080_c">E - Young Maids</a></li>
-<li><a href="#d-teleporterhttpagc004contestatcoderjptasksagc004_d">D - Teleporter</a></li>
-<li><a href="#%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BCsoccerhttpjudgeu-aizuacjponlinejudgedescriptionjspid0639-%E6%8B%A1%E5%BC%B5%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9">サッカー(Soccer) 拡張ダイクストラ</a></li>
-<li><a href="#kingdom-of-joioihttpjudgeu-aizuacjponlinejudgedescriptionjspid0638">Kingdom of JOIOI</a></li>
-<li><a href="#semiexpresshttpjoi2017hocontestatcoderjptasksjoi2017ho_b">Semiexpress</a></li>
-<li><a href="#snake-joihttpjudgeu-aizuacjponlinejudgedescriptionjspid0635">Snake JOI</a></li>
-<li><a href="#d-fennec-vs-snukehttparc078contestatcoderjptasksarc078_b">D - Fennec VS. Snuke</a></li>
-<li><a href="#c-%E3%82%A6%E3%82%B5%E3%82%AE%E8%B7%B3%E3%81%B3httpsbetaatcoderjpcontestsarc041tasksarc041_c-%E7%99%BA%E6%83%B3">C - ウサギ跳び　発想</a></li>
-<li><a href="#d-non-decreasinghttpsbetaatcoderjpcontestsarc086tasksarc086_b-%E7%99%BA%E6%83%B3">D - Non-decreasing 発想</a></li>
-<li><a href="#c-z%E5%A1%97%E3%82%8Ahttpsarc040contestatcoderjptasksarc040_c-%E7%99%BA%E6%83%B3">C - Z塗り 発想</a></li>
-<li><a href="#d-menageriehttpsarc069contestatcoderjpsubmit-%E7%99%BA%E6%83%B3">D - Menagerie　発想</a></li>
-<li><a href="#c-knot-puzzlehttpagc002contestatcoderjptasksagc002_c-%E7%99%BA%E6%83%B3">C - Knot Puzzle 発想</a></li>
-</ul>
-</li>
-<li><a href="#%E8%90%BD%E3%81%A1%E3%81%9F%E3%82%89%E5%8D%B1%E9%99%BAnp%E5%9B%B0%E9%9B%A3%E5%95%8F%E9%A1%8C">落ちたら危険！NP困難問題</a>
-<ul>
-<li><a href="#%E3%82%AF%E3%83%AA%E3%83%BC%E3%82%AF%E5%95%8F%E9%A1%8C">クリーク問題</a></li>
-<li><a href="#%E9%A0%82%E7%82%B9%E8%A2%AB%E8%A6%86%E5%95%8F%E9%A1%8C">頂点被覆問題</a></li>
-<li><a href="#%E6%9C%89%E5%90%91%E7%84%A1%E5%90%91%E9%96%89%E8%B7%AF%E9%99%A4%E5%8E%BB%E5%95%8F%E9%A1%8C">有向/無向閉路除去問題</a></li>
-<li><a href="#%E6%9C%89%E5%90%91%E7%84%A1%E5%90%91%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3%E9%96%89%E8%B7%AF%E5%95%8F%E9%A1%8C">有向/無向ハミルトン閉路問題</a></li>
-<li><a href="#%E5%BC%B7%E9%80%A3%E7%B5%90%E9%83%A8%E5%88%86%E3%82%B0%E3%83%A9%E3%83%95%E5%95%8F%E9%A1%8C">強連結部分グラフ問題</a></li>
-</ul>
-</li>
-<li><a href="#%E8%90%BD%E3%81%A1%E3%81%9F%E3%82%89%E5%8B%9D%E5%88%A9p%E5%95%8F%E9%A1%8C">落ちたら勝利！P問題</a>
-<ul>
-<li><a href="#%E6%9C%89%E5%90%91%E7%84%A1%E5%90%91%E3%82%AA%E3%82%A4%E3%83%A9%E3%83%BC%E5%9B%9E%E8%B7%AF%E5%95%8F%E9%A1%8C">有向/無向オイラー回路問題</a></li>
-<li><a href="#%E9%A0%82%E7%82%B9%E5%BD%A9%E8%89%B2%E5%95%8F%E9%A1%8C">頂点彩色問題</a></li>
-<li><a href="#%E9%9B%86%E5%90%88%E5%88%86%E5%89%B2%E5%95%8F%E9%A1%8C">集合分割問題</a></li>
-<li><a href="#2sat">2SAT</a></li>
-<li><a href="#post-%E3%81%AE%E5%AF%BE%E5%BF%9C%E5%95%8F%E9%A1%8C%E6%B1%BA%E5%AE%9A%E4%B8%8D%E8%83%BD">Post の対応問題(決定不能)</a></li>
-</ul>
-</li>
-<li><a href="#%E8%A7%A3%E6%B3%95%E3%81%8C%E6%B5%AE%E3%81%8B%E3%81%B0%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB%E8%A9%A6%E3%81%99%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88">解法が浮かばない時に試すことリスト</a>
-<ul>
-<li><a href="#%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%95%8F%E9%A1%8C">シュミレーション問題</a></li>
-<li><a href="#yes-or-no">Yes or No</a></li>
-<li><a href="#%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7">最小・最大</a></li>
-<li><a href="#%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AE%E5%80%8B%E6%95%B0">組み合わせの個数</a></li>
-<li><a href="#%E7%A2%BA%E7%8E%87">確率</a></li>
-<li><a href="#%E6%9C%9F%E5%BE%85%E5%80%A4">期待値</a></li>
-<li><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E5%8B%9D%E6%95%97%E5%88%A4%E5%AE%9A%E4%BA%8C%E4%BA%BA%E9%9B%B6%E5%92%8C%E6%9C%89%E9%99%90%E7%A2%BA%E5%AE%9A%E5%AE%8C%E5%85%A8%E6%83%85%E5%A0%B1%E3%82%B2%E3%83%BC%E3%83%A0">ゲームの勝敗判定(二人零和有限確定完全情報ゲーム)</a></li>
-<li><a href="#%E7%AD%94%E3%81%88%E3%81%AE%E3%81%86%E3%81%A1%E4%B8%80%E3%81%A4%E4%BB%BB%E6%84%8F%E3%81%AE%E8%A7%A3">答えのうち一つ(任意の解)</a></li>
-<li><a href="#%E5%8F%82%E8%80%83%E5%8B%95%E7%94%BB">参考動画</a></li>
-</ul>
-</li>
-<li><a href="#%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E3%81%84%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E5%AE%9A%E7%90%86">これから勉強したいアルゴリズム・定理</a></li>
-<li><a href="#%E3%82%82%E3%81%86%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E5%AE%9A%E7%90%86">もう知っているアルゴリズム・定理</a></li>
-</ul>
-</div>
-      <a id="sidebar-toc-btn">≡</a>
+      
+      
     </body>
     
     
     
     
     
-    <script>
-(function bindTaskListEvent() {
-  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
-  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
-    var checkbox = taskListItemCheckboxes[i]
-    var li = checkbox.parentElement
-    if (li.tagName !== 'LI') li = li.parentElement
-    if (li.tagName === 'LI') {
-      li.classList.add('task-list-item')
-    }
-  }
-}())    
-</script>
     
-<script>
-
-var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
-sidebarTOCBtn.addEventListener('click', function(event) {
-  event.stopPropagation()
-  if (document.body.hasAttribute('html-show-sidebar-toc')) {
-    document.body.removeAttribute('html-show-sidebar-toc')
-  } else {
-    document.body.setAttribute('html-show-sidebar-toc', true)
-  }
-})
-</script>
-      
+    
   </html>
