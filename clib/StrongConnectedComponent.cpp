@@ -19,7 +19,7 @@ void dfs(const Graph &g,int v){
     used[v]=true;
     for(int i=0;i<(int)g[v].size();i++)
         if(!used[g[v][i].to])
-            dfs(g[v][i].to);
+            dfs(g,g[v][i].to);
     vs.push_back(v);
 }
 void rdfs(const Graph &rg,int v,int k){
@@ -27,7 +27,7 @@ void rdfs(const Graph &rg,int v,int k){
     cmp[v]=k;
     for(int i=0;i<(int)rg[v].size();i++)
         if(!used[rg[v][i].to])
-            rdfs(rg[v][i].to,k);
+            rdfs(rg,rg[v][i].to,k);
 }
 int scc(const Graph g,const Graph rg){
     memset(used,0,sizeof(used));
