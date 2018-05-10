@@ -1,9 +1,20 @@
+// 二重辺連結成分とは、「その成分に含まれるどの1辺を除いても、
+// その成分が非連結にならないような部分グラフ」のことです。
+// 橋という言葉を定義すると、二重辺連結成分とは、
+// 「すべての橋をグラフから取り除いたときの連結成分」であると言うこともできます。
+// 橋とは、その1辺を取り除いただけでグラフが非連結となるような辺のことです。
+// よって橋を列挙することができれば、二重辺連結成分も列挙することができます。
+
+
 struct Edge{
         int to,cost;
 };
 bool operator < (const Edge &e,const Edge &f){	return e.cost>f.cost;	};	//INVERSE!!
 typedef vector<vector<Edge>> Graph;
-Graph g;
+
+void addEdge(Graph &g,int from,int to,int cost){
+    g[from].push_back((Edge){to,cost});
+}
 
 void bridgeDfs(const Graph &g,int cur, int prev, vector<pair<int,int> > &brg, vector<vector<int> > &each_bcc, stack<int> &roots, stack<int> &S, vector<bool> &inS, vector<int> &order, int &k){
 

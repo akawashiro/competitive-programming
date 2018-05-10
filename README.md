@@ -76,6 +76,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [橋の撤去](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1196&lang=jp) 木の直径
+葉っぱに付いている辺x1 + 直径x2 + その他x3。注意:C++のfor(auto e: G[i])ではeは変更できない。for(auto& e: G[i])とする必要がある。
 ## [夏合宿の朝は早い](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2748) 強連結成分分解→木になる
 グラフを強連結成分分解すると ***木になる***。この木の葉のところの確率を全部掛けあわせたのが答え。
 ## [Daruma Otoshi](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1611) 長さを決めてちょっとずつ伸ばすタイプのDP
