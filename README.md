@@ -76,6 +76,10 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [Circle and Points](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1132) 円を列挙するときはギリギリのケースだけで良い
+二点に接する円を列挙する。  
+ミス一覧  
+- 点が一つしかないケースを忘れていた
 ## [The Enemy of My Enemy is My Friend](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2403) 半分全列挙
 ミス一覧
 - 変数の初期化忘れ(特にデータセットが複数あることに起因するもの)
