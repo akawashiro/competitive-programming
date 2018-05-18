@@ -76,6 +76,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [Problem E: 大玉転がし](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1157&lang=jp) 端っこだけ考える
+長方形の各辺とコースの距離から大玉の直径の最大値がわかる
 ## [Name the Crossing](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1134&lang=jp) ワーシャルフロイド
 通りA,Bが同じかどうか判定するときはグラフのコピ＾を作らないとだめ。
 - 辺の追加と追加できるかの判定を同じグラフでやってしまった
