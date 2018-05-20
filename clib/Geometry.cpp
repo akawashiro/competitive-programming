@@ -89,5 +89,27 @@ Point crosspoint(const Line &l, const Line &m) {
     if (abs(A) < EPS) assert(false); // !!!PRECONDITION NOT SATISFIED!!!
     return m[0] + B / A * (m[1] - m[0]);
 }
-
+vector<Point> convex_hull(vector<Point> ps) {
+    int n = ps.size(), k = 0;
+    sort(ps.begin(), ps.end());
+    vector<Point> ch(2*n);
+    for (int i = 0; i < n; ch[k++] = ps[i++]) // lower-hull
+        while (k >= 2 && ccw(ch[k-2], ch[k-1], ps[i]) <= 0) --k;
+    for (int i = n-2, t = k+1; i >= 0; ch[k++] = ps[i--]) // upper-hull
+        while (k >= t && ccw(ch[k-2], ch[k-1], ps[i]) <= 0) --k;
+    ch.resize(k-1);
+    return ch;
+}
+enum { OUT, ON, IN };
+int contains(const vector<Point>& polygon, const Point& p) {
+    bool in = false;
+    for (int i = 0; i < (int)polygon.size(); ++i) {
+        Point a = polygon[i] - p, b = polygon[(i+1)%polygon.size()] - p;
+        if (imag(a) > imag(b)) swap(a, b);
+        if (imag(a) <= 0 && 0 < imag(b))
+            if (cross(a, b) < 0) in = !in;
+        if (cross(a, b) == 0 && dot(a, b) <= 0) return ON;
+    }
+    return in ? IN : OUT;
+}
 
