@@ -1,5 +1,5 @@
 // S means segment, L means infinite length line
-const double EPS = 1e-5;
+const double EPS = 1e-10;
 const double INF = 1e12;
 typedef complex<double> Point;
 namespace std {
@@ -26,6 +26,15 @@ struct Line : public vector<Point> {
     Line(const Point &a, const Point &b) {
         push_back(a); push_back(b);
     }
+};
+class Circle{
+    public:
+        Point c;
+        double r;
+        Circle(const Point &cc, const double rr){
+            c = cc;
+            r = rr;
+        }
 };
 
 int ccw(Point a, Point b, Point c) {
@@ -113,4 +122,33 @@ int contains(const vector<Point>& polygon, const Point& p) {
     }
     return in ? IN : OUT;
 }
+bool crossCircle(const Circle& c1, const Circle& c2){
+    double r1 = c1.r;
+    double r2 = c2.r;
+    double d = abs(c1.c-c2.c);
+    if(d<r1||d<r2)
+        return d-abs(r1-r2)>EPS;
+    return r1+r2-d>-EPS;
+}
+
+bool containPoint(const Circle& c, const Point& p){
+    double dist = abs(c.c-p);
+    return dist < c.r+EPS;
+}
+
+vector<Point> crosspointCC(const Circle& c1, const Circle& c2){
+    vector<Point> res;
+    if(!crossCircle(c1,c2))
+        return res;
+    double r1 = c1.r;
+    double r2 = c2.r;
+    double r3 = abs(c1.c-c2.c);
+    double rc = (r3*r3+r1*r1-r2*r2)/(2*r3);
+    double rs = sqrt(r1*r1-rc*rc);
+    Point dif = (c2.c-c1.c)/r3;
+    res.push_back(c1.c+dif*Point(rc, rs));
+    res.push_back(c1.c+dif*Point(rc,-rs));
+    return res;
+}
+
 
