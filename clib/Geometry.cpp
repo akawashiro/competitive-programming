@@ -1,3 +1,4 @@
+// S means segment, L means infinite length line
 const double EPS = 1e-5;
 const double INF = 1e12;
 typedef complex<double> Point;

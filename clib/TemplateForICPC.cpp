@@ -14,6 +14,8 @@
 #include <cstring>
 #include <limits.h>
 #include <bitset>
+#include <complex>
+#include <cassert>
 #define FOR(i,k,n)  for (int i=(k); i<(int)(n); ++i)
 #define REP(i,n)    FOR(i,0,n)
 #define FORIT(i,c)	for(__typeof((c).begin())i=(c).begin();i!=(c).end();++i)
