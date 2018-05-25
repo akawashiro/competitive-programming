@@ -76,6 +76,8 @@
 - 蟻本p144 $n$個のサイズ$k$の部分集合
 - 蟻本p27 くじびき
   $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [Substring](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444&lang=jp) Rolling Hash
+Rolling Hashで部分文字列を高速に比較する。
 ## [凸多角形柱工業都市](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2827) 凸包+Dijkstra
 始点から終点への辺を貼り忘れた
 ## [Problem E: 大玉転がし](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1157&lang=jp) 端っこだけ考える
