@@ -1,81 +1,17 @@
-# 未解決問題
-## 700点
-- [C - Nuske vs Phantom Thnook](https://beta.atcoder.jp/contests/agc015/tasks/agc015_c)
-- [C - +/- Rectangle](https://beta.atcoder.jp/contests/agc016/tasks/agc016_c)
-- [E - ConvexScore](https://beta.atcoder.jp/contests/arc082/tasks/arc082_c)
-- [F - Sandglass](https://beta.atcoder.jp/contests/arc082/tasks/arc082_d)
-- [D - Four Coloring](https://beta.atcoder.jp/contests/code-festival-2017-quala/tasks/code_festival_2017_quala_d)
-- [E - Prefix-free Game](https://beta.atcoder.jp/contests/arc087/tasks/arc087_c)
-## 600点
-- [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
-- [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
-- [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
-## 500点
-- [D - IntegerotS](https://beta.atcoder.jp/contests/tenka1-2017/tasks/tenka1_2017_d)
-- [D - 井井井 / ###](https://beta.atcoder.jp/contests/abc058/tasks/arc071_b)
-## 400点
-- [D - Insertion](https://beta.atcoder.jp/contests/abc064/tasks/abc064_d)
-- [B - Median Pyramid Easy](https://beta.atcoder.jp/contests/agc006/tasks/agc006_b)
-- [D - いろはちゃんとマス目 / Iroha and a Grid](https://beta.atcoder.jp/contests/abc042/tasks/arc058_b)
-- [D - アンバランス / Unbalanced](https://beta.atcoder.jp/contests/arc059/tasks/arc059_b)
-- [D - Card Eater](https://beta.atcoder.jp/contests/arc068/tasks/arc068_b)
-- [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
+# Wrong Answerを出したときにチェックするリスト
+- overflow
+- modの取り忘れ
+- 変数の初期化忘れ(特にデータセットが複数あることに起因するもの)
+- 高速化できる箇所の見落とし(各頂点に関する隣接頂点bitmaskの計算)
+- メモ化再帰をループに変換するときのカウンタの順序ミス
+- 文字列で与えられる頂点情報の数字への変換ミス(文字列で読み込んだものはすべてmapで数字に変換しよう)
+- 始点から終点への辺を貼り忘れた
+- 辺の追加と追加できるかの判定を同じグラフでやってしまった
+- メモ化再帰のキャッシュサイズを間違えた
 
 # 過去問の復習
-- setのk番目を求めたいときはg++拡張のtreeが使える
-  <http://hogloid.hatenablog.com/entry/2014/09/23/132440>
-  <https://gcc.gnu.org/onlinedocs/gcc-4.6.4/libstdc++/api/classes.html>
-  を参照せよ
-- 蟻本p219 式変形で1対1割当の最小コストを求める問題に変形→二部グラフの最小費用流
-- 蟻本p217 フローfがその流量における最小費用流=fの残余グラフに負閉路が存在しない
-- 蟻本p212 ProjectSelectionProblem
-  $N$個の要素がある．最初どの頂点も集合$B$に属しているが，これを集合$A$に移すことで利益を最大化したい． 要素$i$が$A$に属する時には利得$p_i$を得るという情報が与えられる． さらに3つ組の列$(x_j,y_j,z_j)$が与えられ，これは$x_j$が$A$に属し，かつ$y_j$が$B$に属していた時に$z_j(\ge0)$だけ損失をすることを意味する． 得られる利得の最大値を答えよ．
-  要素に対応するものとS,Tで合計N+2個の頂点を用意する。 要素がAに属するとき対応する頂点を赤、Bに属するとき青で塗るとする。制約は次のようにして帰着させられる:
-  「Aに属するとき利得pi≥0を得る」は無条件の利得piを準備し重みpiの有向辺S→xiを張る
-  「Aに属するとき利得pi≤0を得る」は重み|pi|の有向辺xi→Tを張る
-  「xjがAに属しかつyjがBに属していた時にzj(≥0)だけ損失」は重みzjの有向辺xj→yjを張る
-- 蟻本p210 2種類のもの(飲み物と食べ物)を1種類のものに割り当てる問題
-- 蟻本p206 座標$\times$時間を頂点とする+二部グラフの最大マッチング
-- 蟻本p205 グリッド系問題における交点を辺に変換するやつ+最小辺カバー(点を全部カバー)=最大マッチング(@二部グラフ)
-- 蟻本p182 数列の一般項を行列で表すことができれば繰り返し二乗法で高速に解ける。DPとか
-- 蟻本p172 接点が列を持っているsegtreeを領域木と呼ぶことがある。
-  区間$[l,r)$の$v$以下の数の個数を計算せよ=$l\le x< r,y<v$の領域に含まれる点の個数を計算せよ
-- 蟻本p168 列を分割してソートしておくと二分探索ができる。segtreeでも平方分割でも可。segtreeは各接点に列を持つ。マージソートの過程を保存する感じ。
-- 蟻本p167 平方分割でもRMQが実現できる
-- 蟻本p165 一般に操作による累積和の変化が位置のn次式で表すことができるとき、n+1個のBITで対処できる場合がある
-- 蟻本p162 反転数はBITで数えることができる
-- 蟻本p156 結合則が成り立つならsegtreeに載せられる
-- 蟻本p149 半分全列挙した後、明らかにいらないものを除くと扱いやすくなる。
-- 蟻本p147 4つのうち２つを選ぶ組み合わせを全列挙して二分探索
-- 蟻本p145 弾性衝突 弾性衝突はとりあえずすり抜けに置き換える
-- 蟻本p132 平均最大化
-  平均$x$を定めると$\sum_{i\in S} v_i / \sum_{i\in S} w_i \ge x$となる$S$を求める問題。
-  これは$\sum_{i\in S}(v_i -xw_i)\ge 0$であり、$(v_i-xw_i)$でソートしておけばよい。
-- 蟻本p113 区間内の素数の個数 $[2,\sqrt{b})$の素数の表を持っておけば$[a,b)$の素数を求めることができる。
-- 蟻本p107 線分上の格子点の個数 最大公約数を使う
-- 蟻本p105 Layout
-  両辺に一つづつしか変数が現れない不等式を最短経路問題に変換する。
-- 蟻本p85 食物連鎖
-  各動物$i$について動物$i$が種類Aである、Bである、Cであるの3種類の頂点を作りUnionFindで条件の妥当性を検証する
-- 蟻本p67 重複組み合わせ（個数制限あり) DPを高速化するやつ
-- 蟻本p66 分割数(n個の区別できない品物をm個の箱に入れるやり方) [写像12相](https://mathtrain.jp/twelveway)を参照
-- 蟻本p63 最長増加部分列問題
-  DP[i] = 長さがi+1であるような増加部分列における最終要素の最小値とすることでDP[i]は常に単調増加するので二分探索で更新出来て$O(n\log n)$。
-- 蟻本p62 個数制限付き部分和問題
-  DP[i+1][j] = i番目まででjを作るときにあまる最大のi番目の個数
-- 蟻本p60 01ナップサック問題その2
-  DP[品物のindex][価値] = 実現する最小の重さ(存在しない場合はINF)
-- 蟻本p59 個数制限なしナップサック問題
-  無駄な計算の削減でオーダーが落とせて$O(nW)$。
-- 蟻本p49 Fence Repair
-  ハフマン符号と同様に最も小さいもの２つをくってつけていく
-- 蟻本p45 Best Cow Line
-  反転して比較する発想
-- 蟻本p43 区間スケジューリング問題
-  終了時間が早いものから選ぶ
-- 蟻本p144 $n$個のサイズ$k$の部分集合
-- 蟻本p27 くじびき
-  $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+## [D - Xor Sum 2](https://beta.atcoder.jp/contests/arc098/tasks/arc098_b)
+答えがoverflowした
 ## [Substring](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444&lang=jp) Rolling Hash
 Rolling Hashで部分文字列を高速に比較する。
 ## [凸多角形柱工業都市](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2827) 凸包+Dijkstra
@@ -602,6 +538,86 @@ DP[i][j]=区間i~i+1にj個準急停車駅をの挿入するときの条件を�
 連続する２つがわかれば全部確定する
 ## [C - Knot Puzzle](http://agc002.contest.atcoder.jp/tasks/agc002_c) 発想
 $a_i + a_{i+1} \ge L$であればPossible、そうでなければImpossible
+
+## 蟻本の復習
+- setのk番目を求めたいときはg++拡張のtreeが使える
+  <http://hogloid.hatenablog.com/entry/2014/09/23/132440>
+  <https://gcc.gnu.org/onlinedocs/gcc-4.6.4/libstdc++/api/classes.html>
+  を参照せよ
+- 蟻本p219 式変形で1対1割当の最小コストを求める問題に変形→二部グラフの最小費用流
+- 蟻本p217 フローfがその流量における最小費用流=fの残余グラフに負閉路が存在しない
+- 蟻本p212 ProjectSelectionProblem
+  $N$個の要素がある．最初どの頂点も集合$B$に属しているが，これを集合$A$に移すことで利益を最大化したい． 要素$i$が$A$に属する時には利得$p_i$を得るという情報が与えられる． さらに3つ組の列$(x_j,y_j,z_j)$が与えられ，これは$x_j$が$A$に属し，かつ$y_j$が$B$に属していた時に$z_j(\ge0)$だけ損失をすることを意味する． 得られる利得の最大値を答えよ．
+  要素に対応するものとS,Tで合計N+2個の頂点を用意する。 要素がAに属するとき対応する頂点を赤、Bに属するとき青で塗るとする。制約は次のようにして帰着させられる:
+  「Aに属するとき利得pi≥0を得る」は無条件の利得piを準備し重みpiの有向辺S→xiを張る
+  「Aに属するとき利得pi≤0を得る」は重み|pi|の有向辺xi→Tを張る
+  「xjがAに属しかつyjがBに属していた時にzj(≥0)だけ損失」は重みzjの有向辺xj→yjを張る
+- 蟻本p210 2種類のもの(飲み物と食べ物)を1種類のものに割り当てる問題
+- 蟻本p206 座標$\times$時間を頂点とする+二部グラフの最大マッチング
+- 蟻本p205 グリッド系問題における交点を辺に変換するやつ+最小辺カバー(点を全部カバー)=最大マッチング(@二部グラフ)
+- 蟻本p182 数列の一般項を行列で表すことができれば繰り返し二乗法で高速に解ける。DPとか
+- 蟻本p172 接点が列を持っているsegtreeを領域木と呼ぶことがある。
+  区間$[l,r)$の$v$以下の数の個数を計算せよ=$l\le x< r,y<v$の領域に含まれる点の個数を計算せよ
+- 蟻本p168 列を分割してソートしておくと二分探索ができる。segtreeでも平方分割でも可。segtreeは各接点に列を持つ。マージソートの過程を保存する感じ。
+- 蟻本p167 平方分割でもRMQが実現できる
+- 蟻本p165 一般に操作による累積和の変化が位置のn次式で表すことができるとき、n+1個のBITで対処できる場合がある
+- 蟻本p162 反転数はBITで数えることができる
+- 蟻本p156 結合則が成り立つならsegtreeに載せられる
+- 蟻本p149 半分全列挙した後、明らかにいらないものを除くと扱いやすくなる。
+- 蟻本p147 4つのうち２つを選ぶ組み合わせを全列挙して二分探索
+- 蟻本p145 弾性衝突 弾性衝突はとりあえずすり抜けに置き換える
+- 蟻本p132 平均最大化
+  平均$x$を定めると$\sum_{i\in S} v_i / \sum_{i\in S} w_i \ge x$となる$S$を求める問題。
+  これは$\sum_{i\in S}(v_i -xw_i)\ge 0$であり、$(v_i-xw_i)$でソートしておけばよい。
+- 蟻本p113 区間内の素数の個数 $[2,\sqrt{b})$の素数の表を持っておけば$[a,b)$の素数を求めることができる。
+- 蟻本p107 線分上の格子点の個数 最大公約数を使う
+- 蟻本p105 Layout
+  両辺に一つづつしか変数が現れない不等式を最短経路問題に変換する。
+- 蟻本p85 食物連鎖
+  各動物$i$について動物$i$が種類Aである、Bである、Cであるの3種類の頂点を作りUnionFindで条件の妥当性を検証する
+- 蟻本p67 重複組み合わせ（個数制限あり) DPを高速化するやつ
+- 蟻本p66 分割数(n個の区別できない品物をm個の箱に入れるやり方) [写像12相](https://mathtrain.jp/twelveway)を参照
+- 蟻本p63 最長増加部分列問題
+  DP[i] = 長さがi+1であるような増加部分列における最終要素の最小値とすることでDP[i]は常に単調増加するので二分探索で更新出来て$O(n\log n)$。
+- 蟻本p62 個数制限付き部分和問題
+  DP[i+1][j] = i番目まででjを作るときにあまる最大のi番目の個数
+- 蟻本p60 01ナップサック問題その2
+  DP[品物のindex][価値] = 実現する最小の重さ(存在しない場合はINF)
+- 蟻本p59 個数制限なしナップサック問題
+  無駄な計算の削減でオーダーが落とせて$O(nW)$。
+- 蟻本p49 Fence Repair
+  ハフマン符号と同様に最も小さいもの２つをくってつけていく
+- 蟻本p45 Best Cow Line
+  反転して比較する発想
+- 蟻本p43 区間スケジューリング問題
+  終了時間が早いものから選ぶ
+- 蟻本p144 $n$個のサイズ$k$の部分集合
+- 蟻本p27 くじびき
+  $n$個の数字$a_i$から重複を許して４つ取り出すとき合計を$m$にすることはできるか?２つの数で作れる数を列挙しておけば二分探索を使って$O(n^2\log n)$。
+
+  # 未解決問題
+  ## 700点
+  - [C - Nuske vs Phantom Thnook](https://beta.atcoder.jp/contests/agc015/tasks/agc015_c)
+  - [C - +/- Rectangle](https://beta.atcoder.jp/contests/agc016/tasks/agc016_c)
+  - [E - ConvexScore](https://beta.atcoder.jp/contests/arc082/tasks/arc082_c)
+  - [F - Sandglass](https://beta.atcoder.jp/contests/arc082/tasks/arc082_d)
+  - [D - Four Coloring](https://beta.atcoder.jp/contests/code-festival-2017-quala/tasks/code_festival_2017_quala_d)
+  - [E - Prefix-free Game](https://beta.atcoder.jp/contests/arc087/tasks/arc087_c)
+  ## 600点
+  - [D - Decrease (Contestant ver.)](https://beta.atcoder.jp/contests/arc079/tasks/arc079_b)
+  - [D - 11](https://beta.atcoder.jp/contests/abc066/tasks/arc077_b)
+  - [D - Xor Sum](https://beta.atcoder.jp/contests/arc066/tasks/arc066_b)
+  ## 500点
+  - [D - IntegerotS](https://beta.atcoder.jp/contests/tenka1-2017/tasks/tenka1_2017_d)
+  - [D - 井井井 / ###](https://beta.atcoder.jp/contests/abc058/tasks/arc071_b)
+  ## 400点
+  - [D - Insertion](https://beta.atcoder.jp/contests/abc064/tasks/abc064_d)
+  - [B - Median Pyramid Easy](https://beta.atcoder.jp/contests/agc006/tasks/agc006_b)
+  - [D - いろはちゃんとマス目 / Iroha and a Grid](https://beta.atcoder.jp/contests/abc042/tasks/arc058_b)
+  - [D - アンバランス / Unbalanced](https://beta.atcoder.jp/contests/arc059/tasks/arc059_b)
+  - [D - Card Eater](https://beta.atcoder.jp/contests/arc068/tasks/arc068_b)
+  - [D - 高橋君と見えざる手 / An Invisible Hand](https://beta.atcoder.jp/contests/abc047/tasks/arc063_b)
+
 # 落ちたら危険！NP困難問題
 ## クリーク問題
 グラフGにサイズkのクリークが存在しますか?
