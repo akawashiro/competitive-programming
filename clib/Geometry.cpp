@@ -1,4 +1,5 @@
 // S means segment, L means infinite length line
+// P means a point, C means a circle.
 const double EPS = 1e-10;
 const double INF = 1e12;
 typedef complex<double> Point;
@@ -130,12 +131,10 @@ bool crossCircle(const Circle& c1, const Circle& c2){
         return d-abs(r1-r2)>EPS;
     return r1+r2-d>-EPS;
 }
-
 bool containPoint(const Circle& c, const Point& p){
     double dist = abs(c.c-p);
     return dist < c.r+EPS;
 }
-
 vector<Point> crosspointCC(const Circle& c1, const Circle& c2){
     vector<Point> res;
     if(!crossCircle(c1,c2))
@@ -149,6 +148,51 @@ vector<Point> crosspointCC(const Circle& c1, const Circle& c2){
     res.push_back(c1.c+dif*Point(rc, rs));
     res.push_back(c1.c+dif*Point(rc,-rs));
     return res;
+}
+double arg3P(const Point& a,const Point &b,const Point &c){
+    Point ab = b - a;
+    Point bc = c - b;
+    double ic=real(ab)*real(bc)+imag(ab)*imag(bc);
+    double aa=abs(ab)*abs(bc);
+    int d = ccw(a,b,c);
+    if(-1==d){
+        return M_PI + acos(ic/aa);
+    }else if(1==d){
+        return M_PI - acos(ic/aa);
+    }else if(2==d){
+        return 0;
+    }else if(-2==d){
+        return M_PI;
+    }else if(0==d){
+        return M_PI;
+    }else{
+        assert(false);
+    }
+}
+// input for onSameLine function must be longer than 3
+vector<Point> onSameLine(const vector<Point> &ps){
+    int N = ps.size();
+    vector<Point> ret;
+    for(int i=0;i<N-2;i++){
+        int c = ccw(ps[i],ps[i+1],ps[i+2]);
+        if(c==1 || c==-1)
+            return ret;
+    }
+    double dist = -1;
+    int idist1=-1,idist2=-1;
+    for(int i=1;i<N;i++)
+        if(abs(ps[0]-ps[i]) > dist){
+            dist = abs(ps[0]-ps[i]);
+            idist1 = i;
+        }
+    for(int i=0;i<N;i++)
+        if(i!=idist1 && abs(ps[idist1]-ps[i]) > dist){
+            dist = abs(ps[idist1]-ps[i]);
+            idist2 = i;
+        }
+    ret.push_back(ps[idist1]);
+    ret.push_back(ps[idist2]);
+    return ret;
 }
 
 
