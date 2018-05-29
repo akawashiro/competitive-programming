@@ -10,8 +10,10 @@
 - メモ化再帰のキャッシュサイズを間違えた
 
 # 過去問の復習
+## [B - Holes](https://beta.atcoder.jp/contests/agc021/tasks/agc021_b) 無限遠が考えられるときは無限遠だけ考慮すれば良い。近いところは消える。
+凸包の外角を計算する。
 ## [D - Xor Sum 2](https://beta.atcoder.jp/contests/arc098/tasks/arc098_b)
-答えがoverflowした
+答えがoverflowした
 ## [Substring](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444&lang=jp) Rolling Hash
 Rolling Hashで部分文字列を高速に比較する。
 ## [凸多角形柱工業都市](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2827) 凸包+Dijkstra
