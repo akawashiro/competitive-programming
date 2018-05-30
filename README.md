@@ -10,6 +10,8 @@
 - メモ化再帰のキャッシュサイズを間違えた
 
 # 過去問の復習
+## [D - Static Sushi](https://beta.atcoder.jp/contests/abc095/tasks/arc096_b)
+端を決めてもうひとつの端をpriority_queueで決める
 ## [B - Holes](https://beta.atcoder.jp/contests/agc021/tasks/agc021_b) 無限遠が考えられるときは無限遠だけ考慮すれば良い。近いところは消える。
 凸包の外角を計算する。
 ## [D - Xor Sum 2](https://beta.atcoder.jp/contests/arc098/tasks/arc098_b)
