@@ -9,8 +9,11 @@
 - 辺の追加と追加できるかの判定を同じグラフでやってしまった
 - メモ化再帰のキャッシュサイズを間違えた
 - 変数の初期化し忘れ
+- クエリを後ろから見るときに同一クエリの重複処理をミス。一番最初のクエリを取るべき。
 
 # 過去問の復習
+## [Problem F: Marked Ancestor](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2170) クエリを後ろから見る
+クエリを後ろから見るとMarkで親とくっつけていく処理に見える。Markが複数あるケースで1WA。
 ## [C - Interval Game](https://agc025.contest.atcoder.jp/tasks/agc025_c)
 左端が最も右→右端が最も左→左端が最も右→ or 右端が最も左→左端が最も右→右端が最も左→
 ## [D - Static Sushi](https://beta.atcoder.jp/contests/abc095/tasks/arc096_b)

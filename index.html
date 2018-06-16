@@ -226,9 +226,20 @@ code.language-yaml {
 <li>始点から終点への辺を貼り忘れた</li>
 <li>辺の追加と追加できるかの判定を同じグラフでやってしまった</li>
 <li>メモ化再帰のキャッシュサイズを間違えた</li>
+<li>変数の初期化し忘れ</li>
+<li>クエリを後ろから見るときに同一クエリの重複処理をミス。一番最初のクエリを取るべき。</li>
 </ul>
 <h1 class="mume-header" id="%E9%81%8E%E5%8E%BB%E5%95%8F%E3%81%AE%E5%BE%A9%E7%BF%92">過去問の復習</h1>
 
+<h2 class="mume-header" id="problem-f-marked-ancestorhttpjudgeu-aizuacjponlinejudgedescriptionjspid2170-%E3%82%AF%E3%82%A8%E3%83%AA%E3%82%92%E5%BE%8C%E3%82%8D%E3%81%8B%E3%82%89%E8%A6%8B%E3%82%8B"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2170">Problem F: Marked Ancestor</a> クエリを後ろから見る</h2>
+
+<p>クエリを後ろから見るとMarkで親とくっつけていく処理に見える。Markが複数あるケースで1WA。</p>
+<h2 class="mume-header" id="c-interval-gamehttpsagc025contestatcoderjptasksagc025_c"><a href="https://agc025.contest.atcoder.jp/tasks/agc025_c">C - Interval Game</a></h2>
+
+<p>左端が最も右→右端が最も左→左端が最も右→ or 右端が最も左→左端が最も右→右端が最も左→</p>
+<h2 class="mume-header" id="d-static-sushihttpsbetaatcoderjpcontestsabc095tasksarc096_b"><a href="https://beta.atcoder.jp/contests/abc095/tasks/arc096_b">D - Static Sushi</a></h2>
+
+<p>端を決めてもうひとつの端をpriority_queueで決める</p>
 <h2 class="mume-header" id="b-holeshttpsbetaatcoderjpcontestsagc021tasksagc021_b-%E7%84%A1%E9%99%90%E9%81%A0%E3%81%8C%E8%80%83%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AF%E7%84%A1%E9%99%90%E9%81%A0%E3%81%A0%E3%81%91%E8%80%83%E6%85%AE%E3%81%99%E3%82%8C%E3%81%B0%E8%89%AF%E3%81%84-%E8%BF%91%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D%E3%81%AF%E6%B6%88%E3%81%88%E3%82%8B"><a href="https://beta.atcoder.jp/contests/agc021/tasks/agc021_b">B - Holes</a> 無限遠が考えられるときは無限遠だけ考慮すれば良い。近いところは消える。</h2>
 
 <p>凸包の外角を計算する。</p>
