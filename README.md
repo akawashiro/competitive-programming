@@ -13,6 +13,8 @@
 - DPの初期値は必ず0にして良いわけではない
 
 # 過去問の復習
+## [Never Wait for Weights](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330) グラフの中に基準点を設ける+マージテク
+連結成分の中に基準点を設けて重さをその基準点からの差分で管理する。2つの連結成分が結合するときは小さい方を大きい方にくっつける(マージテク)。
 ## [D - Patisserie ABC](https://beta.atcoder.jp/contests/abc100/tasks/abc100_d) 絶対値は-1を掛けるか1を掛けるかの場合分け
 DPの初期値を0にしてWA。死にたい。
 ## [Problem F: Marked Ancestor](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2170) クエリを後ろから見る
