@@ -14,6 +14,12 @@
 - マージテクでくっ付ける先とくっつける元を逆にしていた
 
 # 過去問の復習
+## [D - 桁和 / Digit Sum](https://beta.atcoder.jp/contests/abc044/tasks/arc060_b) 入力の平方根に比例する計算時間
+$b<\sqrt n$まで全部試したあと、それ以上の$b$については$n$の$b$進数での表現が二桁になることがわかる。あとは上位の桁を決め打ちすれば良い。
+- $N=S$のケースは$b=N+1$
+- $S=1$のケースは$b=N$
+
+がコーナケースでWAした。 
 ## [Rabbit Party](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2306) クリークを全列挙
 辺の数$M$が100以下なのでクリークの最大サイズは$O(\sqrt{M})$。列挙しても案外大丈夫。
 ## [Never Wait for Weights](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330) グラフの中に基準点を設ける+マージテク
