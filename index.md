@@ -12,8 +12,11 @@
 - クエリを後ろから見るときに同一クエリの重複処理をミス。一番最初のクエリを取るべき。
 - DPの初期値は必ず0にして良いわけではない
 - マージテクでくっ付ける先とくっつける元を逆にしていた
+- 自分の知っている典型問題に飛びつきすぎた
 
 # 過去問の復習
+## [D - Recording](https://beta.atcoder.jp/contests/abc080/tasks/abc080_d)
+同じチャンネルの番組はまとめる
 ## [C - Gr-idian MST](https://beta.atcoder.jp/contests/code-festival-2016-qualb/tasks/codefestival_2016_qualB_c) グリッドの同じ$x$座標/$y$座標をまとめる
 最小全域木の構成方法を考えると同じ重みの辺は同時に追加されるので、グリッドの同じ$x$座標/$y$座標をまとめて考えて良い。
 ## [D - 桁和 / Digit Sum](https://beta.atcoder.jp/contests/abc044/tasks/arc060_b) 入力の平方根に比例する計算時間
