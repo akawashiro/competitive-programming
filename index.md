@@ -15,6 +15,8 @@
 - 自分の知っている典型問題に飛びつきすぎた
 
 # 過去問の復習
+## [C - Go Home](https://beta.atcoder.jp/contests/arc070/tasks/arc070_a) 発想
+$N\leq \sum_{i=1}^k$となる$k$ならOK.
 ## [D - Recording](https://beta.atcoder.jp/contests/abc080/tasks/abc080_d)
 同じチャンネルの番組はまとめる
 ## [C - Gr-idian MST](https://beta.atcoder.jp/contests/code-festival-2016-qualb/tasks/codefestival_2016_qualB_c) グリッドの同じ$x$座標/$y$座標をまとめる
